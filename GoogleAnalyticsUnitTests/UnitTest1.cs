@@ -1,6 +1,5 @@
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GoogleAnalytics.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GoogleAnalyticsUnitTests
 {
@@ -10,13 +9,12 @@ namespace GoogleAnalyticsUnitTests
         [TestMethod]
         public void TestMethod1()
         {
-            TrackerConfig config = new TrackerConfig();
+            var config = new TrackerConfig();
             config.AppVersion = "1";
             config.TrackingId = "2";
             config.Debug = true;
 
-
-            var x = new GoogleAnalytics.Core.EasyTracker(config);
+            var x = new EasyTracker(config);
 
             var y = x.GetTracker();
             y.SendView("Main");
