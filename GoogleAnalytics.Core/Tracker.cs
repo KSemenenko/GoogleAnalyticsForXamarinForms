@@ -18,7 +18,7 @@ namespace GoogleAnalytics.Core
             this.serviceManager = serviceManager;
             if(string.IsNullOrEmpty(serviceManager.UserAgent))
             {
-                serviceManager.UserAgent = platformInfoProvider.GetUserAgent();
+                serviceManager.UserAgent = platformInfoProvider.UserAgent;
             }
             this.platformInfoProvider = platformInfoProvider;
             engine = new PayloadFactory
@@ -31,8 +31,6 @@ namespace GoogleAnalytics.Core
                          ViewportSize = platformInfoProvider.ViewPortResolution
                          //DocumentEncoding = platformInfoProvider.DocumentEncoding,
                      };
-            platformInfoProvider.ViewPortResolutionChanged += platformTrackingInfo_ViewPortResolutionChanged;
-            platformInfoProvider.ScreenResolutionChanged += platformTrackingInfo_ScreenResolutionChanged;
             SampleRate = 100.0F;
             hitTokenBucket = new TokenBucket(60, .5);
         }

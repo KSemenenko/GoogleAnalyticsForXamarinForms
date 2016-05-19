@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleAnalytics.Core", "GoogleAnalytics.Core\GoogleAnalytics.Core.csproj", "{F37123CD-3C3D-40CA-B1B0-9CA81612A478}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApplication", "TestConsoleApplication\TestConsoleApplication.csproj", "{3A48655F-463B-4CAD-8570-B862CBD853A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppStore|Any CPU = AppStore|Any CPU
@@ -56,6 +58,12 @@ Global
 		{F37123CD-3C3D-40CA-B1B0-9CA81612A478}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F37123CD-3C3D-40CA-B1B0-9CA81612A478}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F37123CD-3C3D-40CA-B1B0-9CA81612A478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A48655F-463B-4CAD-8570-B862CBD853A6}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{3A48655F-463B-4CAD-8570-B862CBD853A6}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{3A48655F-463B-4CAD-8570-B862CBD853A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A48655F-463B-4CAD-8570-B862CBD853A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A48655F-463B-4CAD-8570-B862CBD853A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A48655F-463B-4CAD-8570-B862CBD853A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +74,6 @@ Global
 		{FBB9322B-BAF7-4D54-A11D-26FB98692E39} = {B5540EE3-820F-4785-AC56-C28E87D12D8D}
 		{6B29D668-9370-424E-928A-24FE99B57AA0} = {B5540EE3-820F-4785-AC56-C28E87D12D8D}
 		{F37123CD-3C3D-40CA-B1B0-9CA81612A478} = {64ED924C-5F60-4815-A3EB-4324016C86AF}
+		{3A48655F-463B-4CAD-8570-B862CBD853A6} = {C62DCE55-400E-4C30-8DF6-DC06AB245A94}
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GoogleAnalytics.Core
+﻿namespace GoogleAnalytics.Core
 {
     public interface IPlatformInfoProvider
     {
@@ -10,8 +8,6 @@ namespace GoogleAnalytics.Core
         string UserLanguage { get; }
         Dimensions ViewPortResolution { get; }
         void OnTracking();
-        string GetUserAgent();
-        event EventHandler ViewPortResolutionChanged;
-        event EventHandler ScreenResolutionChanged;
+        string UserAgent { get; }
     }
 }

@@ -44,9 +44,6 @@
     <Compile Include="..\GoogleAnalytics.Core\EasyTracker.cs">
       <Link>Core\EasyTracker.cs</Link>
     </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\EasyTrackerConfig.cs">
-      <Link>Core\EasyTrackerConfig.cs</Link>
-    </Compile>
     <Compile Include="..\GoogleAnalytics.Core\GAServiceManager.cs">
       <Link>Core\GAServiceManager.cs</Link>
     </Compile>
@@ -68,9 +65,6 @@
     <Compile Include="..\GoogleAnalytics.Core\Platform\IDisplay.cs">
       <Link>Platform\IDisplay.cs</Link>
     </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Platform\INetwork.cs">
-      <Link>Platform\INetwork.cs</Link>
-    </Compile>
     <Compile Include="..\GoogleAnalytics.Core\Platform\IPlatformInfoProvider.cs">
       <Link>Platform\IPlatformInfoProvider.cs</Link>
     </Compile>
@@ -83,12 +77,16 @@
     <Compile Include="..\GoogleAnalytics.Core\Tracker.cs">
       <Link>Core\Tracker.cs</Link>
     </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerConfig.cs">
+      <Link>Core\TrackerConfig.cs</Link>
+    </Compile>
     <Compile Include="..\GoogleAnalytics.Core\TrackerManager.cs">
       <Link>Core\TrackerManager.cs</Link>
     </Compile>
     <Compile Include="..\GoogleAnalytics.Core\Transactions.cs">
       <Link>Core\Transactions.cs</Link>
     </Compile>
+    <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

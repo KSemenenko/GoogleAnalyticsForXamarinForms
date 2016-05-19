@@ -11,11 +11,16 @@ namespace GoogleAnalytics.Core
 
         public EasyTracker()
         {
-            InitTracker(new EasyTrackerConfig());
+            InitTracker(Config);
+        }
+
+        public EasyTracker(TrackerConfig config)
+        {
+            InitTracker(config);
         }
 
         public Uri ConfigPath { get; set; }
-        public EasyTrackerConfig Config { get; set; }
+        public static TrackerConfig Config { get; set; }
 
         public static EasyTracker Current
         {
@@ -23,7 +28,7 @@ namespace GoogleAnalytics.Core
             {
                 if(current == null)
                 {
-                    current = new EasyTracker();
+                    current = new EasyTracker(Config);
                 }
                 return current;
             }
@@ -33,21 +38,12 @@ namespace GoogleAnalytics.Core
         {
             if(tracker == null)
             {
-                //Application ctx = null;
-                //try
-                //{
-                //    ctx = Application.Current;
-                //}
-                //catch
-                //{
-                //    /* ignore, Win8 JS cannot get the Current Application. Therefore we will pass null instead as context */
-                //}
-                //Current.SetContext(ctx);
+                InitTracker(Config);
             }
             return tracker;
         }
 
-        private void InitTracker(EasyTrackerConfig config)
+        private void InitTracker(TrackerConfig config)
         {
             Config = config;
             Config.Validate();

@@ -1,14 +1,15 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using GoogleAnalytics.Core;
 
-namespace GoogleAnalyticsUnitTests
+namespace TestConsoleApplication
 {
-    [TestClass]
-    public class UnitTest1
+    class Program
     {
-        [TestMethod]
-        public void TestMethod1()
+        static void Main(string[] args)
         {
             TrackerConfig config = new TrackerConfig();
             config.AppVersion = "1";

@@ -1,15 +1,9 @@
-﻿using System;
-
-namespace GoogleAnalytics.Core
+﻿namespace GoogleAnalytics.Core
 {
-    public sealed class PlatformInfoProvider : IPlatformInfoProvider
+    public sealed partial class PlatformInfoProvider : IPlatformInfoProvider
     {
-        private Dimensions screenResolution;
-        private Dimensions viewPortResolution;
         public string UserAgent { get; set; }
-        public event EventHandler ViewPortResolutionChanged;
-        public event EventHandler ScreenResolutionChanged;
-        public string AnonymousClientId { get; set; }
+        public string AnonymousClientId { get; set; } = "GoogleAnaltyics.AnonymousClientId";
 
         public void OnTracking()
         {
@@ -17,36 +11,7 @@ namespace GoogleAnalytics.Core
 
         public int? ScreenColorDepthBits { get; set; }
         public string UserLanguage { get; set; }
-
-        public Dimensions ScreenResolution
-        {
-            get { return screenResolution; }
-            set
-            {
-                screenResolution = value;
-                if(ScreenResolutionChanged != null)
-                {
-                    ScreenResolutionChanged(this, EventArgs.Empty);
-                }
-            }
-        }
-
-        public Dimensions ViewPortResolution
-        {
-            get { return viewPortResolution; }
-            set
-            {
-                viewPortResolution = value;
-                if(ViewPortResolutionChanged != null)
-                {
-                    ViewPortResolutionChanged(this, EventArgs.Empty);
-                }
-            }
-        }
-
-        string IPlatformInfoProvider.GetUserAgent()
-        {
-            return UserAgent;
-        }
+        public Dimensions ScreenResolution { get; set; }
+        public Dimensions ViewPortResolution { get; set; }
     }
 }
