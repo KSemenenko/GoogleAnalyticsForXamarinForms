@@ -67,23 +67,26 @@ namespace GoogleAnalytics.Core
             return PostData(HitType_Pageview, null, isNonInteractive, sessionControl);
         }
 
-        public Payload TrackEvent(string category, string action, string label, long value, SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
+        public Payload TrackEvent(string category, string action, string label, long? value, SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
         {
             var additionalData = new Dictionary<string, string>();
             additionalData.Add("ec", category);
             additionalData.Add("ea", action);
-            if(label != null)
+
+            if(!string.IsNullOrEmpty(label))
             {
                 additionalData.Add("el", label);
             }
-            if(value != 0L)
+
+            if(value.HasValue)
             {
-                additionalData.Add("ev", value.ToString(CultureInfo.InvariantCulture));
+                additionalData.Add("ev", value.Value.ToString(CultureInfo.InvariantCulture));
             }
+
             return PostData(HitType_Event, additionalData, isNonInteractive, sessionControl);
         }
 
-        public Payload TrackEvent(string category, string action, string label, int value, SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
+        public Payload TrackEvent(string category, string action, string label, int? value, SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
         {
             return TrackEvent(category, action, label, Convert.ToInt64(value), sessionControl, isNonInteractive);
         }

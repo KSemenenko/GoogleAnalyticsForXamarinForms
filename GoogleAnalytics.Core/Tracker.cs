@@ -303,6 +303,13 @@ namespace GoogleAnalytics.Core
             SendPayload(payload);
         }
 
+        public void SendEvent(string category, string action)
+        {
+            platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
+            var payload = engine.TrackEvent(category, action, label, value, SessionControl);
+            SendPayload(payload);
+        }
+
         public void SendTransaction(Transaction transaction)
         {
             platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.

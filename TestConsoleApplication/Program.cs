@@ -37,6 +37,8 @@ namespace TestConsoleApplication
             // Log something to GA
             tracker.SendView("MainPage");
 
+            tracker.SendEvent("1","1");
+
 
         }
 
