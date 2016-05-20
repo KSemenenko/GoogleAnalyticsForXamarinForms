@@ -1,5 +1,4 @@
 # Google Analytics for Xamarin Forms
-
 This project is a cross platform library for Xamarin Forms, which enables a handy use of Google Analytics in your applications.  
 I've decided that there should be a broad-based library with no connection to native libraries Google in Xamarin (too long to install). 
 
@@ -13,7 +12,8 @@ Should you have any comments or suggestions, please let me know. Let's make it a
 ## Available at NuGet. 
 TDB
 
-### Example use:
+## Example use:
+
 #### Init:
 ```cs
 
