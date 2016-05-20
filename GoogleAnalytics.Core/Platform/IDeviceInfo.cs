@@ -20,6 +20,11 @@ namespace GoogleAnalytics.Core.Platform
         string Version { get; }
 
         /// <summary>
+        ///     Get the UserAgent string
+        /// </summary>
+        string UserAgent { get; }
+
+        /// <summary>
         ///     Gets the version number of the operating system
         /// </summary>
         Version VersionNumber { get; }

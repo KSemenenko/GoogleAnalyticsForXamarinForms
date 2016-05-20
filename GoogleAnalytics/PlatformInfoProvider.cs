@@ -15,6 +15,7 @@ namespace GoogleAnalytics.Core
             var device = DependencyService.Get<IDeviceInfo>();
             ScreenResolution = new Dimensions(device.Display.Width, device.Display.Height);
             UserLanguage = device.LanguageCode;
+            
         }
     }
 }

@@ -37,6 +37,14 @@ namespace GoogleAnalytics.Droid
             get { return Build.VERSION.Release; }
         }
 
+        public string UserAgent
+        {
+            get
+            {
+                return new System.Net.HttpWebRequest(new Uri("http://google.com")).UserAgent?? string.Empty; //TODO: FIx it
+            }
+        }
+
         public Version VersionNumber
         {
             get

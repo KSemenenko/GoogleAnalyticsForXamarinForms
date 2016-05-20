@@ -56,6 +56,14 @@ namespace GoogleAnalytics.iOS
             get { return UIDevice.CurrentDevice.Model; }
         }
 
+        public string UserAgent
+        {
+            get
+            {
+                return new System.Net.HttpWebRequest(new Uri("http://google.com")).UserAgent ?? string.Empty; //TODO: FIx it
+            } 
+        }
+
         public string Version
         {
             get { return UIDevice.CurrentDevice.SystemVersion; }
