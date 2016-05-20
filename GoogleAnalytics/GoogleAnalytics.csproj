@@ -41,9 +41,6 @@
     <Compile Include="..\GoogleAnalytics.Core\Dimensions.cs">
       <Link>Core\Dimensions.cs</Link>
     </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\EasyTracker.cs">
-      <Link>Core\EasyTracker.cs</Link>
-    </Compile>
     <Compile Include="..\GoogleAnalytics.Core\GAServiceManager.cs">
       <Link>Core\GAServiceManager.cs</Link>
     </Compile>
@@ -79,6 +76,9 @@
     </Compile>
     <Compile Include="..\GoogleAnalytics.Core\TrackerConfig.cs">
       <Link>Core\TrackerConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerFactory.cs">
+      <Link>Core\TrackerFactory.cs</Link>
     </Compile>
     <Compile Include="..\GoogleAnalytics.Core\TrackerManager.cs">
       <Link>Core\TrackerManager.cs</Link>

@@ -3,18 +3,18 @@ using System.Threading.Tasks;
 
 namespace GoogleAnalytics.Core
 {
-    public class EasyTracker
+    public class TrackerFactory
     {
-        private static EasyTracker current;
+        private static TrackerFactory current;
         private static Tracker tracker;
         private DateTime? suspended;
 
-        public EasyTracker()
+        public TrackerFactory()
         {
             InitTracker(Config);
         }
 
-        public EasyTracker(TrackerConfig config)
+        public TrackerFactory(TrackerConfig config)
         {
             InitTracker(config);
         }
@@ -22,13 +22,13 @@ namespace GoogleAnalytics.Core
         public Uri ConfigPath { get; set; }
         public static TrackerConfig Config { get; set; }
 
-        public static EasyTracker Current
+        public static TrackerFactory Current
         {
             get
             {
-                if(current == null)
+                if(current == null && Config != null)
                 {
-                    current = new EasyTracker(Config);
+                    current = new TrackerFactory(Config);
                 }
                 return current;
             }
@@ -43,7 +43,7 @@ namespace GoogleAnalytics.Core
             return tracker;
         }
 
-        private void InitTracker(TrackerConfig config)
+        public void InitTracker(TrackerConfig config)
         {
             Config = config;
             Config.Validate();

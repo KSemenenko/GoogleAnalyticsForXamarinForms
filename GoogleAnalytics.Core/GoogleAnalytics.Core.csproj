@@ -39,7 +39,7 @@
   <ItemGroup>
     <Compile Include="AnalyticsEngine.cs" />
     <Compile Include="Dimensions.cs" />
-    <Compile Include="EasyTracker.cs" />
+    <Compile Include="TrackerFactory.cs" />
     <Compile Include="TrackerConfig.cs" />
     <Compile Include="GAServiceManager.cs" />
     <Compile Include="Platform\IPlatformInfoProvider.cs" />
