@@ -306,7 +306,7 @@ namespace GoogleAnalytics.Core
         public void SendEvent(string category, string action)
         {
             platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
-            var payload = engine.TrackEvent(category, action, label, value, SessionControl);
+            var payload = engine.TrackEvent(category, action, string.Empty, null, SessionControl);
             SendPayload(payload);
         }
 

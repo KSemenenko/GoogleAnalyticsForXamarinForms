@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace GoogleAnalytics.Droid
 {
-    internal class DeviceInfo : IDeviceInfo
+    public class DeviceInfo : IDeviceInfo
     {
         /// <summary>
         ///     Device major version.
@@ -91,7 +91,7 @@ namespace GoogleAnalytics.Droid
             get { return Platform.Android; }
         }
 
-        public IDisplay Display { get; set; }
+        public IDisplay Display { get; set; } = new Display();
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {
