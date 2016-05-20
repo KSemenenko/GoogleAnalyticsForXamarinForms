@@ -10,7 +10,7 @@ Should you have any comments or suggestions, please let me know. Let's make it a
 * jamesmontemagno/Xamarin.Plugins (https://github.com/jamesmontemagno/Xamarin.Plugins)
 
 ## Available at NuGet. 
-TDB
+https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 
 ## Example use:
 
