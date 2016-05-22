@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GoogleAnalytics.Core\GoogleAnalytics.Core.csproj">
-      <Project>{f37123cd-3c3d-40ca-b1b0-9ca81612a478}</Project>
+      <Project>{F37123CD-3C3D-40CA-B1B0-9CA81612A478}</Project>
       <Name>GoogleAnalytics.Core</Name>
     </ProjectReference>
   </ItemGroup>
