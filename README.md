@@ -17,9 +17,17 @@ https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 #### Init:
 ```cs
 
-//TDB
-
-
+var config = new TrackerConfig();
+            config.AppVersion = "1.0.0.0";
+            config.TrackingId = "UA-11111111-1";
+            config.AppId = "AppID";
+            config.AppName = "Google Analytics Test";
+            config.AppInstallerId = Guid.NewGuid().ToString();
+            //config.Debug = true;
+            TrackerFactory.Config = config;
+			
+var tracker = new TrackerFactory().GetTracker();
+tracker.SendView("MainPage");
 ```
 
 #### Track:
