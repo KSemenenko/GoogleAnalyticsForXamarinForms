@@ -1,5 +1,6 @@
 using System;
 using Android.OS;
+using Android.Views;
 using GoogleAnalytics.Core.Platform;
 using GoogleAnalytics.Droid;
 using Java.Util;
@@ -12,6 +13,12 @@ namespace GoogleAnalytics.Droid
 {
     public class DeviceInfo : IDeviceInfo
     {
+        public DeviceInfo()
+        {
+            UserAgent = Java.Lang.JavaSystem.GetProperty("http.agent");
+            
+        }
+
         /// <summary>
         ///     Device major version.
         /// </summary>
@@ -37,13 +44,7 @@ namespace GoogleAnalytics.Droid
             get { return Build.VERSION.Release; }
         }
 
-        public string UserAgent
-        {
-            get
-            {
-                return new System.Net.HttpWebRequest(new Uri("http://google.com")).UserAgent?? string.Empty; //TODO: FIx it
-            }
-        }
+        public string UserAgent { get; set; }
 
         public Version VersionNumber
         {
@@ -91,7 +92,7 @@ namespace GoogleAnalytics.Droid
             get { return Platform.Android; }
         }
 
-        public IDisplay Display { get; set; } = new Display();
+        public GoogleAnalytics.Core.Platform.Display Display { get; set; } = new GoogleAnalytics.Core.Platform.Display(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels, Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {

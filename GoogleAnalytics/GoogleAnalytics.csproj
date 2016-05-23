@@ -56,11 +56,11 @@
     <Compile Include="..\GoogleAnalytics.Core\PlatformInfoProvider.cs">
       <Link>Core\PlatformInfoProvider.cs</Link>
     </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Platform\Display.cs">
+      <Link>Platform\Display.cs</Link>
+    </Compile>
     <Compile Include="..\GoogleAnalytics.Core\Platform\IDeviceInfo.cs">
       <Link>Platform\IDeviceInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Platform\IDisplay.cs">
-      <Link>Platform\IDisplay.cs</Link>
     </Compile>
     <Compile Include="..\GoogleAnalytics.Core\Platform\IPlatformInfoProvider.cs">
       <Link>Platform\IPlatformInfoProvider.cs</Link>

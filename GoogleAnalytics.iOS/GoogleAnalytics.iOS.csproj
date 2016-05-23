@@ -53,10 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeviceInfo.cs" />
-    <Compile Include="Display.cs" />
-    <Compile Include="Pad.cs" />
-    <Compile Include="Phone.cs" />
-    <Compile Include="Pod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -48,7 +48,7 @@
     <Compile Include="PayloadFactory.cs" />
     <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Platform\IDeviceInfo.cs" />
-    <Compile Include="Platform\IDisplay.cs" />
+    <Compile Include="Platform\Display.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="TokenBucket.cs" />
     <Compile Include="Tracker.cs" />

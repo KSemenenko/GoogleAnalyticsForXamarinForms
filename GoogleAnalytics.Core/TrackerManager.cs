@@ -10,6 +10,7 @@ namespace GoogleAnalytics.Core
         {
             trackers = new Dictionary<string, Tracker>();
             PlatformTrackingInfo = platformTrackingInfo;
+            GAServiceManager.Current.UserAgent = PlatformTrackingInfo.UserAgent;
         }
 
         public Tracker DefaultTracker { get; set; }

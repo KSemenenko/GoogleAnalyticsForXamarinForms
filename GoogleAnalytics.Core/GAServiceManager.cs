@@ -27,7 +27,6 @@ namespace GoogleAnalytics.Core
             dispatchingTasks = new List<Task>();
             payloads = new Queue<Payload>();
             DispatchPeriod = TimeSpan.Zero;
-            UserAgent = ConstructUserAgent();
         }
 
         /// <summary>

@@ -6,6 +6,7 @@ using GoogleAnalytics;
 using GoogleAnalytics.Core;
 using Xamarin.Forms;
 
+
 namespace TestFormsApp
 {
     public class App : Application
@@ -34,6 +35,8 @@ namespace TestFormsApp
 
         private void B_Clicked(object sender, EventArgs e)
         {
+
+        
             var config = new TrackerConfig();
             config.AppVersion = "1.0.0.0";
             config.TrackingId = "UA-11111111-1";

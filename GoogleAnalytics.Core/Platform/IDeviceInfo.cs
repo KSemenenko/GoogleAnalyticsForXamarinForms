@@ -32,7 +32,7 @@ namespace GoogleAnalytics.Core.Platform
         /// <summary>
         ///     Gets the display information for the device.
         /// </summary>
-        IDisplay Display { get; }
+        Display Display { get; }
 
         /// <summary>
         ///     Get the platform of the device

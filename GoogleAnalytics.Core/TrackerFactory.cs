@@ -61,6 +61,8 @@ namespace GoogleAnalytics.Core
             tracker.IsAnonymizeIpEnabled = Config.AnonymizeIp;
             tracker.SampleRate = Config.SampleFrequency;
             tracker.IsDebug = Config.Debug;
+            
+
         }
 
         public Task Dispatch()
