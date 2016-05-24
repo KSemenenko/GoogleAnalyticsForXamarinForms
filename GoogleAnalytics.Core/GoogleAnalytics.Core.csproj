@@ -38,7 +38,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyticsEngine.cs" />
+    <Compile Include="AppReceipt.cs" />
     <Compile Include="Dimensions.cs" />
+    <Compile Include="ProductReceipt.cs" />
     <Compile Include="TrackerFactory.cs" />
     <Compile Include="TrackerConfig.cs" />
     <Compile Include="GAServiceManager.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="TokenBucket.cs" />
     <Compile Include="Tracker.cs" />
     <Compile Include="TrackerManager.cs" />
+    <Compile Include="TransactionBuilder.WP8.cs" />
     <Compile Include="Transactions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
