@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using Windows.Foundation;
 using Windows.Foundation.Metadata;
 using Windows.Graphics.Display;
 using Windows.Security.ExchangeActiveSyncProvisioning;
@@ -8,10 +9,8 @@ using Windows.System.Profile;
 using Windows.UI.ViewManagement;
 using GoogleAnalytics.Core.Platform;
 using GoogleAnalytics.Universal;
-using Xamarin.Forms;
 using Platform = GoogleAnalytics.Core.Platform.Platform;
 
-[assembly: Dependency(typeof (DeviceInfo))]
 
 namespace GoogleAnalytics.Universal
 {

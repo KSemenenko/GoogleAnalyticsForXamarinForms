@@ -1,5 +1,4 @@
-using GoogleAnalytics.Core.Platform;
-using Xamarin.Forms;
+﻿using GoogleAnalytics.iOS;
 
 namespace GoogleAnalytics.Core
 {
@@ -7,7 +6,7 @@ namespace GoogleAnalytics.Core
     {
         public PlatformInfoProvider()
         {
-            var device = DependencyService.Get<IDeviceInfo>();
+            var device = new DeviceInfo();
             ScreenResolution = new Dimensions(device.Display.Width, device.Display.Height);
             UserLanguage = device.LanguageCode;
             UserAgent = device.UserAgent;

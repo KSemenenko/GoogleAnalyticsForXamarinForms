@@ -3,9 +3,6 @@ using Foundation;
 using GoogleAnalytics.Core.Platform;
 using GoogleAnalytics.iOS;
 using UIKit;
-using Xamarin.Forms;
-
-[assembly: Dependency(typeof(DeviceInfo))]
 
 namespace GoogleAnalytics.iOS
 {

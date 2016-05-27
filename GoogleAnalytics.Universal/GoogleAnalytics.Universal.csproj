@@ -107,18 +107,70 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\GoogleAnalytics.Core\AnalyticsEngine.cs">
+      <Link>Core\AnalyticsEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\AppReceipt.cs">
+      <Link>Core\AppReceipt.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Dimensions.cs">
+      <Link>Core\Dimensions.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\GAServiceManager.cs">
+      <Link>Core\GAServiceManager.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\IServiceManager.cs">
+      <Link>Core\IServiceManager.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Payload.cs">
+      <Link>Core\Payload.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\PayloadFactory.cs">
+      <Link>Core\PayloadFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\PlatformInfoProvider.cs">
+      <Link>Core\PlatformInfoProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Platform\Display.cs">
+      <Link>Platform\Display.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Platform\IDeviceInfo.cs">
+      <Link>Platform\IDeviceInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Platform\IPlatformInfoProvider.cs">
+      <Link>Platform\IPlatformInfoProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\ProductReceipt.cs">
+      <Link>Core\ProductReceipt.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Timer.cs">
+      <Link>Core\Timer.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TokenBucket.cs">
+      <Link>Core\TokenBucket.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Tracker.cs">
+      <Link>Core\Tracker.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerConfig.cs">
+      <Link>Core\TrackerConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerFactory.cs">
+      <Link>Core\TrackerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerManager.cs">
+      <Link>Core\TrackerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TransactionBuilder.WP8.cs">
+      <Link>Core\TransactionBuilder.WP8.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Transactions.cs">
+      <Link>Core\Transactions.cs</Link>
+    </Compile>
     <Compile Include="DeviceInfo.cs" />
+    <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\GoogleAnalytics.Universal.rd.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GoogleAnalytics.Core\GoogleAnalytics.Core.csproj">
-      <Project>{f37123cd-3c3d-40ca-b1b0-9ca81612a478}</Project>
-      <Name>GoogleAnalytics.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="WindowsDesktop, Version=10.0.10586.0">
@@ -134,6 +186,7 @@
       <Name>Windows Team Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

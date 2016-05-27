@@ -112,10 +112,6 @@
       <Project>{6B29D668-9370-424E-928A-24FE99B57AA0}</Project>
       <Name>GoogleAnalytics.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\GoogleAnalytics\GoogleAnalytics.csproj">
-      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
-      <Name>GoogleAnalytics</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="..\TestFormsApp\TestFormsApp.projitems" Label="Shared" Condition="Exists('..\TestFormsApp\TestFormsApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -39,11 +39,9 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Xamarin.Forms.2.2.0.31\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
     </Reference>
@@ -68,29 +66,72 @@
     <Reference Include="Xamarin.Android.Support.Vector.Drawable, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Xamarin.Forms.2.2.0.31\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Xamarin.Forms.2.2.0.31\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform.Android, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Xamarin.Forms.2.2.0.31\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Xamarin.Forms.2.2.0.31\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\GoogleAnalytics.Core\AnalyticsEngine.cs">
+      <Link>Core\AnalyticsEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\AppReceipt.cs">
+      <Link>Core\AppReceipt.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Dimensions.cs">
+      <Link>Core\Dimensions.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\GAServiceManager.cs">
+      <Link>Core\GAServiceManager.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\IServiceManager.cs">
+      <Link>Core\IServiceManager.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Payload.cs">
+      <Link>Core\Payload.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\PayloadFactory.cs">
+      <Link>Core\PayloadFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\PlatformInfoProvider.cs">
+      <Link>Core\PlatformInfoProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Platform\Display.cs">
+      <Link>Platform\Display.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Platform\IDeviceInfo.cs">
+      <Link>Platform\IDeviceInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Platform\IPlatformInfoProvider.cs">
+      <Link>Platform\IPlatformInfoProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\ProductReceipt.cs">
+      <Link>Core\ProductReceipt.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Timer.cs">
+      <Link>Core\Timer.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TokenBucket.cs">
+      <Link>Core\TokenBucket.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Tracker.cs">
+      <Link>Core\Tracker.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerConfig.cs">
+      <Link>Core\TrackerConfig.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerFactory.cs">
+      <Link>Core\TrackerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TrackerManager.cs">
+      <Link>Core\TrackerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\TransactionBuilder.WP8.cs">
+      <Link>Core\TransactionBuilder.WP8.cs</Link>
+    </Compile>
+    <Compile Include="..\GoogleAnalytics.Core\Transactions.cs">
+      <Link>Core\Transactions.cs</Link>
+    </Compile>
     <Compile Include="DeviceInfo.cs" />
+    <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GoogleAnalytics\GoogleAnalytics.csproj">
-      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
-      <Name>GoogleAnalytics</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -102,9 +143,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets'))" />
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>
-  <Import Project="..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.2.0.31\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

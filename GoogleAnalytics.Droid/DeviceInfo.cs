@@ -5,9 +5,6 @@ using GoogleAnalytics.Core.Platform;
 using GoogleAnalytics.Droid;
 using Java.Util;
 using Java.Util.Concurrent;
-using Xamarin.Forms;
-
-[assembly: Dependency(typeof(DeviceInfo))]
 
 namespace GoogleAnalytics.Droid
 {
