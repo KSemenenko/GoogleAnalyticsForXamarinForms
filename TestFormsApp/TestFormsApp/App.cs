@@ -13,7 +13,7 @@ namespace TestFormsApp
     {
         public App ()
         {
-
+            B_Clicked(null, null);
             var button = new Button();
             button.Text = "ClickMe";
             button.Clicked += B_Clicked;
