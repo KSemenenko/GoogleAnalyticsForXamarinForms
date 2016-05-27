@@ -18,13 +18,13 @@ https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 ```cs
 
 var config = new TrackerConfig();
-            config.AppVersion = "1.0.0.0";
-            config.TrackingId = "UA-11111111-1";
-            config.AppId = "AppID";
-            config.AppName = "Google Analytics Test";
-            config.AppInstallerId = Guid.NewGuid().ToString();
-            //config.Debug = true;
-            TrackerFactory.Config = config;
+config.AppVersion = "1.0.0.0";
+config.TrackingId = "UA-11111111-1";
+config.AppId = "AppID";
+config.AppName = "Google Analytics Test";
+config.AppInstallerId = Guid.NewGuid().ToString();
+//config.Debug = true;
+TrackerFactory.Config = config;
 			
 var tracker = new TrackerFactory().GetTracker();
 tracker.SendView("MainPage");
@@ -32,13 +32,12 @@ tracker.SendView("MainPage");
 
 #### Track:
 ```cs
-
-//TDB
-
-
+tracker.SendView("MainPage");
+tracker.SendEvent("Category", "Action", "Label", 1);
+tracker.SendEvent("Category", "Action");
 ```
 
-#### Other:
+#### Other way:
 ```cs
 var trackerManager = new TrackerManager(new PlatformInfoProvider()
 {
