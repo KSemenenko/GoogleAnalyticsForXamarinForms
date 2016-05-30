@@ -37,28 +37,9 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalyticsEngine.cs" />
-    <Compile Include="AppReceipt.cs" />
-    <Compile Include="Dimensions.cs" />
-    <Compile Include="ProductReceipt.cs" />
-    <Compile Include="TrackerFactory.cs" />
-    <Compile Include="TrackerConfig.cs" />
-    <Compile Include="GAServiceManager.cs" />
-    <Compile Include="Platform\IPlatformInfoProvider.cs" />
-    <Compile Include="IServiceManager.cs" />
-    <Compile Include="Payload.cs" />
-    <Compile Include="PayloadFactory.cs" />
-    <Compile Include="PlatformInfoProvider.cs" />
-    <Compile Include="Platform\IDeviceInfo.cs" />
-    <Compile Include="Platform\Display.cs" />
-    <Compile Include="Timer.cs" />
-    <Compile Include="TokenBucket.cs" />
-    <Compile Include="Tracker.cs" />
-    <Compile Include="TrackerManager.cs" />
-    <Compile Include="TransactionBuilder.WP8.cs" />
-    <Compile Include="Transactions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <Import Project="..\GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

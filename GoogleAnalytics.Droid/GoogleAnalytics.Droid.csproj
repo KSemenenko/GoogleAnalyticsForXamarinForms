@@ -68,74 +68,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\GoogleAnalytics.Core\AnalyticsEngine.cs">
-      <Link>Core\AnalyticsEngine.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\AppReceipt.cs">
-      <Link>Core\AppReceipt.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Dimensions.cs">
-      <Link>Core\Dimensions.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\GAServiceManager.cs">
-      <Link>Core\GAServiceManager.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\IServiceManager.cs">
-      <Link>Core\IServiceManager.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Payload.cs">
-      <Link>Core\Payload.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\PayloadFactory.cs">
-      <Link>Core\PayloadFactory.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\PlatformInfoProvider.cs">
-      <Link>Core\PlatformInfoProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Platform\Display.cs">
-      <Link>Platform\Display.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Platform\IDeviceInfo.cs">
-      <Link>Platform\IDeviceInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Platform\IPlatformInfoProvider.cs">
-      <Link>Platform\IPlatformInfoProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\ProductReceipt.cs">
-      <Link>Core\ProductReceipt.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Timer.cs">
-      <Link>Core\Timer.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\TokenBucket.cs">
-      <Link>Core\TokenBucket.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Tracker.cs">
-      <Link>Core\Tracker.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\TrackerConfig.cs">
-      <Link>Core\TrackerConfig.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\TrackerFactory.cs">
-      <Link>Core\TrackerFactory.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\TrackerManager.cs">
-      <Link>Core\TrackerManager.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\TransactionBuilder.WP8.cs">
-      <Link>Core\TransactionBuilder.WP8.cs</Link>
-    </Compile>
-    <Compile Include="..\GoogleAnalytics.Core\Transactions.cs">
-      <Link>Core\Transactions.cs</Link>
-    </Compile>
     <Compile Include="DeviceInfo.cs" />
     <Compile Include="PlatformInfoProvider.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="..\GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
