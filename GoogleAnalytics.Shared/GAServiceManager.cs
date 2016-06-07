@@ -256,7 +256,7 @@ namespace GoogleAnalytics.Core
 
         private async Task<HttpResponseMessage> SendPayloadAsync(Payload payload, HttpClient httpClient, Dictionary<string, string> payloadData)
         {
-            var endPoint = payload.IsDebug ? (payload.IsUseSecure ? endPointSecureDebug : endPointUnsecureDebug) : (payload.IsUseSecure ? endPointSecure : endPointUnsecure);
+            var endPoint = payload.IsDebug ? endPointSecureDebug : (payload.IsUseSecure ? endPointSecure : endPointUnsecure);
             if(PostData)
             {
                 using(var content = GetEncodedContent(payloadData))
