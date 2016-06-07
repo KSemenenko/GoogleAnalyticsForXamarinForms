@@ -22,15 +22,16 @@ namespace GoogleAnalytics.Core
             }
             this.platformInfoProvider = platformInfoProvider;
             engine = new PayloadFactory
-                     {
-                         PropertyId = propertyId,
-                         AnonymousClientId = platformInfoProvider.AnonymousClientId,
-                         ScreenColorDepthBits = platformInfoProvider.ScreenColorDepthBits,
-                         ScreenResolution = platformInfoProvider.ScreenResolution,
-                         UserLanguage = platformInfoProvider.UserLanguage,
-                         ViewportSize = platformInfoProvider.ViewPortResolution
-                         //DocumentEncoding = platformInfoProvider.DocumentEncoding,
-                     };
+            {
+                PropertyId = propertyId,
+                AnonymousClientId = platformInfoProvider.AnonymousClientId,
+                ScreenColorDepthBits = platformInfoProvider.ScreenColorDepthBits,
+                ScreenResolution = platformInfoProvider.ScreenResolution,
+                UserAgentOverride = platformInfoProvider.UserAgent,
+                UserLanguage = platformInfoProvider.UserLanguage,
+                ViewportSize = platformInfoProvider.ViewPortResolution
+                //DocumentEncoding = platformInfoProvider.DocumentEncoding,
+            };
             SampleRate = 100.0F;
             hitTokenBucket = new TokenBucket(60, .5);
         }
