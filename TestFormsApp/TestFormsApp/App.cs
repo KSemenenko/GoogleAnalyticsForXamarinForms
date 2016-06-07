@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using GoogleAnalytics;
@@ -13,6 +14,22 @@ namespace TestFormsApp
     {
         public App ()
         {
+            GAServiceManager.Current.PayloadSent += delegate (object s, PayloadSentEventArgs ev)
+            {
+                Debug.WriteLine($"Payload sent! Response:\n{ev.Response}");
+            };
+
+            GAServiceManager.Current.PayloadFailed += delegate (object s, PayloadFailedEventArgs ev)
+            {
+                Debug.WriteLine($"Payload Failed! Error: {ev.Error}");
+            };
+
+            GAServiceManager.Current.PayloadMalformed += delegate (object s, PayloadMalformedEventArgs ev)
+            {
+                Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}");
+            };
+
+
             B_Clicked(null, null);
             var button = new Button();
             button.Text = "ClickMe";
@@ -24,7 +41,7 @@ namespace TestFormsApp
                     VerticalOptions = LayoutOptions.Center,
                     Children = {
                         new Label {
-                            XAlign = TextAlignment.Center,
+                            HorizontalTextAlignment = TextAlignment.Center,
                             Text = "Welcome to Xamarin Forms!"
                         },
                        button,
@@ -47,6 +64,7 @@ namespace TestFormsApp
             config.Debug = true;
 
             TrackerFactory.Config = config;
+
 
             Tracker tracker;
 
