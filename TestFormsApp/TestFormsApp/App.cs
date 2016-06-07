@@ -14,6 +14,22 @@ namespace TestFormsApp
     {
         public App ()
         {
+            GAServiceManager.Current.PayloadSent += delegate (object s, PayloadSentEventArgs ev)
+            {
+                Debug.WriteLine($"Payload sent! Response:\n{ev.Response}");
+            };
+
+            GAServiceManager.Current.PayloadFailed += delegate (object s, PayloadFailedEventArgs ev)
+            {
+                Debug.WriteLine($"Payload Failed! Error: {ev.Error}");
+            };
+
+            GAServiceManager.Current.PayloadMalformed += delegate (object s, PayloadMalformedEventArgs ev)
+            {
+                Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}");
+            };
+
+
             B_Clicked(null, null);
             var button = new Button();
             button.Text = "ClickMe";
@@ -48,21 +64,6 @@ namespace TestFormsApp
             config.Debug = true;
 
             TrackerFactory.Config = config;
-
-            GAServiceManager.Current.PayloadSent += delegate (object s, PayloadSentEventArgs ev)
-            {
-                Debug.WriteLine($"Payload sent! Response:\n{ev.Response}");
-            };
-
-            GAServiceManager.Current.PayloadFailed += delegate (object s, PayloadFailedEventArgs ev)
-            {
-                Debug.WriteLine($"Payload Failed! Error: {ev.Error}");
-            };
-
-            GAServiceManager.Current.PayloadMalformed += delegate (object s, PayloadMalformedEventArgs ev)
-            {
-                Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}");
-            };
 
 
             Tracker tracker;
