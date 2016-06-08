@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Plugin.Plugin.GoogleAnalytics</RootNamespace>
-    <AssemblyName>Plugin.Plugin.GoogleAnalytics</AssemblyName>
+    <RootNamespace>Plugin.GoogleAnalytics</RootNamespace>
+    <AssemblyName>Plugin.GoogleAnalytics</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -39,7 +39,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>Bin\Release\Plugin.Plugin.GoogleAnalytics.XML</DocumentationFile>
+    <DocumentationFile>Bin\Release\Plugin.GoogleAnalytics.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,7 +61,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Plugin.Plugin.GoogleAnalytics.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
     <DebugSymbols>true</DebugSymbols>
@@ -85,16 +85,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\Plugin.Plugin.GoogleAnalytics\CrossPlugin.GoogleAnalytics.cs">
+    <Compile Include="..\Plugin.GoogleAnalytics\CrossPlugin.GoogleAnalytics.cs">
       <Link>CrossPlugin.GoogleAnalytics.cs</Link>
     </Compile>
     <Compile Include="Plugin.GoogleAnalyticsImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Plugin.Plugin.GoogleAnalytics.Abstractions\Plugin.Plugin.GoogleAnalytics.Abstractions.csproj">
+    <ProjectReference Include="..\Plugin.GoogleAnalytics.Abstractions\Plugin.GoogleAnalytics.Abstractions.csproj">
       <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
-      <Name>Plugin.Plugin.GoogleAnalytics.Abstractions</Name>
+      <Name>Plugin.GoogleAnalytics.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

@@ -7,8 +7,8 @@
     <ProjectGuid>{E34B516D-C0D8-450F-9DB0-BB6A5B04AEF1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Plugin.Plugin.GoogleAnalytics</RootNamespace>
-    <AssemblyName>Plugin.Plugin.GoogleAnalytics</AssemblyName>
+    <RootNamespace>Plugin.GoogleAnalytics</RootNamespace>
+    <AssemblyName>Plugin.GoogleAnalytics</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -35,7 +35,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Plugin.Plugin.GoogleAnalytics.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -58,7 +58,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <DocumentationFile>bin\Release\Plugin.Plugin.GoogleAnalytics.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <PlatformTarget>ARM</PlatformTarget>
@@ -109,12 +109,12 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Plugin.Plugin.GoogleAnalytics\CrossPlugin.GoogleAnalytics.cs">
+    <Compile Include="..\Plugin.GoogleAnalytics\CrossPlugin.GoogleAnalytics.cs">
       <Link>CrossPlugin.GoogleAnalytics.cs</Link>
     </Compile>
     <Compile Include="Plugin.GoogleAnalyticsImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Plugin.Plugin.GoogleAnalytics.UWP.rd.xml" />
+    <EmbeddedResource Include="Properties\Plugin.GoogleAnalytics.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plugin.GoogleAnalytics.Abstractions\Plugin.GoogleAnalytics.Abstractions.csproj">

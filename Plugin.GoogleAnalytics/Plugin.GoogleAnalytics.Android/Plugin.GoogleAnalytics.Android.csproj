@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Plugin.Plugin.GoogleAnalytics</RootNamespace>
-    <AssemblyName>Plugin.Plugin.GoogleAnalytics</AssemblyName>
+    <RootNamespace>Plugin.GoogleAnalytics</RootNamespace>
+    <AssemblyName>Plugin.GoogleAnalytics</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Plugin.Plugin.GoogleAnalytics.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Plugin.Plugin.GoogleAnalytics\CrossPlugin.GoogleAnalytics.cs">
+    <Compile Include="..\Plugin.GoogleAnalytics\CrossPlugin.GoogleAnalytics.cs">
       <Link>CrossPlugin.GoogleAnalytics.cs</Link>
     </Compile>
     <Compile Include="Plugin.GoogleAnalyticsImplementation.cs" />
