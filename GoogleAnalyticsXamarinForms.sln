@@ -33,6 +33,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GoogleAnalytics.Shared", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.GoogleAnalytics.Abstractions", "Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\Plugin.GoogleAnalytics.Abstractions.csproj", "{6EDB0588-FFC5-4EF5-8A99-9E241D0F878D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{53533321-9AE1-4B0B-B01F-7241821CBAED}"
+	ProjectSection(SolutionItems) = preProject
+		GoogleAnalytics.nuspec = GoogleAnalytics.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{65468291-ec6a-4386-a42d-092736bc9d94}*SharedItemsImports = 4
