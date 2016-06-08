@@ -35,23 +35,17 @@
     <DocumentationFile>bin\iPhone\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\Plugin.GoogleAnalytics\CrossPlugin.GoogleAnalytics.cs">
-      <Link>CrossPlugin.GoogleAnalytics.cs</Link>
-    </Compile>
-    <Compile Include="Plugin.GoogleAnalyticsImplementation.cs" />
+    <Compile Include="DeviceInfo.cs" />
+    <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Plugin.GoogleAnalytics.Abstractions\Plugin.GoogleAnalytics.Abstractions.csproj">
-      <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
-      <Name>Plugin.GoogleAnalytics.Abstractions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
+  <Import Project="..\..\GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

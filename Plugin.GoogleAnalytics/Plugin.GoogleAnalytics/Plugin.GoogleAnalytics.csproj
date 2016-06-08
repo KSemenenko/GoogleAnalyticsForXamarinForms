@@ -35,16 +35,9 @@
     <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\Plugin.GoogleAnalytics.Abstractions\Plugin.GoogleAnalytics.Abstractions.csproj">
-      <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
-      <Name>Plugin.GoogleAnalytics.Abstractions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="CrossPlugin.GoogleAnalytics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <Import Project="..\..\GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
