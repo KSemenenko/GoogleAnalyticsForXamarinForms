@@ -56,9 +56,9 @@
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Plugin.Plugin.GoogleAnalytics.Abstractions\Plugin.Plugin.GoogleAnalytics.Abstractions.csproj">
+    <ProjectReference Include="..\Plugin.GoogleAnalytics.Abstractions\Plugin.GoogleAnalytics.Abstractions.csproj">
       <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
-      <Name>Plugin.Plugin.GoogleAnalytics.Abstractions</Name>
+      <Name>Plugin.GoogleAnalytics.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
