@@ -11,9 +11,9 @@ namespace GoogleAnalytics.Core
 
         public static ProductReceipt Load(string receipt)
         {
-            using (XmlReader reader = XmlReader.Create(new StringReader(receipt)))
+            using(XmlReader reader = XmlReader.Create(new StringReader(receipt)))
             {
-                if (reader.ReadToFollowing("ProductReceipt"))
+                if(reader.ReadToFollowing("ProductReceipt"))
                 {
                     var result = new ProductReceipt();
                     result.Id = (string)reader.GetAttribute("Id");

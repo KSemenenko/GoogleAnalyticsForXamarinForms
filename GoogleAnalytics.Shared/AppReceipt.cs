@@ -11,9 +11,9 @@ namespace GoogleAnalytics.Core
 
         public static AppReceipt Load(string receipt)
         {
-            using (XmlReader reader = XmlReader.Create(new StringReader(receipt)))
+            using(XmlReader reader = XmlReader.Create(new StringReader(receipt)))
             {
-                if (reader.ReadToFollowing("AppReceipt"))
+                if(reader.ReadToFollowing("AppReceipt"))
                 {
                     var result = new AppReceipt();
                     result.Id = (string)reader.GetAttribute("Id");

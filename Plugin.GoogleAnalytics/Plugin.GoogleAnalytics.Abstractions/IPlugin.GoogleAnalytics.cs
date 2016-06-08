@@ -2,10 +2,10 @@
 
 namespace Plugin.GoogleAnalytics.Abstractions
 {
-  /// <summary>
-  /// Interface for Plugin.GoogleAnalytics
-  /// </summary>
-  //public interface IPlugin.GoogleAnalytics
-  //{
-  //}
+    /// <summary>
+    /// Interface for Plugin.GoogleAnalytics
+    /// </summary>
+    public interface IGoogleAnalytics
+    {
+    }
 }

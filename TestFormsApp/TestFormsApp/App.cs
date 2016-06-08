@@ -7,28 +7,32 @@ using GoogleAnalytics;
 using GoogleAnalytics.Core;
 using Xamarin.Forms;
 
-
 namespace TestFormsApp
 {
     public class App : Application
     {
-        public App ()
+        public App()
         {
-            GAServiceManager.Current.PayloadSent += delegate (object s, PayloadSentEventArgs ev)
+            GAServiceManager.Current.PayloadSent += delegate(object s, PayloadSentEventArgs ev)
             {
-                Debug.WriteLine($"Payload sent! Response:\n{ev.Response}");
+                Debug.WriteLine($
+                "Payload sent! Response:\n{ev.Response}")
+                ;
             };
 
-            GAServiceManager.Current.PayloadFailed += delegate (object s, PayloadFailedEventArgs ev)
+            GAServiceManager.Current.PayloadFailed += delegate(object s, PayloadFailedEventArgs ev)
             {
-                Debug.WriteLine($"Payload Failed! Error: {ev.Error}");
+                Debug.WriteLine($
+                "Payload Failed! Error: {ev.Error}")
+                ;
             };
 
-            GAServiceManager.Current.PayloadMalformed += delegate (object s, PayloadMalformedEventArgs ev)
+            GAServiceManager.Current.PayloadMalformed += delegate(object s, PayloadMalformedEventArgs ev)
             {
-                Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}");
+                Debug.WriteLine($
+                "Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}")
+                ;
             };
-
 
             B_Clicked(null, null);
             var button = new Button();
@@ -36,15 +40,19 @@ namespace TestFormsApp
             button.Clicked += B_Clicked;
 
             // The root page of your application
-            MainPage = new ContentPage {
-                Content = new StackLayout {
+            MainPage = new ContentPage
+            {
+                Content = new StackLayout
+                {
                     VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
+                    Children =
+                    {
+                        new Label
+                        {
                             HorizontalTextAlignment = TextAlignment.Center,
                             Text = "Welcome to Xamarin Forms!"
                         },
-                       button,
+                        button,
                     }
                 }
             };
@@ -52,8 +60,6 @@ namespace TestFormsApp
 
         private void B_Clicked(object sender, EventArgs e)
         {
-
-        
             var config = new TrackerConfig();
             config.AppVersion = "1.0.0.0";
             config.TrackingId = "UA-11111111-1";
@@ -65,7 +71,6 @@ namespace TestFormsApp
 
             TrackerFactory.Config = config;
 
-
             Tracker tracker;
 
             try
@@ -73,26 +78,23 @@ namespace TestFormsApp
                 tracker = new TrackerFactory().GetTracker();
                 tracker.SendView("MainPage");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-
                 int a = 5;
             }
-
-            
         }
 
-        protected override void OnStart ()
+        protected override void OnStart()
         {
             // Handle when your app starts
         }
 
-        protected override void OnSleep ()
+        protected override void OnSleep()
         {
             // Handle when your app sleeps
         }
 
-        protected override void OnResume ()
+        protected override void OnResume()
         {
             // Handle when your app resumes
         }

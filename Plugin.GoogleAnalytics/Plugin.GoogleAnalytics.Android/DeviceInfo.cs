@@ -13,7 +13,6 @@ namespace GoogleAnalytics.Droid
         public DeviceInfo()
         {
             UserAgent = Java.Lang.JavaSystem.GetProperty("http.agent");
-            
         }
 
         /// <summary>
@@ -89,7 +88,9 @@ namespace GoogleAnalytics.Droid
             get { return Platform.Android; }
         }
 
-        public GoogleAnalytics.Core.Platform.Display Display { get; set; } = new GoogleAnalytics.Core.Platform.Display(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels, Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
+        public GoogleAnalytics.Core.Platform.Display Display { get; set; } =
+            new GoogleAnalytics.Core.Platform.Display(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
+                Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {

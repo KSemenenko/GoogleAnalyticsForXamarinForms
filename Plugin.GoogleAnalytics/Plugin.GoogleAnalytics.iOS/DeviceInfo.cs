@@ -8,7 +8,6 @@ namespace GoogleAnalytics.iOS
 {
     internal class DeviceInfo : IDeviceInfo
     {
-
         public DeviceInfo()
         {
             //https://gist.github.com/crdeutsch/6707396

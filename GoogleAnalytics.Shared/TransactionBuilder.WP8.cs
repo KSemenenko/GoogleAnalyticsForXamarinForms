@@ -1,6 +1,5 @@
 ﻿//using GoogleAnalytics.Core;
 
-
 //namespace GoogleAnalytics
 //{
 //    public static class TransactionBuilder
@@ -71,3 +70,4 @@
 //        }
 //    }
 //}
+

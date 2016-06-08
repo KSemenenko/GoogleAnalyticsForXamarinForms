@@ -354,10 +354,10 @@ namespace GoogleAnalytics.Core
             if("Environment.OSVersion.Version.Major" == "7")
             {
                 return string.Format("Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS {0}; Trident/5.0; IEMobile/9.0; Touch; {1}; {2})", "Environment.OSVersion.Version",
-                                     DeviceManufacturer, DeviceType);
+                    DeviceManufacturer, DeviceType);
             }
             return string.Format("Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone OS {0}; Trident/6.0; IEMobile/10.0; ARM; Touch; {1}; {2})", "Environment.OSVersion.Version",
-                                 DeviceManufacturer, DeviceType);
+                DeviceManufacturer, DeviceType);
         }
     }
 

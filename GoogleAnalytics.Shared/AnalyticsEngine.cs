@@ -54,7 +54,6 @@ namespace GoogleAnalytics.Core
 
         private void LoadAppOptOut()
         {
-
             //if (ApplicationData.Current.LocalSettings.Values.ContainsKey(Key_AppOptOut))
             //{
             //    manager.AppOptOut = (bool)ApplicationData.Current.LocalSettings.Values[Key_AppOptOut];
@@ -70,7 +69,6 @@ namespace GoogleAnalytics.Core
             }
             isAppOptOutSet = true;
         }
-
 
         //public IAsyncOperation<bool> RequestAppOptOutAsync()
         //{
@@ -98,7 +96,6 @@ namespace GoogleAnalytics.Core
         //    //return result;
         //    return false;
         //}
-
 
         public bool IsDebugEnabled
         {

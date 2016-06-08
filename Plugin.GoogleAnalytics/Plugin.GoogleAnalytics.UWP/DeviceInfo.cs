@@ -11,7 +11,6 @@ using GoogleAnalytics.Core.Platform;
 using GoogleAnalytics.Universal;
 using Platform = GoogleAnalytics.Core.Platform.Platform;
 
-
 namespace GoogleAnalytics.Universal
 {
     internal class DeviceInfo : IDeviceInfo
@@ -24,9 +23,8 @@ namespace GoogleAnalytics.Universal
 
             var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
             var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-            var size = new Size(bounds.Width*scaleFactor, bounds.Height*scaleFactor);
+            var size = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
             Display = new Display(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
-
 
             UserAgent =
                 string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
@@ -47,7 +45,7 @@ namespace GoogleAnalytics.Universal
         {
             get
             {
-                if (ApiInformation.IsTypePresent("Windows.System.Profile.HardwareIdentification"))
+                if(ApiInformation.IsTypePresent("Windows.System.Profile.HardwareIdentification"))
                 {
                     var token = HardwareIdentification.GetPackageSpecificToken(null);
                     var hardwareId = token.Id;
@@ -120,19 +118,19 @@ namespace GoogleAnalytics.Universal
         {
             var appId = "";
 
-            if (!string.IsNullOrEmpty(prefix))
+            if(!string.IsNullOrEmpty(prefix))
             {
                 appId += prefix;
             }
 
             appId += Guid.NewGuid().ToString();
 
-            if (usingPhoneId)
+            if(usingPhoneId)
             {
                 appId += Id;
             }
 
-            if (!string.IsNullOrEmpty(suffix))
+            if(!string.IsNullOrEmpty(suffix))
             {
                 appId += suffix;
             }

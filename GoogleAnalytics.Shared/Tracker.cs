@@ -324,7 +324,7 @@ namespace GoogleAnalytics.Core
         {
             platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
             var payload = engine.TrackTransactionItem(transactionItem.TransactionId, transactionItem.Name, (double)transactionItem.PriceInMicros / 1000000, transactionItem.Quantity,
-                                                      transactionItem.SKU, transactionItem.Category, transactionItem.CurrencyCode, SessionControl);
+                transactionItem.SKU, transactionItem.Category, transactionItem.CurrencyCode, SessionControl);
             SendPayload(payload);
         }
 
@@ -332,14 +332,14 @@ namespace GoogleAnalytics.Core
         {
             yield return
                 engine.TrackTransaction(transaction.TransactionId, transaction.Affiliation, (double)transaction.TotalCostInMicros / 1000000,
-                                        (double)transaction.ShippingCostInMicros / 1000000, (double)transaction.TotalTaxInMicros / 1000000, transaction.CurrencyCode, sessionControl,
-                                        isNonInteractive);
+                    (double)transaction.ShippingCostInMicros / 1000000, (double)transaction.TotalTaxInMicros / 1000000, transaction.CurrencyCode, sessionControl,
+                    isNonInteractive);
 
             foreach(var item in transaction.Items)
             {
                 yield return
                     engine.TrackTransactionItem(transaction.TransactionId, item.Name, (double)item.PriceInMicros / 1000000, item.Quantity, item.SKU, item.Category,
-                                                transaction.CurrencyCode, sessionControl, isNonInteractive);
+                        transaction.CurrencyCode, sessionControl, isNonInteractive);
             }
         }
 

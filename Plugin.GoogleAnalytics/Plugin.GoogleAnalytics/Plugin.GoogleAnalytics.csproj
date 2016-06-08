@@ -40,7 +40,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrossPlugin.GoogleAnalytics.cs" />
+    <Compile Include="CrossGoogleAnalytics.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

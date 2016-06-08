@@ -115,8 +115,8 @@ namespace GoogleAnalytics.Core
         }
 
         public Payload TrackUserTiming(string category, string variable, TimeSpan? time, string label, TimeSpan? loadTime, TimeSpan? dnsTime, TimeSpan? downloadTime,
-                                       TimeSpan? redirectResponseTime, TimeSpan? tcpConnectTime, TimeSpan? serverResponseTime, SessionControl sessionControl = SessionControl.None,
-                                       bool isNonInteractive = false)
+            TimeSpan? redirectResponseTime, TimeSpan? tcpConnectTime, TimeSpan? serverResponseTime, SessionControl sessionControl = SessionControl.None,
+            bool isNonInteractive = false)
         {
             var additionalData = new Dictionary<string, string>();
             if(category != null)
@@ -163,7 +163,7 @@ namespace GoogleAnalytics.Core
         }
 
         public Payload TrackTransaction(string id, string affiliation, double revenue, double shipping, double tax, string currencyCode,
-                                        SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
+            SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
         {
             var additionalData = new Dictionary<string, string>();
             additionalData.Add("ti", id);
@@ -191,7 +191,7 @@ namespace GoogleAnalytics.Core
         }
 
         public Payload TrackTransactionItem(string transactionId, string name, double price, long quantity, string code, string category, string currencyCode,
-                                            SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
+            SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
         {
             var additionalData = new Dictionary<string, string>();
             additionalData.Add("ti", transactionId);
