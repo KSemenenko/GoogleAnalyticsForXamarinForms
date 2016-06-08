@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Plugin.Plugin.GoogleAnalytics.Abstractions
+namespace Plugin.GoogleAnalytics.Abstractions
 {
   /// <summary>
   /// Interface for Plugin.GoogleAnalytics

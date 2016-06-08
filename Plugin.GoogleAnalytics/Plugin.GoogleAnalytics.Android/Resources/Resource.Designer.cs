@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Plugin.Plugin.GoogleAnalytics.Android.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Plugin.GoogleAnalytics.Android.Resource", IsApplication=false)]
 
-namespace Plugin.Plugin.GoogleAnalytics.Android
+namespace Plugin.GoogleAnalytics.Android
 {
 	
 	

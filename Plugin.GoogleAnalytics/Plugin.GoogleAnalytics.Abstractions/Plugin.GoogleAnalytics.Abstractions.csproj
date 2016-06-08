@@ -38,6 +38,26 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\AnalyticsEngine.cs" />
+    <Compile Include="Core\AppReceipt.cs" />
+    <Compile Include="Core\Dimensions.cs" />
+    <Compile Include="Core\Display.cs" />
+    <Compile Include="Core\GAServiceManager.cs" />
+    <Compile Include="Core\IDeviceInfo.cs" />
+    <Compile Include="Core\IPlatformInfoProvider.cs" />
+    <Compile Include="Core\IServiceManager.cs" />
+    <Compile Include="Core\Payload.cs" />
+    <Compile Include="Core\PayloadFactory.cs" />
+    <Compile Include="Core\PlatformInfoProvider.cs" />
+    <Compile Include="Core\ProductReceipt.cs" />
+    <Compile Include="Core\Timer.cs" />
+    <Compile Include="Core\TokenBucket.cs" />
+    <Compile Include="Core\Tracker.cs" />
+    <Compile Include="Core\TrackerConfig.cs" />
+    <Compile Include="Core\TrackerFactory.cs" />
+    <Compile Include="Core\TrackerManager.cs" />
+    <Compile Include="Core\TransactionBuilder.WP8.cs" />
+    <Compile Include="Core\Transactions.cs" />
     <Compile Include="IPlugin.GoogleAnalytics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

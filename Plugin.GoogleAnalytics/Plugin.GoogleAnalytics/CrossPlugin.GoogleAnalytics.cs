@@ -1,7 +1,7 @@
-﻿using Plugin.Plugin.GoogleAnalytics.Abstractions;
+﻿using Plugin.GoogleAnalytics.Abstractions;
 using System;
 
-namespace Plugin.Plugin.GoogleAnalytics
+namespace Plugin.GoogleAnalytics
 {
   /// <summary>
   /// Cross platform Plugin.GoogleAnalytics implemenations
