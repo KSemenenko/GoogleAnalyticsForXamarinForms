@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public sealed class TrackerConfig
     {
@@ -99,7 +99,7 @@ namespace GoogleAnalytics.Core
         /// <summary>
         ///     Validates the configuration and throws an exception is a problem is found.
         /// </summary>
-        internal void Validate()
+        public void Validate()
         {
             if(AutoAppLifetimeTracking && !AutoAppLifetimeMonitoring)
             {

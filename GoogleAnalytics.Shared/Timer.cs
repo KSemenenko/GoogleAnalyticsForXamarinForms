@@ -2,18 +2,17 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
-    internal delegate void TimerCallback(object state);
+    public delegate void TimerCallback(object state);
 
-    internal sealed class Timer : CancellationTokenSource, IDisposable
+    public sealed class Timer : CancellationTokenSource, IDisposable
     {
-        internal Timer(TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period)
-            : this(callback, state, (int)dueTime.TotalMilliseconds, (int)period.TotalMilliseconds)
+        public Timer(TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period): this(callback, state, (int)dueTime.TotalMilliseconds, (int)period.TotalMilliseconds)
         {
         }
 
-        internal Timer(TimerCallback callback, object state, int dueTime, int period)
+        public Timer(TimerCallback callback, object state, int dueTime, int period)
         {
             Task.Run(() => WaitTimer(callback, state, period, Token));
         }
@@ -44,7 +43,7 @@ namespace GoogleAnalytics.Core
             }
             catch(TaskCanceledException)
             {
-                /* ignore */
+                // ignore 
             }
         }
     }

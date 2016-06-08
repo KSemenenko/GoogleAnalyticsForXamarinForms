@@ -4,8 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.GoogleAnalytics.Abstractions;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public sealed class GAServiceManager : IServiceManager
     {
@@ -99,7 +100,7 @@ namespace GoogleAnalytics.Core
             get { return "Microsoft.Phone.Info.DeviceStatus.DeviceName"; }
         }
 
-        async void IServiceManager.SendPayload(Payload payload)
+        public async void SendPayload(Payload payload)
         {
             if(DispatchPeriod == TimeSpan.Zero && IsConnected)
             {
@@ -365,7 +366,7 @@ namespace GoogleAnalytics.Core
 
     public sealed class PayloadFailedEventArgs : EventArgs
     {
-        internal PayloadFailedEventArgs(Payload payload, string error)
+        public PayloadFailedEventArgs(Payload payload, string error)
         {
             Error = error;
             Payload = payload;
@@ -377,7 +378,7 @@ namespace GoogleAnalytics.Core
 
     public sealed class PayloadSentEventArgs : EventArgs
     {
-        internal PayloadSentEventArgs(Payload payload, string response)
+        public PayloadSentEventArgs(Payload payload, string response)
         {
             Response = response;
             Payload = payload;
@@ -389,7 +390,7 @@ namespace GoogleAnalytics.Core
 
     public sealed class PayloadMalformedEventArgs : EventArgs
     {
-        internal PayloadMalformedEventArgs(Payload payload, int httpStatusCode)
+        public PayloadMalformedEventArgs(Payload payload, int httpStatusCode)
         {
             HttpStatusCode = httpStatusCode;
             Payload = payload;

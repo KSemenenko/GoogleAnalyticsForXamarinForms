@@ -1,6 +1,7 @@
 ﻿using System;
+using Plugin.GoogleAnalytics.Abstractions;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public sealed partial class PlatformInfoProvider : IPlatformInfoProvider
     {

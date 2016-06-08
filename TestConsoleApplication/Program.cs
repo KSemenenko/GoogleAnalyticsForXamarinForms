@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Runtime;
 using System.Runtime.InteropServices;
-using GoogleAnalytics.Core;
+using Plugin.GoogleAnalytics;
 
 namespace TestConsoleApplication
 {
-    internal class Program
+     class Program
     {
         private static void Main(string[] args)
         {

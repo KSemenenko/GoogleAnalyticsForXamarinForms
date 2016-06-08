@@ -7,13 +7,11 @@ using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.Storage.Streams;
 using Windows.System.Profile;
 using Windows.UI.ViewManagement;
-using GoogleAnalytics.Core.Platform;
-using GoogleAnalytics.Universal;
-using Platform = GoogleAnalytics.Core.Platform.Platform;
+using Plugin.GoogleAnalytics.Abstractions;
 
-namespace GoogleAnalytics.Universal
+namespace Plugin.GoogleAnalytics
 {
-    internal class DeviceInfo : IDeviceInfo
+     class DeviceInfo : IDeviceInfo
     {
         private readonly EasClientDeviceInformation deviceInfo;
 
@@ -105,11 +103,6 @@ namespace GoogleAnalytics.Universal
         public string TimeZone
         {
             get { return TimeZoneInfo.Local.DisplayName; }
-        }
-
-        public Platform Platform
-        {
-            get { return Platform.Windows; }
         }
 
         public Display Display { get; set; }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     //https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters
-    internal sealed class PayloadFactory
+     sealed class PayloadFactory
     {
         private const string HitType_Pageview = "screenview";
         private const string HitType_Event = "event";
@@ -392,7 +392,7 @@ namespace GoogleAnalytics.Core
         }
     }
 
-    internal enum SessionControl
+     enum SessionControl
     {
         None,
         Start,

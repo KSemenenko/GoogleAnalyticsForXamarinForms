@@ -1,6 +1,4 @@
-using GoogleAnalytics.Droid;
-
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public sealed partial class PlatformInfoProvider
     {

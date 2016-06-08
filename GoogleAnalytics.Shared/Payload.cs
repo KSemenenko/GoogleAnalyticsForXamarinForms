@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public sealed class Payload
     {

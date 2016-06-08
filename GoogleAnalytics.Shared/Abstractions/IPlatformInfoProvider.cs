@@ -1,4 +1,4 @@
-﻿namespace GoogleAnalytics.Core
+﻿namespace Plugin.GoogleAnalytics.Abstractions
 {
     public interface IPlatformInfoProvider
     {

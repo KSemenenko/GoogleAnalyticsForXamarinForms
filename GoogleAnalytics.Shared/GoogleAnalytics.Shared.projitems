@@ -14,7 +14,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\IGoogleAnalytics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\IServiceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AnalyticsEngine.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AppReceipt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dimensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Display.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GAServiceManager.cs" />

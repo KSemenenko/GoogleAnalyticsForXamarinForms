@@ -1,4 +1,6 @@
-namespace GoogleAnalytics.Core
+using Plugin.GoogleAnalytics.Abstractions;
+
+namespace Plugin.GoogleAnalytics
 {
     public class AnalyticsEngine
     {

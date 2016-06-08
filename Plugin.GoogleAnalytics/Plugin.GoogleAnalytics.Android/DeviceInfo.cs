@@ -1,12 +1,10 @@
 using System;
 using Android.OS;
-using Android.Views;
-using GoogleAnalytics.Core.Platform;
-using GoogleAnalytics.Droid;
 using Java.Util;
 using Java.Util.Concurrent;
+using Plugin.GoogleAnalytics.Abstractions;
 
-namespace GoogleAnalytics.Droid
+namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
@@ -83,13 +81,8 @@ namespace GoogleAnalytics.Droid
             get { return Java.Util.TimeZone.Default.ID; }
         }
 
-        public Platform Platform
-        {
-            get { return Platform.Android; }
-        }
-
-        public GoogleAnalytics.Core.Platform.Display Display { get; set; } =
-            new GoogleAnalytics.Core.Platform.Display(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
+        public Display Display { get; set; } =
+            new Display(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)

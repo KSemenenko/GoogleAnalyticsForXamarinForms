@@ -1,4 +1,4 @@
-namespace GoogleAnalytics.Core.Platform
+namespace Plugin.GoogleAnalytics
 {
     public class Display
     {

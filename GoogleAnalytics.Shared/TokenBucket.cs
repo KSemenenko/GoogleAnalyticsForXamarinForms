@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
-    internal class TokenBucket
+     class TokenBucket
     {
         private readonly double capacity;
         private readonly double fillRate;

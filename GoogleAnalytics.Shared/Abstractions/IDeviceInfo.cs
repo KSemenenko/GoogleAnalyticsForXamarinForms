@@ -1,6 +1,6 @@
 using System;
 
-namespace GoogleAnalytics.Core.Platform
+namespace Plugin.GoogleAnalytics.Abstractions
 {
     public interface IDeviceInfo
     {
@@ -35,11 +35,6 @@ namespace GoogleAnalytics.Core.Platform
         Display Display { get; }
 
         /// <summary>
-        ///     Get the platform of the device
-        /// </summary>
-        Platform Platform { get; }
-
-        /// <summary>
         ///     Gets the manufacturer.
         /// </summary>
         string Manufacturer { get; }
@@ -71,13 +66,5 @@ namespace GoogleAnalytics.Core.Platform
         /// <param name="suffix">Sets the suffix of the AppId</param>
         /// <returns></returns>
         string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null);
-    }
-
-    public enum Platform
-    {
-        Android,
-        iOS,
-        WindowsPhone,
-        Windows
     }
 }

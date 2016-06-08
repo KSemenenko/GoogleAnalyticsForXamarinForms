@@ -1,12 +1,11 @@
 ﻿using System;
 using Foundation;
-using GoogleAnalytics.Core.Platform;
-using GoogleAnalytics.iOS;
+using Plugin.GoogleAnalytics.Abstractions;
 using UIKit;
 
-namespace GoogleAnalytics.iOS
+namespace Plugin.GoogleAnalytics
 {
-    internal class DeviceInfo : IDeviceInfo
+     class DeviceInfo : IDeviceInfo
     {
         public DeviceInfo()
         {
@@ -77,10 +76,6 @@ namespace GoogleAnalytics.iOS
             get { return NSTimeZone.LocalTimeZone.Name; }
         }
 
-        public Platform Platform
-        {
-            get { return Platform.iOS; }
-        }
 
         public Display Display { get; set; } = new Display(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
 

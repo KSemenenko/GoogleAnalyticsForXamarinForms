@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public sealed class ProductReceipt
     {

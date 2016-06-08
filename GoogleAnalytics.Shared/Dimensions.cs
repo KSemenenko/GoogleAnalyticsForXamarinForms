@@ -1,4 +1,4 @@
-﻿namespace GoogleAnalytics.Core
+﻿namespace Plugin.GoogleAnalytics
 {
     public sealed class Dimensions
     {

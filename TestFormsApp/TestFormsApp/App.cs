@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using GoogleAnalytics;
-using GoogleAnalytics.Core;
+using Plugin.GoogleAnalytics;
 using Xamarin.Forms;
 
 namespace TestFormsApp

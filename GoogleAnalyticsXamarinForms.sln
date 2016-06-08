@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.GoogleAnalytics.Wind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.GoogleAnalytics.UWP", "Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.UWP\Plugin.GoogleAnalytics.UWP.csproj", "{E34B516D-C0D8-450F-9DB0-BB6A5B04AEF1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{B4A0DFE8-85C9-47EF-91F4-3172E200E447}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{B4A0DFE8-85C9-47EF-91F4-3172E200E447}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GoogleAnalytics.Shared", "GoogleAnalytics.Shared\GoogleAnalytics.Shared.shproj", "{2BE19BDA-C26E-4C6E-8B27-148EA06D2266}"
 EndProject

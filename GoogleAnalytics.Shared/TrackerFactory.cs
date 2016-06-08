@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Plugin.GoogleAnalytics;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public class TrackerFactory
     {

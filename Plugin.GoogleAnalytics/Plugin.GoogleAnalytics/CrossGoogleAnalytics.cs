@@ -35,7 +35,7 @@
 //#endif
 //        }
 
-//        internal static Exception NotImplementedInReferenceAssembly()
+//         static Exception NotImplementedInReferenceAssembly()
 //        {
 //            return
 //                new NotImplementedException(

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Plugin.GoogleAnalytics.Abstractions;
 
-namespace GoogleAnalytics.Core
+namespace Plugin.GoogleAnalytics
 {
     public sealed class Tracker
     {
