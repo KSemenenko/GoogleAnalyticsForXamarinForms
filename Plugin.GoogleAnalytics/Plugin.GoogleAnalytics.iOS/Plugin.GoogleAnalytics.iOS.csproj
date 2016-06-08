@@ -35,6 +35,9 @@
     <DocumentationFile>bin\iPhone\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\Plugin.GoogleAnalytics\CrossGoogleAnalytics.cs">
+      <Link>CrossGoogleAnalytics.cs</Link>
+    </Compile>
     <Compile Include="DeviceInfo.cs" />
     <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
