@@ -44,9 +44,12 @@ Global
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{56a56f17-7de1-4ca1-9617-bf32e971ac84}*SharedItemsImports = 4
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{e34b516d-c0d8-450f-9db0-bb6a5b04aef1}*SharedItemsImports = 4
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{2882aeeb-d4cd-4eb9-8a6c-6653b33681f0}*SharedItemsImports = 4
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{5876144b-47dd-4c4e-b421-bc03f191b996}*SharedItemsImports = 4
 		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{0f204619-b4d1-4a89-be06-54f01c904cbd}*SharedItemsImports = 13
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{2be19bda-c26e-4c6e-8b27-148ea06d2266}*SharedItemsImports = 13
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{7169373f-0b82-4e5d-9129-7cc3065b90fa}*SharedItemsImports = 4
 		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{e0ab3ff3-c87e-476e-9d83-6b09ecd5a21a}*SharedItemsImports = 4
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}*SharedItemsImports = 4
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
