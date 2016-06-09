@@ -10,6 +10,10 @@ namespace TestConsoleApplication
     {
         private static void Main(string[] args)
         {
+            var ga = new GA();
+            
+
+
             var config = new TrackerConfig();
             config.AppVersion = "1";
             config.TrackingId = "2";
