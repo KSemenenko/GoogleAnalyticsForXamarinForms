@@ -90,16 +90,6 @@ namespace Plugin.GoogleAnalytics
             }
         }
 
-        public static string DeviceManufacturer
-        {
-            get { return "Microsoft.Phone.Info.DeviceStatus.DeviceManufacturer"; }
-        }
-
-        public static string DeviceType
-        {
-            get { return "Microsoft.Phone.Info.DeviceStatus.DeviceName"; }
-        }
-
         public async void SendPayload(Payload payload)
         {
             if(DispatchPeriod == TimeSpan.Zero && IsConnected)
@@ -134,7 +124,6 @@ namespace Plugin.GoogleAnalytics
         }
 
         public async Task Dispatch()
-
         {
             if(!isConnected)
             {
@@ -168,6 +157,7 @@ namespace Plugin.GoogleAnalytics
                     payloadsToSend.Add(payloads.Dequeue());
                 }
             }
+
             if(payloadsToSend.Any())
             {
                 await RunDispatchingTask(DispatchQueuedPayloads(payloadsToSend));
@@ -180,6 +170,7 @@ namespace Plugin.GoogleAnalytics
             {
                 dispatchingTasks.Add(newDispatchingTask);
             }
+
             try
             {
                 await newDispatchingTask;
@@ -270,27 +261,18 @@ namespace Plugin.GoogleAnalytics
 
         private void OnMalformedPayload(Payload payload, HttpResponseMessage response)
         {
-            if(PayloadMalformed != null)
-            {
-                PayloadMalformed(this, new PayloadMalformedEventArgs(payload, (int)response.StatusCode));
-            }
+            PayloadMalformed?.Invoke(this, new PayloadMalformedEventArgs(payload, (int)response.StatusCode));
         }
 
         private void OnPayloadFailed(Payload payload, Exception exception)
         {
             // TODO: store in isolated storage and retry next session
-            if(PayloadFailed != null)
-            {
-                PayloadFailed(this, new PayloadFailedEventArgs(payload, exception.Message));
-            }
+            PayloadFailed?.Invoke(this, new PayloadFailedEventArgs(payload, exception.Message));
         }
 
         private async Task OnPayloadSentAsync(Payload payload, HttpResponseMessage response)
         {
-            if(PayloadSent != null)
-            {
-                PayloadSent(this, new PayloadSentEventArgs(payload, await response.Content.ReadAsStringAsync()));
-            }
+            PayloadSent?.Invoke(this, new PayloadSentEventArgs(payload, await response.Content.ReadAsStringAsync()));
         }
 
         private HttpClient GetHttpClient()
@@ -347,58 +329,6 @@ namespace Plugin.GoogleAnalytics
             }
             return result.ToString();
         }
-
-        private static string ConstructUserAgent()
-        {
-            //TODO: FIX IT
-            //var userAgentMask = "Mozilla/[version] ([system and browser information]) [platform] ([platform details]) [extensions]";
-            if("Environment.OSVersion.Version.Major" == "7")
-            {
-                return string.Format("Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS {0}; Trident/5.0; IEMobile/9.0; Touch; {1}; {2})", "Environment.OSVersion.Version",
-                    DeviceManufacturer, DeviceType);
-            }
-            return string.Format("Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone OS {0}; Trident/6.0; IEMobile/10.0; ARM; Touch; {1}; {2})", "Environment.OSVersion.Version",
-                DeviceManufacturer, DeviceType);
-        }
     }
 
-    #region EventArgs
-
-    public sealed class PayloadFailedEventArgs : EventArgs
-    {
-        public PayloadFailedEventArgs(Payload payload, string error)
-        {
-            Error = error;
-            Payload = payload;
-        }
-
-        public string Error { get; private set; }
-        public Payload Payload { get; private set; }
-    }
-
-    public sealed class PayloadSentEventArgs : EventArgs
-    {
-        public PayloadSentEventArgs(Payload payload, string response)
-        {
-            Response = response;
-            Payload = payload;
-        }
-
-        public string Response { get; private set; }
-        public Payload Payload { get; private set; }
-    }
-
-    public sealed class PayloadMalformedEventArgs : EventArgs
-    {
-        public PayloadMalformedEventArgs(Payload payload, int httpStatusCode)
-        {
-            HttpStatusCode = httpStatusCode;
-            Payload = payload;
-        }
-
-        public int HttpStatusCode { get; private set; }
-        public Payload Payload { get; private set; }
-    }
-
-    #endregion
 }

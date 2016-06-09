@@ -11,11 +11,10 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\IDeviceInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\IPlatformInfoProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Abstractions\IGoogleAnalytics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\IServiceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AnalyticsEngine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dimensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Display.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GAServiceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Payload.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PayloadFactory.cs" />

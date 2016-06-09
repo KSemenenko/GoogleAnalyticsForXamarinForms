@@ -11,7 +11,7 @@ using Plugin.GoogleAnalytics.Abstractions;
 
 namespace Plugin.GoogleAnalytics
 {
-     class DeviceInfo : IDeviceInfo
+    public class DeviceInfo : IDeviceInfo
     {
         private readonly EasClientDeviceInformation deviceInfo;
 
@@ -22,7 +22,7 @@ namespace Plugin.GoogleAnalytics
             var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
             var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
             var size = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
-            Display = new Display(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
+            Display = new Dimensions(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
 
             UserAgent =
                 string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
@@ -105,7 +105,7 @@ namespace Plugin.GoogleAnalytics
             get { return TimeZoneInfo.Local.DisplayName; }
         }
 
-        public Display Display { get; set; }
+        public Dimensions Display { get; set; }
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {

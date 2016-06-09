@@ -19,15 +19,15 @@ namespace Plugin.GoogleAnalytics
         public bool AppOptOut { get; set; }
         public IPlatformInfoProvider PlatformTrackingInfo { get; }
 
-        void IServiceManager.SendPayload(Payload payload)
+        public void SendPayload(Payload payload)
         {
             if(!AppOptOut)
             {
-                ((IServiceManager)GAServiceManager.Current).SendPayload(payload);
+                GAServiceManager.Current.SendPayload(payload);
             }
         }
 
-        string IServiceManager.UserAgent
+        public string UserAgent
         {
             get { return GAServiceManager.Current.UserAgent; }
             set { GAServiceManager.Current.UserAgent = value; }

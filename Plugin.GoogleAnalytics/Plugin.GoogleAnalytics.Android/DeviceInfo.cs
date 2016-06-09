@@ -81,8 +81,8 @@ namespace Plugin.GoogleAnalytics
             get { return Java.Util.TimeZone.Default.ID; }
         }
 
-        public Display Display { get; set; } =
-            new Display(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
+        public Dimensions Display { get; set; } =
+            new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)

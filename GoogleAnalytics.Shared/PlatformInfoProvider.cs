@@ -7,11 +7,7 @@ namespace Plugin.GoogleAnalytics
     {
         public string UserAgent { get; set; }
         public string AnonymousClientId { get; set; } = Guid.NewGuid().ToString("D");
-
-        public void OnTracking()
-        {
-        }
-
+        public void OnTracking() { }
         public int? ScreenColorDepthBits { get; set; }
         public string UserLanguage { get; set; }
         public Dimensions ScreenResolution { get; set; }

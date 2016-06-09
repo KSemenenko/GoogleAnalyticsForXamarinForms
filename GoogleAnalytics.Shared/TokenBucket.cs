@@ -2,7 +2,7 @@
 
 namespace Plugin.GoogleAnalytics
 {
-     class TokenBucket
+    public class TokenBucket
     {
         private readonly double capacity;
         private readonly double fillRate;

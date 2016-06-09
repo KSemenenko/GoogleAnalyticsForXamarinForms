@@ -5,7 +5,7 @@ using UIKit;
 
 namespace Plugin.GoogleAnalytics
 {
-     class DeviceInfo : IDeviceInfo
+    public class DeviceInfo : IDeviceInfo
     {
         public DeviceInfo()
         {
@@ -77,7 +77,7 @@ namespace Plugin.GoogleAnalytics
         }
 
 
-        public Display Display { get; set; } = new Display(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
+        public Dimensions Display { get; set; } = new Dimensions(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {

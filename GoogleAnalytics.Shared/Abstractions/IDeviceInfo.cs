@@ -32,7 +32,7 @@ namespace Plugin.GoogleAnalytics.Abstractions
         /// <summary>
         ///     Gets the display information for the device.
         /// </summary>
-        Display Display { get; }
+        Dimensions Display { get; }
 
         /// <summary>
         ///     Gets the manufacturer.

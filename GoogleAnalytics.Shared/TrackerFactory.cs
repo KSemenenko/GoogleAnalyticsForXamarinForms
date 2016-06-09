@@ -8,7 +8,6 @@ namespace Plugin.GoogleAnalytics
     {
         private static TrackerFactory current;
         private static Tracker tracker;
-        private DateTime? suspended;
 
         public TrackerFactory()
         {

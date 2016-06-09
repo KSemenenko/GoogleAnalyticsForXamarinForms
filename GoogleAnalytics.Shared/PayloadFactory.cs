@@ -5,7 +5,7 @@ using System.Globalization;
 namespace Plugin.GoogleAnalytics
 {
     //https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters
-     sealed class PayloadFactory
+    public sealed class PayloadFactory
     {
         private const string HitType_Pageview = "screenview";
         private const string HitType_Event = "event";
@@ -392,7 +392,7 @@ namespace Plugin.GoogleAnalytics
         }
     }
 
-     enum SessionControl
+    public enum SessionControl
     {
         None,
         Start,
