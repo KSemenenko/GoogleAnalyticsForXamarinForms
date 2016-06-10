@@ -330,5 +330,4 @@ namespace Plugin.GoogleAnalytics
             return result.ToString();
         }
     }
-
 }

@@ -24,20 +24,9 @@ namespace Plugin.GoogleAnalytics
             var size = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
             Display = new Dimensions(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
 
-            UserAgent =
-                string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
-                    deviceInfo.OperatingSystem, deviceInfo.SystemManufacturer, deviceInfo.SystemProductName);
+            UserAgent = string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
+                deviceInfo.OperatingSystem, deviceInfo.SystemManufacturer, deviceInfo.SystemProductName);
         }
-
-        /// <summary>
-        ///     Device major version.
-        /// </summary>
-        public int MajorVersion { get; private set; }
-
-        /// <summary>
-        ///     Device minor version.
-        /// </summary>
-        public int MinorVersion { get; private set; }
 
         public string Id
         {
@@ -85,24 +74,9 @@ namespace Plugin.GoogleAnalytics
             }
         }
 
-        public string Manufacturer
-        {
-            get { return deviceInfo.SystemManufacturer; }
-        }
-
         public string LanguageCode
         {
             get { return CultureInfo.CurrentUICulture.TwoLetterISOLanguageName; }
-        }
-
-        public double TimeZoneOffset
-        {
-            get { return 0.0; }
-        }
-
-        public string TimeZone
-        {
-            get { return TimeZoneInfo.Local.DisplayName; }
         }
 
         public Dimensions Display { get; set; }

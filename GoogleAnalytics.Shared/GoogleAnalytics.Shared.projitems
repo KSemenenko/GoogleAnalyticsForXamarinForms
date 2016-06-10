@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AnalyticsEngine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dimensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GA.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GAServiceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Payload.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PayloadFactory.cs" />

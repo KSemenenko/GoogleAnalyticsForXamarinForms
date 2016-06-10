@@ -10,33 +10,11 @@ namespace Plugin.GoogleAnalytics
             UserAgent = string.Empty;
         }
 
-        /// <summary>
-        ///     Device major version.
-        /// </summary>
-        public int MajorVersion { get; private set; }
+        public string Id { get; set; }
 
-        /// <summary>
-        ///     Device minor version.
-        /// </summary>
-        public int MinorVersion { get; private set; }
+        public string Model { get; set; }
 
-        public string Id
-        {
-            get { return Build.Serial; }
-        }
-
-        public string Model
-        {
-            get { return Build.Model; }
-        }
-
-        public string Version
-        {
-            get
-            {
-                 
-            }
-        }
+        public string Version { get; set; }
 
         public string UserAgent { get; set; }
 
@@ -50,40 +28,19 @@ namespace Plugin.GoogleAnalytics
                 }
                 catch
                 {
-                    return new Version(0,0,0,0);
+                    return new Version(0, 0, 0, 0);
                 }
             }
         }
 
-        public string Manufacturer
-        {
-            get { return Build.Manufacturer; }
-        }
+        public string Manufacturer { get; set; }
 
         public string LanguageCode
         {
-            get { return Locale.Default.Language; }
+            get { return System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName; }
         }
 
-        public double TimeZoneOffset
-        {
-            get
-            {
-                using(var calendar = new GregorianCalendar())
-                {
-                    return TimeUnit.Hours.Convert(calendar.TimeZone.RawOffset, TimeUnit.Milliseconds) / 3600;
-                }
-            }
-        }
-
-        public string TimeZone
-        {
-            get { return Java.Util.TimeZone.Default.ID; }
-        }
-
-        public Dimensions Display { get; set; } =
-            new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
-                Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
+        public Dimensions Display { get; set; }
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {

@@ -8,7 +8,7 @@ namespace Plugin.GoogleAnalytics
 
     public sealed class Timer : CancellationTokenSource, IDisposable
     {
-        public Timer(TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period): this(callback, state, (int)dueTime.TotalMilliseconds, (int)period.TotalMilliseconds)
+        public Timer(TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period) : this(callback, state, (int)dueTime.TotalMilliseconds, (int)period.TotalMilliseconds)
         {
         }
 

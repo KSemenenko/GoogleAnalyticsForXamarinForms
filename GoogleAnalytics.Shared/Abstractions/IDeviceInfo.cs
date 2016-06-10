@@ -10,11 +10,6 @@ namespace Plugin.GoogleAnalytics.Abstractions
         string Id { get; }
 
         /// <summary>
-        ///     Get the model of the device
-        /// </summary>
-        string Model { get; }
-
-        /// <summary>
         ///     Get the version of the Operating System
         /// </summary>
         string Version { get; }
@@ -35,27 +30,12 @@ namespace Plugin.GoogleAnalytics.Abstractions
         Dimensions Display { get; }
 
         /// <summary>
-        ///     Gets the manufacturer.
-        /// </summary>
-        string Manufacturer { get; }
-
-        /// <summary>
         ///     Gets the ISO Language Code
         /// </summary>
         string LanguageCode { get; }
 
         /// <summary>
-        ///     Gets the UTC offset
-        /// </summary>
-        double TimeZoneOffset { get; }
-
-        /// <summary>
-        ///     Gets the timezone name
-        /// </summary>
-        string TimeZone { get; }
-
-        /// <summary>
-        ///     Generates a an AppId optionally using the PhoneId a prefix and a suffix and a Guid to ensure uniqueness
+        ///     Generates a an AppId optionally using the PhoneId a prefix and a suffix and a Guid to ensure uniqueness 
         ///     The AppId format is as follows {prefix}guid{phoneid}{suffix}, where parts in {} are optional.
         /// </summary>
         /// <param name="usingPhoneId">

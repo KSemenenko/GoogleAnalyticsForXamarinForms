@@ -37,6 +37,8 @@
     <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DeviceInfo.cs" />
+    <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
