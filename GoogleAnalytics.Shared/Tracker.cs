@@ -7,7 +7,6 @@ namespace Plugin.GoogleAnalytics
 {
     public sealed class Tracker : ITracker
     {
-        private readonly AnalyticsEngine analyticsEngine;
         private readonly PayloadFactory engine;
         private readonly TokenBucket hitTokenBucket;
         private readonly IPlatformInfoProvider platformInfoProvider;
@@ -18,11 +17,14 @@ namespace Plugin.GoogleAnalytics
         public Tracker(string propertyId, IPlatformInfoProvider platformInfoProvider, IServiceManager serviceManager)
         {
             this.serviceManager = serviceManager;
-            if(string.IsNullOrEmpty(serviceManager.UserAgent))
+
+            if (string.IsNullOrEmpty(serviceManager.UserAgent))
             {
                 serviceManager.UserAgent = platformInfoProvider.UserAgent;
             }
+
             this.platformInfoProvider = platformInfoProvider;
+
             engine = new PayloadFactory
             {
                 PropertyId = propertyId,
@@ -34,6 +36,7 @@ namespace Plugin.GoogleAnalytics
                 ViewportSize = platformInfoProvider.ViewPortResolution,                
                 //DocumentEncoding = platformInfoProvider.DocumentEncoding,
             };
+
             SampleRate = 100.0F;
             hitTokenBucket = new TokenBucket(60, .5);
         }

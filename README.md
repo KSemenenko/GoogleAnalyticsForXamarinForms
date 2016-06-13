@@ -33,24 +33,20 @@ android.permission.ACCESS_NETWORK_STATE
 #### Init:
 ```cs
 
-var config = new TrackerConfig();
-config.AppVersion = "1.0.0.0";
-config.TrackingId = "UA-11111111-1";
-config.AppId = "AppID";
-config.AppName = "Google Analytics Test";
-config.AppInstallerId = Guid.NewGuid().ToString();
-//config.Debug = true;
-TrackerFactory.Config = config;
-            
-var tracker = new TrackerFactory().GetTracker();
-tracker.SendView("MainPage");
+GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
+GoogleAnalytics.Current.Config.AppId = "AppID";
+GoogleAnalytics.Current.Config.AppName = "TEST";
+GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
+GoogleAnalytics.Current.Config.Debug = true;
+           
+GoogleAnalytics.Current.Tracker.SendView("MainPage");
 ```
 
 #### Track:
 ```cs
-tracker.SendView("MainPage");
-tracker.SendEvent("Category", "Action", "Label", 1);
-tracker.SendEvent("Category", "Action");
+GoogleAnalytics.Current.Tracker.SendView("MainPage");
+GoogleAnalytics.Current.Tracker.SendEvent("Category", "Action", "Label", 1);
+GoogleAnalytics.Current.Tracker.SendEvent("Category", "Action");
 ```
 
 #### Other way:

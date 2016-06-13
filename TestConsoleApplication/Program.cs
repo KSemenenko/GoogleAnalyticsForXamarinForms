@@ -10,17 +10,17 @@ namespace TestConsoleApplication
     {
         private static void Main(string[] args)
         {
-            CrossGoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
-            CrossGoogleAnalytics.Current.Config.AppId = "AppID";
-            CrossGoogleAnalytics.Current.Config.AppName = "TEST";
-            CrossGoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
+            GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
+            GoogleAnalytics.Current.Config.AppId = "AppID";
+            GoogleAnalytics.Current.Config.AppName = "TEST";
+            GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
 
-            CrossGoogleAnalytics.Current.Config.Debug = true;
+            //  GoogleAnalytics.Current.Config.Debug = true;
 
 
             try
             {
-                CrossGoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
             }
             catch (Exception ex)
             {

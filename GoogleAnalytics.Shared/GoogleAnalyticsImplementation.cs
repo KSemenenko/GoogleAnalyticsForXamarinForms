@@ -16,16 +16,23 @@ namespace Plugin.GoogleAnalytics
             var platform = new PlatformInfoProvider();
             Config.AppVersion = platform.Version.ToString();
             TrackerFactory.Config = Config;
-            Tracker = new TrackerFactory().GetTracker();
         }
 
         private static ITrackerConfig StaticConfig { get; set; }
 
         public ITrackerConfig Config
         {
-            get { return StaticConfig; }
+            get { return StaticConfig; } 
             set { StaticConfig = value; }
         }
-        public ITracker Tracker { get; set; }
+
+        public ITracker Tracker
+        {
+            get
+            {
+                return new TrackerFactory().GetTracker(Config);
+            }
+
+        }
     }
 }

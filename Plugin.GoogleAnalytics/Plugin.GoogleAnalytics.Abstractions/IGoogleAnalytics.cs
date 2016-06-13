@@ -9,6 +9,6 @@ namespace Plugin.GoogleAnalytics.Abstractions
     {
         ITrackerConfig Config { get; set; }
 
-        ITracker Tracker { get; set; }
+        ITracker Tracker { get; }
     }
 }

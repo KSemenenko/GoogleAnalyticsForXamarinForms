@@ -44,6 +44,12 @@ namespace Plugin.GoogleAnalytics
             return tracker;
         }
 
+        public ITracker GetTracker(ITrackerConfig config)
+        {
+            InitTracker(config);
+            return tracker;
+        }
+
         public void InitTracker(ITrackerConfig config)
         {
             Config = config;

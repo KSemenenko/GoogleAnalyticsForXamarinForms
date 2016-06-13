@@ -1,12 +1,14 @@
 ﻿using Plugin.GoogleAnalytics.Abstractions;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Plugin.GoogleAnalytics
 {
     /// <summary>
     /// Cross platform Plugin.GoogleAnalytics implemenations
     /// </summary>
-    public class CrossGoogleAnalytics
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
+    public class GoogleAnalytics
     {
         private static Lazy<IGoogleAnalytics> Implementation = new Lazy<IGoogleAnalytics>(() => CreatePluginGoogleAnalytics(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
