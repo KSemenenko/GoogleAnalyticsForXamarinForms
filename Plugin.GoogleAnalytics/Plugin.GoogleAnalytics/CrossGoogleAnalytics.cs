@@ -7,10 +7,10 @@ namespace Plugin.GoogleAnalytics
     /// <summary>
     /// Cross platform Plugin.GoogleAnalytics implemenations
     /// </summary>
-    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class GoogleAnalytics
     {
-        private static Lazy<IGoogleAnalytics> Implementation = new Lazy<IGoogleAnalytics>(() => CreatePluginGoogleAnalytics(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
+        private static readonly Lazy<IGoogleAnalytics> Implementation = 
+            new Lazy<IGoogleAnalytics>(CreatePluginGoogleAnalytics, System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
         /// Current settings to use
@@ -37,7 +37,8 @@ namespace Plugin.GoogleAnalytics
         {
             return
                 new NotImplementedException(
-                    "This functionality is not implemented in the portable version of this assembly.  You should reference the NuGet package from your main application project in order to reference the platform-specific implementation.");
+                    "This functionality is not implemented in the portable version of this assembly.  " +
+                    "You should reference the NuGet package from your main application project in order to reference the platform-specific implementation.");
         }
     }
 }

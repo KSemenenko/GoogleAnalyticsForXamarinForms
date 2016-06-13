@@ -13,20 +13,17 @@ https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 
 ## Permission
 #### Android:
-`
-android.permission.INTERNET
-android.permission.ACCESS_NETWORK_STATE
-`
+* android.permission.INTERNET
+* android.permission.ACCESS_NETWORK_STATE
+
 
 #### iOS:
-`
+* 
 *
-`
 
 #### WP/UWP:
-`
+* 
 *
-`
 
 ## Example use:
 
