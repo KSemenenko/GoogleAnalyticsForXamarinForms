@@ -1,4 +1,5 @@
-﻿using Plugin.GoogleAnalytics.Abstractions.Model;
+﻿using System;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics.Abstractions
 {
@@ -11,5 +12,6 @@ namespace Plugin.GoogleAnalytics.Abstractions
         Dimensions ViewPortResolution { get; }
         void OnTracking();
         string UserAgent { get; }
+        Version Version { get; }
     }
 }

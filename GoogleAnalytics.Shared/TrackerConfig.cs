@@ -1,8 +1,9 @@
 ﻿using System;
+using Plugin.GoogleAnalytics.Abstractions;
 
 namespace Plugin.GoogleAnalytics
 {
-    public sealed class TrackerConfig
+    public sealed class TrackerConfig : ITrackerConfig
     {
         public TrackerConfig()
         {

@@ -53,23 +53,18 @@ namespace TestFormsApp
 
         private void B_Clicked(object sender, EventArgs e)
         {
-            var config = new TrackerConfig();
-            config.AppVersion = "1.0.0.0";
-            config.TrackingId = "UA-11111111-1";
-            config.AppId = "AppID";
-            config.AppName = "TEST";
-            config.AppInstallerId = Guid.NewGuid().ToString();
 
-            config.Debug = true;
+            CrossGoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
+            CrossGoogleAnalytics.Current.Config.AppId = "AppID";
+            CrossGoogleAnalytics.Current.Config.AppName = "TEST";
+            CrossGoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
 
-            TrackerFactory.Config = config;
+            CrossGoogleAnalytics.Current.Config.Debug = true;
 
-            Tracker tracker;
 
             try
             {
-                tracker = new TrackerFactory().GetTracker();
-                tracker.SendView("MainPage");
+                CrossGoogleAnalytics.Current.Tracker.SendView("MainPage");
             }
             catch(Exception ex)
             {

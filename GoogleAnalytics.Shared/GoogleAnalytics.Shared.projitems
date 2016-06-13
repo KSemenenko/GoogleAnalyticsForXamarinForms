@@ -11,7 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AnalyticsEngine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EventArgs.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GA.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GoogleAnalyticsImplementation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GAServiceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PayloadFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlatformInfoProvider.cs" />
@@ -22,6 +22,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)TrackerConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TrackerFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TrackerManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TransactionBuilder.WP8.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransactionBuilder.cs" />
   </ItemGroup>
 </Project>

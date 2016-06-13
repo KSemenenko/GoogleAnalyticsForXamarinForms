@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Plugin.GoogleAnalytics;
+using Plugin.GoogleAnalytics.Abstractions;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -14,13 +15,13 @@ namespace Plugin.GoogleAnalytics
             InitTracker(Config);
         }
 
-        public TrackerFactory(TrackerConfig config)
+        public TrackerFactory(ITrackerConfig config)
         {
             InitTracker(config);
         }
 
         public Uri ConfigPath { get; set; }
-        public static TrackerConfig Config { get; set; }
+        public static ITrackerConfig Config { get; set; }
 
         public static TrackerFactory Current
         {
@@ -34,7 +35,7 @@ namespace Plugin.GoogleAnalytics
             }
         }
 
-        public Tracker GetTracker()
+        public ITracker GetTracker()
         {
             if(tracker == null)
             {
@@ -43,7 +44,7 @@ namespace Plugin.GoogleAnalytics
             return tracker;
         }
 
-        public void InitTracker(TrackerConfig config)
+        public void InitTracker(ITrackerConfig config)
         {
             Config = config;
             Config.Validate();

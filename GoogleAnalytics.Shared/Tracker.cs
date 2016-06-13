@@ -31,7 +31,7 @@ namespace Plugin.GoogleAnalytics
                 ScreenResolution = platformInfoProvider.ScreenResolution,
                 UserAgentOverride = platformInfoProvider.UserAgent,
                 UserLanguage = platformInfoProvider.UserLanguage,
-                ViewportSize = platformInfoProvider.ViewPortResolution
+                ViewportSize = platformInfoProvider.ViewPortResolution,                
                 //DocumentEncoding = platformInfoProvider.DocumentEncoding,
             };
             SampleRate = 100.0F;
@@ -357,18 +357,22 @@ namespace Plugin.GoogleAnalytics
 
         private void SendPayload(Payload payload)
         {
-            if(!string.IsNullOrEmpty(TrackingId))
+            if(string.IsNullOrEmpty(TrackingId))
             {
-                if(!IsSampledOut())
+                System.Diagnostics.Debug.WriteLine("Error: TrackingId not set.");
+                return;
+            }
+
+            if(!IsSampledOut())
+            {
+                if(!ThrottlingEnabled || hitTokenBucket.Consume())
                 {
-                    if(!ThrottlingEnabled || hitTokenBucket.Consume())
-                    {
-                        payload.IsUseSecure = IsUseSecure;
-                        payload.IsDebug = IsDebug;
-                        serviceManager.SendPayload(payload);
-                    }
+                    payload.IsUseSecure = IsUseSecure;
+                    payload.IsDebug = IsDebug;
+                    serviceManager.SendPayload(payload);
                 }
             }
+            
         }
 
         private bool IsSampledOut()

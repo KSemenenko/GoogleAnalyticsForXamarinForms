@@ -7,6 +7,8 @@ namespace Plugin.GoogleAnalytics
     public sealed partial class PlatformInfoProvider : IPlatformInfoProvider
     {
         public string UserAgent { get; set; }
+
+        public Version Version { get; set; }
         public string AnonymousClientId { get; set; } = Guid.NewGuid().ToString("D");
 
         public void OnTracking()

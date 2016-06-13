@@ -1,8 +1,9 @@
-﻿using Plugin.GoogleAnalytics.Abstractions.Model;
+﻿using Plugin.GoogleAnalytics.Abstractions;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics
 {
-    public sealed partial class PlatformInfoProvider
+    public sealed partial class PlatformInfoProvider : IPlatformInfoProvider
     {
         public PlatformInfoProvider()
         {
@@ -10,6 +11,8 @@ namespace Plugin.GoogleAnalytics
             ScreenResolution = new Dimensions(device.Display.Width, device.Display.Height);
             UserLanguage = device.LanguageCode;
             UserAgent = device.UserAgent;
+            ViewPortResolution = new Dimensions(device.Display.Width, device.Display.Height);
+            Version = device.VersionNumber;
         }
     }
 }

@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\Plugin.GoogleAnalytics.Abstractions.csproj">
+      <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
+      <Name>Plugin.GoogleAnalytics.Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.csproj">
       <Project>{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}</Project>
       <Name>Plugin.GoogleAnalytics</Name>

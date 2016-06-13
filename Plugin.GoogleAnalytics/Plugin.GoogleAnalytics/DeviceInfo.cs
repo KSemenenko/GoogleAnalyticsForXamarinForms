@@ -9,6 +9,7 @@ namespace Plugin.GoogleAnalytics
         public DeviceInfo()
         {
             UserAgent = string.Empty;
+            Display = new Dimensions(0,0);
         }
 
         public string Id { get; set; }
