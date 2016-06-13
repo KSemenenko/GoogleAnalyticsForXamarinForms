@@ -7,5 +7,8 @@ namespace Plugin.GoogleAnalytics.Abstractions
     /// </summary>
     public interface IGoogleAnalytics
     {
+        ITrackerConfig Config { get; set; }
+
+        ITracker Tracker { get; set; }
     }
 }

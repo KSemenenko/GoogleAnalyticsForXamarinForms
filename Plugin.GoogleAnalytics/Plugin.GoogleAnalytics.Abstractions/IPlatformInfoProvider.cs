@@ -1,4 +1,6 @@
-﻿namespace Plugin.GoogleAnalytics.Abstractions
+﻿using Plugin.GoogleAnalytics.Abstractions.Model;
+
+namespace Plugin.GoogleAnalytics.Abstractions
 {
     public interface IPlatformInfoProvider
     {

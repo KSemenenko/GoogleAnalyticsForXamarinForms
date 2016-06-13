@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics
 {

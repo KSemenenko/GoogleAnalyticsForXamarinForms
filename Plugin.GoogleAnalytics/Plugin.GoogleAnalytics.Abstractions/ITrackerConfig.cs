@@ -5,7 +5,7 @@ namespace Plugin.GoogleAnalytics.Abstractions
     /// <summary>
     /// Interface for Plugin.GoogleAnalytics
     /// </summary>
-    public interface IGoogleAnalyticsTrackerConfig
+    public interface ITrackerConfig
     {
         /// <summary>
         ///     The Google Analytics tracking ID to which to send your data. Dashes in the ID must be unencoded. You can disable

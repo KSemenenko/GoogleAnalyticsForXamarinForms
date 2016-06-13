@@ -1,4 +1,4 @@
-﻿namespace Plugin.GoogleAnalytics
+﻿namespace Plugin.GoogleAnalytics.Abstractions.Model
 {
     public sealed class Dimensions
     {

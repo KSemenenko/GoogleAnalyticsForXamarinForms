@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Plugin.GoogleAnalytics.Abstractions;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics
 {
-    public sealed class Tracker
+    public sealed class Tracker : ITracker
     {
         private readonly AnalyticsEngine analyticsEngine;
         private readonly PayloadFactory engine;

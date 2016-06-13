@@ -8,6 +8,7 @@ using Windows.Storage.Streams;
 using Windows.System.Profile;
 using Windows.UI.ViewManagement;
 using Plugin.GoogleAnalytics.Abstractions;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics
 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using Foundation;
 using Plugin.GoogleAnalytics.Abstractions;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 using UIKit;
 
 namespace Plugin.GoogleAnalytics

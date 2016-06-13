@@ -1,4 +1,5 @@
 ﻿using System;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics
 {

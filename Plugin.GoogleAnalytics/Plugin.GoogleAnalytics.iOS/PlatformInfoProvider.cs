@@ -1,4 +1,6 @@
-﻿namespace Plugin.GoogleAnalytics
+﻿using Plugin.GoogleAnalytics.Abstractions.Model;
+
+namespace Plugin.GoogleAnalytics
 {
     public sealed partial class PlatformInfoProvider
     {

@@ -3,6 +3,7 @@ using Android.OS;
 using Java.Util;
 using Java.Util.Concurrent;
 using Plugin.GoogleAnalytics.Abstractions;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics
 {

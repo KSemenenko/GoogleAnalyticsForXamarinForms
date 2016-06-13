@@ -1,14 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Text;
+using Plugin.GoogleAnalytics.Abstractions;
 
 namespace Plugin.GoogleAnalytics
 {
-    public class GA
+    public class GoogleAnalyticsImplementation : IGoogleAnalytics
     {
-        public TrackerConfig Config { get; set; }
+        public ITrackerConfig Config
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
 
-        public TrackerFactory Factory { get; set; }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public ITracker Tracker
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
