@@ -30,9 +30,14 @@ namespace Plugin.GoogleAnalytics
         {
             get
             {
-                return new TrackerFactory().GetTracker(Config);
+                return TrackerFactory.Current.GetTracker();
             }
 
+        }
+
+        public void InitTracker()
+        {
+            TrackerFactory.Current.InitTracker(Config);
         }
     }
 }

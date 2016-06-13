@@ -2,7 +2,7 @@
 
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.3">
-    <id>Plugin.GoogleAnalytics</id>
+    <id>ksemenenko.GoogleAnalytics</id>
     <version>0.7.0-beta</version>
     <title>GoogleAnalytics Plugin for Xamarin and Windows</title>
     <authors>ksemenenko</authors>

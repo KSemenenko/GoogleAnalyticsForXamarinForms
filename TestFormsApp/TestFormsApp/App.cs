@@ -58,9 +58,8 @@ namespace TestFormsApp
             GoogleAnalytics.Current.Config.AppId = "AppID";
             GoogleAnalytics.Current.Config.AppName = "TEST";
             GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
-
             GoogleAnalytics.Current.Config.Debug = true;
-
+            GoogleAnalytics.Current.InitTracker();
 
             try
             {

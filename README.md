@@ -1,4 +1,4 @@
-# Google Analytics for Xamarin Forms
+# Google Analytics Plugin for Xamarin and Windows
 This project is a cross platform library for Xamarin Forms, which enables a handy use of Google Analytics in your applications.  
 I've decided that there should be a broad-based library with no connection to native libraries Google in Xamarin (too long to install). 
 
@@ -35,7 +35,9 @@ GoogleAnalytics.Current.Config.AppId = "AppID";
 GoogleAnalytics.Current.Config.AppName = "TEST";
 GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
 GoogleAnalytics.Current.Config.Debug = true;
+GoogleAnalytics.Current.InitTracker();
            
+//Track view
 GoogleAnalytics.Current.Tracker.SendView("MainPage");
 ```
 

@@ -16,7 +16,7 @@ namespace TestConsoleApplication
             GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
 
             //  GoogleAnalytics.Current.Config.Debug = true;
-
+            GoogleAnalytics.Current.InitTracker();
 
             try
             {
