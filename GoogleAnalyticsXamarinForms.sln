@@ -40,6 +40,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{53533321
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.GoogleAnalytics.Mac", "Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Mac\Plugin.GoogleAnalytics.Mac.csproj", "{2D4E302B-5F6A-4ECA-9E2D-681B9DD64D84}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E154EA3D-B011-49D9-A313-218A6617A703}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{65468291-ec6a-4386-a42d-092736bc9d94}*SharedItemsImports = 4

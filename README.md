@@ -6,11 +6,27 @@ Should you have any comments or suggestions, please let me know. Let's make it a
 
 ### Additional thanks to the project that inspired me:
 * Google Analytics SDK for Windows and Windows Phone (https://googleanalyticssdk.codeplex.com/)
-* XLabs/Xamarin-Forms-Labs (https://github.com/XLabs/Xamarin-Forms-Labs)
 * jamesmontemagno/Xamarin.Plugins (https://github.com/jamesmontemagno/Xamarin.Plugins)
 
 ## Available at NuGet. 
 https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
+
+## Permission
+#### Android:
+`
+android.permission.INTERNET
+android.permission.ACCESS_NETWORK_STATE
+`
+
+#### iOS:
+`
+*
+`
+
+#### WP/UWP:
+`
+*
+`
 
 ## Example use:
 
@@ -25,7 +41,7 @@ config.AppName = "Google Analytics Test";
 config.AppInstallerId = Guid.NewGuid().ToString();
 //config.Debug = true;
 TrackerFactory.Config = config;
-			
+            
 var tracker = new TrackerFactory().GetTracker();
 tracker.SendView("MainPage");
 ```
