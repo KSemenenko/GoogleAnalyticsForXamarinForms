@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Plugin.GoogleAnalytics\CrossGoogleAnalytics.cs">
-      <Link>CrossGoogleAnalytics.cs</Link>
+    <Compile Include="..\Plugin.GoogleAnalytics\GoogleAnalytics.cs">
+      <Link>GoogleAnalytics.cs</Link>
     </Compile>
     <Compile Include="DeviceInfo.cs" />
     <Compile Include="PlatformInfoProvider.cs" />

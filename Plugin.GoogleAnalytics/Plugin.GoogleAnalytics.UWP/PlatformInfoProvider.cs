@@ -8,10 +8,10 @@ namespace Plugin.GoogleAnalytics
         public PlatformInfoProvider()
         {
             var device = new DeviceInfo();
-            ScreenResolution = new Dimensions(device.Display.Width, device.Display.Height);
+            ScreenResolution = device.Display;
             UserLanguage = device.LanguageCode;
             UserAgent = device.UserAgent;
-            ViewPortResolution = new Dimensions(device.Display.Width, device.Display.Height);
+            ViewPortResolution = device.ViewPortResolution;
             Version = device.VersionNumber;
         }
     }

@@ -31,12 +31,17 @@ namespace Plugin.GoogleAnalytics.Abstractions
         Dimensions Display { get; }
 
         /// <summary>
+        ///     Gets the ViewPort resolution.
+        /// </summary>
+        Dimensions ViewPortResolution { get; }
+
+        /// <summary>
         ///     Gets the ISO Language Code
         /// </summary>
         string LanguageCode { get; }
 
         /// <summary>
-        ///     Generates a an AppId optionally using the PhoneId a prefix and a suffix and a Guid to ensure uniqueness 
+        ///     Generates a an AppId optionally using the PhoneId a prefix and a suffix and a Guid to ensure uniqueness
         ///     The AppId format is as follows {prefix}guid{phoneid}{suffix}, where parts in {} are optional.
         /// </summary>
         /// <param name="usingPhoneId">

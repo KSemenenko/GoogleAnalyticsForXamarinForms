@@ -10,10 +10,11 @@ namespace TestConsoleApplication
     {
         private static void Main(string[] args)
         {
-            GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
+            GoogleAnalytics.Current.Config.TrackingId = "UA-78089698-1"; //"UA -11111111-1";
             GoogleAnalytics.Current.Config.AppId = "AppID";
             GoogleAnalytics.Current.Config.AppName = "TEST";
             GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
+            GoogleAnalytics.Current.Tracker.UserAgentOverride = "dfsfsdf";
 
             //  GoogleAnalytics.Current.Config.Debug = true;
             GoogleAnalytics.Current.InitTracker();
@@ -21,11 +22,35 @@ namespace TestConsoleApplication
             try
             {
                 GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
             }
             catch (Exception ex)
             {
                 int a = 5;
             }
+
+
+            Console.ReadLine();
         }
 
         private static void Tets2()

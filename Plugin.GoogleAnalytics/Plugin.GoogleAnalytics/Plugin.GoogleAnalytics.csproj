@@ -42,7 +42,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrossGoogleAnalytics.cs" />
+    <Compile Include="GoogleAnalytics.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

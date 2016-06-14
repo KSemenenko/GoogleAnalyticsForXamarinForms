@@ -1,73 +1,30 @@
-﻿/*using System;
-using System.Globalization;
-using Windows.Foundation;
-using Windows.Foundation.Metadata;
-using Windows.Graphics.Display;
-using Windows.Security.ExchangeActiveSyncProvisioning;
-using Windows.Storage.Streams;
-using Windows.System.Profile;
-using Windows.UI.ViewManagement;
+﻿using System;
+using Foundation;
 using Plugin.GoogleAnalytics.Abstractions;
+using Plugin.GoogleAnalytics.Abstractions.Model;
+using UIKit;
 
 namespace Plugin.GoogleAnalytics
 {
-     class DeviceInfo : IDeviceInfo
+    public class DeviceInfo : IDeviceInfo
     {
-        private readonly EasClientDeviceInformation deviceInfo;
-
         public DeviceInfo()
         {
-            deviceInfo = new EasClientDeviceInformation();
-
-            var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
-            var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-            var size = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
-            Display = new Display(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
-
-            UserAgent =
-                string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
-                    deviceInfo.OperatingSystem, deviceInfo.SystemManufacturer, deviceInfo.SystemProductName);
+            UIWebView agentWebView = new UIWebView();
+            UserAgent = agentWebView.EvaluateJavascript("navigator.userAgent");
+            Display = new Dimensions(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
         }
-
-        /// <summary>
-        ///     Device major version.
-        /// </summary>
-        public int MajorVersion { get; private set; }
-
-        /// <summary>
-        ///     Device minor version.
-        /// </summary>
-        public int MinorVersion { get; private set; }
 
         public string Id
         {
-            get
-            {
-                if(ApiInformation.IsTypePresent("Windows.System.Profile.HardwareIdentification"))
-                {
-                    var token = HardwareIdentification.GetPackageSpecificToken(null);
-                    var hardwareId = token.Id;
-                    var dataReader = DataReader.FromBuffer(hardwareId);
-
-                    var bytes = new byte[hardwareId.Length];
-                    dataReader.ReadBytes(bytes);
-
-                    return Convert.ToBase64String(bytes);
-                }
-                return "unsupported";
-            }
-        }
-
-        public string Model
-        {
-            get { return deviceInfo.SystemProductName; }
+            get { return UIDevice.CurrentDevice.IdentifierForVendor.AsString(); }
         }
 
         public string UserAgent { get; set; }
 
         public string Version
         {
-            get { return AnalyticsInfo.VersionInfo.DeviceFamilyVersion; }
+            get { return UIDevice.CurrentDevice.SystemVersion; }
         }
 
         public Version VersionNumber
@@ -80,32 +37,17 @@ namespace Plugin.GoogleAnalytics
                 }
                 catch
                 {
-                    return new Version(0, 0);
+                    return new Version();
                 }
             }
         }
 
-        public string Manufacturer
-        {
-            get { return deviceInfo.SystemManufacturer; }
-        }
-
         public string LanguageCode
         {
-            get { return CultureInfo.CurrentUICulture.TwoLetterISOLanguageName; }
+            get { return NSLocale.PreferredLanguages[0]; }
         }
 
-        public double TimeZoneOffset
-        {
-            get { return 0.0; }
-        }
-
-        public string TimeZone
-        {
-            get { return TimeZoneInfo.Local.DisplayName; }
-        }
-
-        public Display Display { get; set; }
+        public Dimensions Display { get; set; }
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {
@@ -131,4 +73,4 @@ namespace Plugin.GoogleAnalytics
             return appId;
         }
     }
-}*/
+}

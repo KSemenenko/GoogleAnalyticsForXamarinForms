@@ -14,7 +14,8 @@ namespace Plugin.GoogleAnalytics
             UserAgent = Java.Lang.JavaSystem.GetProperty("http.agent");
             Display = new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
-        }
+            
+    }
 
         public string Id
         {
@@ -49,6 +50,8 @@ namespace Plugin.GoogleAnalytics
         }
 
         public Dimensions Display { get; set; }
+
+        public Dimensions ViewPortResolution { get; set; }
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {

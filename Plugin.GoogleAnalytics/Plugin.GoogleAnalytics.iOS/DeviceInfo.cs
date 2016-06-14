@@ -48,6 +48,7 @@ namespace Plugin.GoogleAnalytics
         }
 
         public Dimensions Display { get; set; }
+        public Dimensions ViewPortResolution { get; set; }
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {

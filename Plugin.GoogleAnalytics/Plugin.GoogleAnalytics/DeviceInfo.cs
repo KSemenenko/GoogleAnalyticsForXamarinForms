@@ -9,7 +9,7 @@ namespace Plugin.GoogleAnalytics
         public DeviceInfo()
         {
             UserAgent = string.Empty;
-            Display = new Dimensions(0,0);
+            Display = new Dimensions(0, 0);
         }
 
         public string Id { get; set; }
@@ -43,6 +43,7 @@ namespace Plugin.GoogleAnalytics
         }
 
         public Dimensions Display { get; set; }
+        public Dimensions ViewPortResolution { get; set; }
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {
