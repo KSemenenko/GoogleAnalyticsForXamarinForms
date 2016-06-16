@@ -16,8 +16,8 @@ namespace Plugin.GoogleAnalytics
 
         public DeviceInfo()
         {
-
-            
+			deviceInfo = DisplayInformation.GetForCurrentView();
+		   
             var sysInfo = new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation();
             UserAgent =  string.Format("Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {0}; {1}) like Gecko", 
                 sysInfo.SystemManufacturer, sysInfo.SystemProductName);
@@ -26,11 +26,11 @@ namespace Plugin.GoogleAnalytics
             var bounds = Window.Current.Bounds;
             double w = bounds.Width;
             double h = bounds.Height;
-            var displayInfo = DisplayInformation.GetForCurrentView();
-            w = Math.Round(w * displayInfo.RawPixelsPerViewPixel);
-            h = Math.Round(h * displayInfo.RawPixelsPerViewPixel);
+            
+            w = Math.Round(w * deviceInfo.RawPixelsPerViewPixel);
+            h = Math.Round(h * deviceInfo.RawPixelsPerViewPixel);
 
-            if ((displayInfo.CurrentOrientation & DisplayOrientations.Landscape) == DisplayOrientations.Landscape)
+            if ((deviceInfo.CurrentOrientation & DisplayOrientations.Landscape) == DisplayOrientations.Landscape)
             {
                 Display = new Dimensions((int)w, (int)h);
             }
@@ -42,31 +42,24 @@ namespace Plugin.GoogleAnalytics
             Window.Current.SizeChanged += Current_SizeChanged;
             windowInitialized = true;
 
-
-
-
-            deviceInfo = DisplayInformation.GetForCurrentView();
-
-   
-    
         }
 
         public string Id
         {
             get
             {
-                if (ApiInformation.IsTypePresent("Windows.System.Profile.HardwareIdentification"))
-                {
-                    var token = HardwareIdentification.GetPackageSpecificToken(null);
-                    var hardwareId = token.Id;
-                    var dataReader = DataReader.FromBuffer(hardwareId);
+				object o; 
+				if (DeviceExtendedProperties.TryGetValue("DeviceUniqueId", out o)) 
+				{ 
+					return = Convert.ToBase64String((byte[])o); 
+				} 
+				else 
+				{ 
+					//throw new UnauthorizedAccessException( 
+					//"Application has no access to device identity. To enable access consider enabling ID_CAP_IDENTITY_DEVICE on app manifest."); 
+					return "unsupported";
+				} 
 
-                    var bytes = new byte[hardwareId.Length];
-                    dataReader.ReadBytes(bytes);
-
-                    return Convert.ToBase64String(bytes);
-                }
-                return "unsupported";
             }
         }
 
@@ -99,7 +92,7 @@ namespace Plugin.GoogleAnalytics
 
         public string LanguageCode
         {
-            get { return System.Globalization.CultureInfo.CurrentUICulture.Name; }
+            get { return System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;; }
         }
 
         public Dimensions Display { get; set; }
