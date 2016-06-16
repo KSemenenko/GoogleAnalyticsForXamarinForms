@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.3">
     <id>ksemenenko.GoogleAnalytics</id>
-    <version>0.7.0-beta</version>
+    <version>1.0.0</version>
     <title>GoogleAnalytics Plugin for Xamarin and Windows</title>
     <authors>ksemenenko</authors>
     <owners>ksemenenko</owners>
     <licenseUrl>https://github.com/KSemenenko/Google-Analytics-for-Xamarin-Forms/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/KSemenenko/Google-Analytics-for-Xamarin-Forms</projectUrl>
-    <!--<iconUrl>https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon_nuget.png</iconUrl>-->
+    <!--<iconUrl>https://github.com/KSemenenko/Google-Analytics-for-Xamarin-Forms/icons/plugin_icon_nuget.png</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       This project is a cross platform library for Xamarin, which enables a handy use of Google Analytics in your applications.
@@ -89,4 +89,16 @@
         <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\Xamarin.Mac20\Plugin.GoogleAnalytics.Abstractions.xml" />
         -->
   </files>
+  <dependencies>
+    <group targetFramework="UAP10">
+      <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.1.0" />
+    </group>
+    <group targetFramework="net45">
+      <dependency id="Microsoft.Bcl" version="1.1.10" />
+      <dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+      <dependency id="Microsoft.Net.Http" version="2.2.29" />
+    </group>
+  </dependencies>
+
 </package>
