@@ -1,143 +1,117 @@
-﻿//using System;
-//using System.Globalization;
-//using Windows.Foundation;
-//using Windows.Foundation.Metadata;
-//using Windows.Graphics.Display;
-//using Windows.Security.ExchangeActiveSyncProvisioning;
-//using Windows.Storage.Streams;
-//using Windows.System.Profile;
-//using Windows.UI.ViewManagement;
-//using GoogleAnalytics.Core.Platform;
-//using GoogleAnalytics.W81;
-//using Platform = GoogleAnalytics.Core.Platform.Platform;
+﻿using System;
+using System.Globalization;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
 
+using Plugin.GoogleAnalytics.Abstractions;
+using Plugin.GoogleAnalytics.Abstractions.Model;
 
-//namespace GoogleAnalytics.W81
-//{
-//    internal class DeviceInfo : IDeviceInfo
-//    {
-//        private readonly EasClientDeviceInformation deviceInfo;
+namespace Plugin.GoogleAnalytics
+{
+    public class DeviceInfo : IDeviceInfo
+    {
+       // private readonly EasClientDeviceInformation deviceInfo;
 
-//        public DeviceInfo()
-//        {
-//            deviceInfo = new EasClientDeviceInformation();
+        public DeviceInfo()
+        {
+            //deviceInfo = new EasClientDeviceInformation();
+            UserAgent = ""; //$"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
 
-//            var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
-//            var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-//            var size = new Size(bounds.Width*scaleFactor, bounds.Height*scaleFactor);
-//            Display = new Display(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
+            //var bounds = Window.Current.Bounds;
+            var w = 800;//bounds.Width;
+            var h = 480;//bounds.Height;
 
+            Display = new Dimensions((int)w, (int)h);
 
-//            UserAgent =
-//                string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
-//                    deviceInfo.OperatingSystem, deviceInfo.SystemManufacturer, deviceInfo.SystemProductName);
-//        }
+            ViewPortResolution = new Dimensions((int)w, (int)h);
+        }
 
-//        /// <summary>
-//        ///     Device major version.
-//        /// </summary>
-//        public int MajorVersion { get; private set; }
+        public string Model
+        {
+            get { return ""; } // return deviceInfo.SystemProductName; }
+        }
 
-//        /// <summary>
-//        ///     Device minor version.
-//        /// </summary>
-//        public int MinorVersion { get; private set; }
+        public string Id
+        {
+            get
+            {
+                return "unsupported";
+                try
+                {
+                    //var myToken = HardwareIdentification.GetPackageSpecificToken(null);
+                    //var hardwareId = myToken.Id;
+                    //return Convert.ToBase64String(hardwareId.ToArray());
+                }
+                catch(Exception)
+                {
+                    //throw new UnauthorizedAccessException( 
+                    //"Application has no access to device identity. To enable access consider enabling ID_CAP_IDENTITY_DEVICE on app manifest."); 
+                    return "unsupported";
+                }
+            }
+        }
 
-//        public string Id
-//        {
-//            get
-//            {
-//                if (ApiInformation.IsTypePresent("Windows.System.Profile.HardwareIdentification"))
-//                {
-//                    var token = HardwareIdentification.GetPackageSpecificToken(null);
-//                    var hardwareId = token.Id;
-//                    var dataReader = DataReader.FromBuffer(hardwareId);
+        public string UserAgent { get; set; }
 
-//                    var bytes = new byte[hardwareId.Length];
-//                    dataReader.ReadBytes(bytes);
+        public string Version
+        {
+            get
+            {
+                var pv = Package.Current.Id.Version;
+                var version = new Version(Package.Current.Id.Version.Major,
+                    Package.Current.Id.Version.Minor,
+                    Package.Current.Id.Version.Revision,
+                    Package.Current.Id.Version.Build);
+                return version.ToString();
+            }
+        }
 
-//                    return Convert.ToBase64String(bytes);
-//                }
-//                return "unsupported";
-//            }
-//        }
+        public Version VersionNumber
+        {
+            get
+            {
+                try
+                {
+                    return new Version(Version);
+                }
+                catch
+                {
+                    return new Version(0, 0);
+                }
+            }
+        }
 
-//        public string Model
-//        {
-//            get { return deviceInfo.SystemProductName; }
-//        }
+        public string LanguageCode
+        {
+            get { return CultureInfo.CurrentCulture.TwoLetterISOLanguageName; }
+        }
 
-//        public string UserAgent { get; set; }
+        public Dimensions Display { get; set; }
 
-//        public string Version
-//        {
-//            get { return AnalyticsInfo.VersionInfo.DeviceFamilyVersion; }
-//        }
+        public Dimensions ViewPortResolution { get; set; }
 
-//        public Version VersionNumber
-//        {
-//            get
-//            {
-//                try
-//                {
-//                    return new Version(Version);
-//                }
-//                catch
-//                {
-//                    return new Version(0, 0);
-//                }
-//            }
-//        }
+        public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
+        {
+            var appId = "";
 
-//        public string Manufacturer
-//        {
-//            get { return deviceInfo.SystemManufacturer; }
-//        }
+            if(!string.IsNullOrEmpty(prefix))
+            {
+                appId += prefix;
+            }
 
-//        public string LanguageCode
-//        {
-//            get { return CultureInfo.CurrentUICulture.TwoLetterISOLanguageName; }
-//        }
+            appId += Guid.NewGuid().ToString();
 
-//        public double TimeZoneOffset
-//        {
-//            get { return 0.0; }
-//        }
+            if(usingPhoneId)
+            {
+                appId += Id;
+            }
 
-//        public string TimeZone
-//        {
-//            get { return TimeZoneInfo.Local.DisplayName; }
-//        }
+            if(!string.IsNullOrEmpty(suffix))
+            {
+                appId += suffix;
+            }
 
-//        public Platform Platform
-//        {
-//            get { return Platform.Windows; }
-//        }
-
-//        public Display Display { get; set; }
-
-//        public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
-//        {
-//            var appId = "";
-
-//            if (!string.IsNullOrEmpty(prefix))
-//            {
-//                appId += prefix;
-//            }
-
-//            appId += Guid.NewGuid().ToString();
-
-//            if (usingPhoneId)
-//            {
-//                appId += Id;
-//            }
-
-//            if (!string.IsNullOrEmpty(suffix))
-//            {
-//                appId += suffix;
-//            }
-
-//            return appId;
-//        }
-//    }
-//}
+            return appId;
+        }
+    }
+}

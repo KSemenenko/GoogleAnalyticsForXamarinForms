@@ -1,9 +1,9 @@
 ﻿using System;
-using Windows.Foundation;
-using Windows.Graphics.Display;
-using Windows.Storage;
-using Windows.UI.Core;
-using Windows.UI.ViewManagement;
+using System.Globalization;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
+using Windows.Security.ExchangeActiveSyncProvisioning;
+using Windows.System.Profile;
 using Windows.UI.Xaml;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
@@ -16,51 +16,16 @@ namespace Plugin.GoogleAnalytics
 
         public DeviceInfo()
         {
-			deviceInfo = DisplayInformation.GetForCurrentView();
-		   
-            var sysInfo = new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation();
-            UserAgent =  string.Format("Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {0}; {1}) like Gecko", 
-                sysInfo.SystemManufacturer, sysInfo.SystemProductName);
-            
+            deviceInfo = new EasClientDeviceInformation();
+            UserAgent = $"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
 
             var bounds = Window.Current.Bounds;
-            double w = bounds.Width;
-            double h = bounds.Height;
-            
-            w = Math.Round(w * deviceInfo.RawPixelsPerViewPixel);
-            h = Math.Round(h * deviceInfo.RawPixelsPerViewPixel);
+            var w = bounds.Width;
+            var h = bounds.Height;
 
-            if ((deviceInfo.CurrentOrientation & DisplayOrientations.Landscape) == DisplayOrientations.Landscape)
-            {
-                Display = new Dimensions((int)w, (int)h);
-            }
-            else // portrait
-            {
-                Display = new Dimensions((int)h, (int)w);
-            }
-            ViewPortResolution = new Dimensions((int)bounds.Width, (int)bounds.Height); // leave viewport at the scale unadjusted size
-            Window.Current.SizeChanged += Current_SizeChanged;
-            windowInitialized = true;
+            Display = new Dimensions((int)w, (int)h);
 
-        }
-
-        public string Id
-        {
-            get
-            {
-				object o; 
-				if (DeviceExtendedProperties.TryGetValue("DeviceUniqueId", out o)) 
-				{ 
-					return = Convert.ToBase64String((byte[])o); 
-				} 
-				else 
-				{ 
-					//throw new UnauthorizedAccessException( 
-					//"Application has no access to device identity. To enable access consider enabling ID_CAP_IDENTITY_DEVICE on app manifest."); 
-					return "unsupported";
-				} 
-
-            }
+            ViewPortResolution = new Dimensions((int)w, (int)h);
         }
 
         public string Model
@@ -68,11 +33,38 @@ namespace Plugin.GoogleAnalytics
             get { return deviceInfo.SystemProductName; }
         }
 
+        public string Id
+        {
+            get
+            {
+                try
+                {
+                    var myToken = HardwareIdentification.GetPackageSpecificToken(null);
+                    var hardwareId = myToken.Id;
+                    return Convert.ToBase64String(hardwareId.ToArray());
+                }
+                catch (Exception)
+                {
+                    //throw new UnauthorizedAccessException( 
+                    //"Application has no access to device identity. To enable access consider enabling ID_CAP_IDENTITY_DEVICE on app manifest."); 
+                    return "unsupported";
+                }
+            }
+        }
+
         public string UserAgent { get; set; }
 
         public string Version
         {
-            get { return AnalyticsInfo.VersionInfo.DeviceFamilyVersion; }
+            get
+            {
+                var pv = Package.Current.Id.Version;
+                var version = new Version(Package.Current.Id.Version.Major,
+                    Package.Current.Id.Version.Minor,
+                    Package.Current.Id.Version.Revision,
+                    Package.Current.Id.Version.Build);
+                return version.ToString();
+            }
         }
 
         public Version VersionNumber
@@ -92,7 +84,7 @@ namespace Plugin.GoogleAnalytics
 
         public string LanguageCode
         {
-            get { return System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;; }
+            get { return CultureInfo.CurrentCulture.TwoLetterISOLanguageName; }
         }
 
         public Dimensions Display { get; set; }

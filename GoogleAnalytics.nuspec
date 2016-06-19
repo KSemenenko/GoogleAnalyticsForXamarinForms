@@ -36,29 +36,21 @@
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\dotnet\Plugin.GoogleAnalytics.Abstractions.xml" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\dotnet\Plugin.GoogleAnalytics.Abstractions.pdb" />
 
-    <!--Win Phone Silverlight
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone8\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\wp8\Plugin.GoogleAnalytics.dll" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone8\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\wp8\Plugin.GoogleAnalytics.xml" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone8\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\wp8\Plugin.GoogleAnalytics.pdb" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\wp8\Plugin.GoogleAnalytics.Abstractions.dll" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\wp8\Plugin.GoogleAnalytics.Abstractions.xml" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\wp8\Plugin.GoogleAnalytics.Abstractions.pdb" />-->
+    <!--Win Phone 81-->
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone81\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\wpa81\Plugin.GoogleAnalytics.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone81\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\wpa81\Plugin.GoogleAnalytics.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone81\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\wpa81\Plugin.GoogleAnalytics.pdb" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\wpa81\Plugin.GoogleAnalytics.Abstractions.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\wpa81\Plugin.GoogleAnalytics.Abstractions.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\wpa81\Plugin.GoogleAnalytics.Abstractions.pdb" />
 
-    <!--Win Phone 81
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone81\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\wpa81\Plugin.GoogleAnalytics.dll" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone81\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\wpa81\Plugin.GoogleAnalytics.xml" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone81\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\wpa81\Plugin.GoogleAnalytics.pdb" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\wpa81\Plugin.GoogleAnalytics.Abstractions.dll" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\wpa81\Plugin.GoogleAnalytics.Abstractions.xml" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\wpa81\Plugin.GoogleAnalytics.Abstractions.pdb" />-->
-
-    <!--WinStore
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsStore\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\win8\Plugin.GoogleAnalytics.dll" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsStore\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\win8\Plugin.GoogleAnalytics.xml" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsStore\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\win8\Plugin.GoogleAnalytics.pdb" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\win8\Plugin.GoogleAnalytics.Abstractions.dll" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\win8\Plugin.GoogleAnalytics.Abstractions.xml" />
-        <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\win8\Plugin.GoogleAnalytics.Abstractions.pdb" />-->
+    <!--WinStore-->
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsStore\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\win8\Plugin.GoogleAnalytics.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsStore\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\win8\Plugin.GoogleAnalytics.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsStore\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\win8\Plugin.GoogleAnalytics.pdb" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\win8\Plugin.GoogleAnalytics.Abstractions.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\win8\Plugin.GoogleAnalytics.Abstractions.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\win8\Plugin.GoogleAnalytics.Abstractions.pdb" />
 
     <!--Xamarin.Android-->
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Android\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.dll" />
