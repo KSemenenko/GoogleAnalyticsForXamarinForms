@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Plugin.GoogleAnalytics;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,6 +30,7 @@ namespace TestFormsApp.WinPhone
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
             LoadApplication(new TestFormsApp.App());
+
         }
 
         /// <summary>

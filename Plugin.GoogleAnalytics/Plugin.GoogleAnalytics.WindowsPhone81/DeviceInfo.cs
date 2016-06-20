@@ -17,7 +17,7 @@ namespace Plugin.GoogleAnalytics
         public DeviceInfo()
         {
             deviceInfo = new EasClientDeviceInformation();
-            UserAgent = $"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
+            UserAgent = $"Mozilla/5.0 (Windows Phone 8.1 ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
 
             var bounds = Window.Current.Bounds;
             var w = bounds.Width;
