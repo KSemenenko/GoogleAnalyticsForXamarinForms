@@ -1,30 +1,61 @@
 ﻿using System;
-using Foundation;
+using System.Globalization;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
-using UIKit;
 
 namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
+        // private readonly EasClientDeviceInformation deviceInfo;
+
         public DeviceInfo()
         {
-            UIWebView agentWebView = new UIWebView();
-            UserAgent = agentWebView.EvaluateJavascript("navigator.userAgent");
-            Display = new Dimensions(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
+            //deviceInfo = new EasClientDeviceInformation();
+            UserAgent = ""; //$"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
+
+            //var bounds = Window.Current.Bounds;
+            var w = 800;//bounds.Width;
+            var h = 480;//bounds.Height;
+
+            Display = new Dimensions((int)w, (int)h);
+
+            ViewPortResolution = new Dimensions((int)w, (int)h);
+        }
+
+        public string Model
+        {
+            get { return ""; } // return deviceInfo.SystemProductName; }
         }
 
         public string Id
         {
-            get { return UIDevice.CurrentDevice.IdentifierForVendor.AsString(); }
+            get
+            {
+                return "unsupported";
+                try
+                {
+                    //var myToken = HardwareIdentification.GetPackageSpecificToken(null);
+                    //var hardwareId = myToken.Id;
+                    //return Convert.ToBase64String(hardwareId.ToArray());
+                }
+                catch (Exception)
+                {
+                    //throw new UnauthorizedAccessException( 
+                    //"Application has no access to device identity. To enable access consider enabling ID_CAP_IDENTITY_DEVICE on app manifest."); 
+                    return "unsupported";
+                }
+            }
         }
 
         public string UserAgent { get; set; }
 
         public string Version
         {
-            get { return UIDevice.CurrentDevice.SystemVersion; }
+            get
+            {
+                return "0.0.0.0";
+            }
         }
 
         public Version VersionNumber
@@ -37,35 +68,37 @@ namespace Plugin.GoogleAnalytics
                 }
                 catch
                 {
-                    return new Version();
+                    return new Version(0, 0);
                 }
             }
         }
 
         public string LanguageCode
         {
-            get { return NSLocale.PreferredLanguages[0]; }
+            get { return CultureInfo.CurrentCulture.TwoLetterISOLanguageName; }
         }
 
         public Dimensions Display { get; set; }
+
+        public Dimensions ViewPortResolution { get; set; }
 
         public string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null)
         {
             var appId = "";
 
-            if(!string.IsNullOrEmpty(prefix))
+            if (!string.IsNullOrEmpty(prefix))
             {
                 appId += prefix;
             }
 
             appId += Guid.NewGuid().ToString();
 
-            if(usingPhoneId)
+            if (usingPhoneId)
             {
                 appId += Id;
             }
 
-            if(!string.IsNullOrEmpty(suffix))
+            if (!string.IsNullOrEmpty(suffix))
             {
                 appId += suffix;
             }
