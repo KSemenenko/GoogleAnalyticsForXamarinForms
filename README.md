@@ -11,20 +11,6 @@ Should you have any comments or suggestions, please let me know. Let's make it a
 ## Available at NuGet. 
 https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 
-## Permission
-#### Android:
-* android.permission.INTERNET
-* android.permission.ACCESS_NETWORK_STATE
-
-
-#### iOS:
-* 
-*
-
-#### WP/UWP:
-* 
-*
-
 ## Example use:
 
 #### Init:

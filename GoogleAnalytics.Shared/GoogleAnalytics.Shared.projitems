@@ -16,6 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)PayloadFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlatformInfoProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProductReceipt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\SharedAssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Timer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TokenBucket.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tracker.cs" />

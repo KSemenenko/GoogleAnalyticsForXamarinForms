@@ -38,6 +38,9 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\GoogleAnalytics.Shared\Properties\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Model\Dimensions.cs" />
     <Compile Include="IDeviceInfo.cs" />
     <Compile Include="IPlatformInfoProvider.cs" />
