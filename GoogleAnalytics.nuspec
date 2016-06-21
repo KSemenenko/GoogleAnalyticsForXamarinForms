@@ -7,9 +7,9 @@
     <title>GoogleAnalytics Plugin for Xamarin and Windows</title>
     <authors>ksemenenko</authors>
     <owners>ksemenenko</owners>
-    <licenseUrl>https://github.com/KSemenenko/Google-Analytics-for-Xamarin-Forms/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/KSemenenko/Google-Analytics-for-Xamarin-Forms</projectUrl>
-    <!--<iconUrl>https://github.com/KSemenenko/Google-Analytics-for-Xamarin-Forms/icons/plugin_icon_nuget.png</iconUrl>-->
+    <licenseUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms</projectUrl>
+    <!--<iconUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms/icons/plugin_icon_nuget.png</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       This project is a cross platform library for Xamarin, which enables a handy use of Google Analytics in your applications.
