@@ -11,6 +11,18 @@ Should you have any comments or suggestions, please let me know. Let's make it a
 ## Available at NuGet. 
 https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 
+
+|Platform|Supported|Version|
+| ------------------- | :-----------: | :------------------: |
+|Xamarin.iOS|Yes|iOS 6+|
+|Xamarin.iOS Unified|Yes|iOS 6+|
+|Xamarin.Android|Yes|API 10+|
+|Windows Phone 8|Partial|8.0+|
+|Windows Phone 8.1|Yes|8.1+|
+|Windows Store|Yes|8.1+|
+|Windows 10 UWP|Yes|10+|
+|Xamarin.Mac|Partial||
+
 ## Example use:
 
 #### Init:
@@ -20,7 +32,7 @@ GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
 GoogleAnalytics.Current.Config.AppId = "AppID";
 GoogleAnalytics.Current.Config.AppName = "TEST";
 GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
-GoogleAnalytics.Current.Config.Debug = true;
+//GoogleAnalytics.Current.Config.Debug = true;
 GoogleAnalytics.Current.InitTracker();
            
 //Track view

@@ -6,8 +6,8 @@
     <ProjectGuid>{2D4E302B-5F6A-4ECA-9E2D-681B9DD64D84}</ProjectGuid>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Plugin.GoogleAnalytics.Mac</RootNamespace>
-    <AssemblyName>Plugin.GoogleAnalytics.Mac</AssemblyName>
+    <RootNamespace>Plugin.GoogleAnalytics</RootNamespace>
+    <AssemblyName>Plugin.GoogleAnalytics</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Plugin.GoogleAnalytics.Mac.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Plugin.GoogleAnalytics.xml</DocumentationFile>
     <ConsolePause>false</ConsolePause>
     <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>false</CreatePackage>
@@ -38,7 +38,7 @@
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.Mac.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.xml</DocumentationFile>
     <ConsolePause>false</ConsolePause>
     <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>false</CreatePackage>
