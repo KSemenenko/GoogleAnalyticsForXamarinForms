@@ -17,7 +17,7 @@
     <summary>App Version Tracking Plugin for Xamarin and Windows</summary>
     <tags>xamarin, google analytics, analytics, pcl, plugin, plugin for xamarin, windows phone, uwp, winphone, wp8, winrt, android, xamarin.forms, ios, mac, version</tags>
     <dependencies>
-      <group targetFramework="UAP10.0">
+      <group targetFramework="UAP10">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
       </group>
       <group targetFramework="portable-net45">
