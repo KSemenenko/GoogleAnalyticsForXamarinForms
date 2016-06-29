@@ -65,9 +65,12 @@ namespace Plugin.GoogleAnalytics.Abstractions
         void SetCustomMetric(int index, long value);
         void SendView(string screenName);
         void SendException(string description, bool isFatal);
+        void SendException(Exception exception, bool isFatal);
         void SendSocial(string network, string action, string target);
         void SendTiming(TimeSpan time, string category, string variable, string label);
         void SendEvent(string category, string action, string label, long value);
+        void SendEvent(string category, string action, string label, int value);
+        void SendEvent(string category, string action, string label);
         void SendEvent(string category, string action);
         void SendTransaction(Transaction transaction);
         void SendTransactionItem(TransactionItem transactionItem);

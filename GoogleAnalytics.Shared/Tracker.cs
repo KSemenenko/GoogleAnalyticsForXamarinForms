@@ -288,6 +288,11 @@ namespace Plugin.GoogleAnalytics
             SendPayload(payload);
         }
 
+        public void SendException(Exception exception, bool isFatal)
+        {
+            SendException(string.Format("{0};{3}{1};{3}{2};", exception.Message, exception.StackTrace, exception.Source, Environment.NewLine), isFatal);
+        }
+
         public void SendSocial(string network, string action, string target)
         {
             platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
@@ -306,6 +311,20 @@ namespace Plugin.GoogleAnalytics
         {
             platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
             var payload = engine.TrackEvent(category, action, label, value, SessionControl);
+            SendPayload(payload);
+        }
+
+        public void SendEvent(string category, string action, string label, int value)
+        {
+            platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
+            var payload = engine.TrackEvent(category, action, label, value, SessionControl);
+            SendPayload(payload);
+        }
+
+        public void SendEvent(string category, string action, string label)
+        {
+            platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
+            var payload = engine.TrackEvent(category, action, label, null, SessionControl);
             SendPayload(payload);
         }
 
