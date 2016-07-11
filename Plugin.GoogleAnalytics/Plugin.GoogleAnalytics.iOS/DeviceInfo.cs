@@ -3,6 +3,7 @@ using Foundation;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 using UIKit;
+using System.IO;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -24,7 +25,7 @@ namespace Plugin.GoogleAnalytics
 
         public string Version
         {
-            get { return UIDevice.CurrentDevice.SystemVersion; }
+            get { return NSBundle.MainBundle.InfoDictionary["CFBundleVersion"].ToString(); }
         }
 
         public Version VersionNumber
@@ -72,6 +73,21 @@ namespace Plugin.GoogleAnalytics
             }
 
             return appId;
+        }
+
+        public string ReadFile(string path)
+        {
+            if (!File.Exists(path))
+            {
+                return string.Empty;
+            }
+
+            return File.ReadAllText(path);
+        }
+
+        public void WriteFile(string path, string content)
+        {
+            File.WriteAllText(path, content);
         }
     }
 }

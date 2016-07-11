@@ -1,3 +1,4 @@
+using System;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 
@@ -13,6 +14,7 @@ namespace Plugin.GoogleAnalytics
             UserAgent = device.UserAgent;
             ViewPortResolution = device.ViewPortResolution;
             Version = device.VersionNumber;
+            GetAnonymousClientId(device);
         }
     }
 }

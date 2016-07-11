@@ -5,6 +5,7 @@ using Windows.ApplicationModel;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.System.Profile;
 using Windows.UI.Xaml;
+using System.IO;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 
@@ -58,7 +59,6 @@ namespace Plugin.GoogleAnalytics
         {
             get
             {
-                var pv = Package.Current.Id.Version;
                 var version = new Version(Package.Current.Id.Version.Major,
                     Package.Current.Id.Version.Minor,
                     Package.Current.Id.Version.Revision,
@@ -113,6 +113,21 @@ namespace Plugin.GoogleAnalytics
             }
 
             return appId;
+        }
+		
+		public string ReadFile(string path)
+        {
+            if(!File.Exists(path))
+            {
+                return string.Empty;
+            }
+
+            return File.ReadAllText(path);
+        }
+
+        public void WriteFile(string path, string content)
+        {
+            File.WriteAllText(path, content);
         }
     }
 }

@@ -9,6 +9,8 @@ using Windows.System.Profile;
 using Windows.UI.ViewManagement;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
+using System.IO;
+using Windows.ApplicationModel;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -57,7 +59,14 @@ namespace Plugin.GoogleAnalytics
 
         public string Version
         {
-            get { return AnalyticsInfo.VersionInfo.DeviceFamilyVersion; }
+            get
+            {
+                var version = new Version(Package.Current.Id.Version.Major,
+                    Package.Current.Id.Version.Minor,
+                    Package.Current.Id.Version.Revision,
+                    Package.Current.Id.Version.Build);
+                return version.ToString();
+            }
         }
 
         public Version VersionNumber
@@ -105,6 +114,21 @@ namespace Plugin.GoogleAnalytics
             }
 
             return appId;
+        }
+
+        public string ReadFile(string path)
+        {
+            if(!File.Exists(path))
+            {
+                return string.Empty;
+            }
+
+            return File.ReadAllText(path);
+        }
+
+        public void WriteFile(string path, string content)
+        {
+            File.WriteAllText(path, content);
         }
     }
 }

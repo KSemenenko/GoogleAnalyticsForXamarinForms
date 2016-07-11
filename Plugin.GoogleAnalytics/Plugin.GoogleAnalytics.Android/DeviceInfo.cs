@@ -4,6 +4,7 @@ using Java.Util;
 using Java.Util.Concurrent;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
+using System.IO;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -15,7 +16,7 @@ namespace Plugin.GoogleAnalytics
             Display = new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
             
-    }
+        }
 
         public string Id
         {
@@ -24,7 +25,7 @@ namespace Plugin.GoogleAnalytics
 
         public string Version
         {
-            get { return Build.VERSION.Release; }
+            get { return Android.App.Application.Context.PackageManager.GetPackageInfo(Android.App.Application.Context.PackageName, 0).VersionName; }
         }
 
         public string UserAgent { get; set; }
@@ -75,6 +76,21 @@ namespace Plugin.GoogleAnalytics
             }
 
             return appId;
+        }
+
+        public string ReadFile(string path)
+        {
+            if(!File.Exists(path))
+            {
+                return string.Empty;
+            }
+
+            return File.ReadAllText(path);
+        }
+
+        public void WriteFile(string path, string content)
+        {
+            File.WriteAllText(path, content);
         }
     }
 }

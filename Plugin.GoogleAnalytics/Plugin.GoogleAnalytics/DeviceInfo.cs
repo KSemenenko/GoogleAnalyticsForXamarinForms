@@ -1,6 +1,7 @@
 using System;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
+using System.IO;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -67,6 +68,17 @@ namespace Plugin.GoogleAnalytics
             }
 
             return appId;
+        }
+
+        public string ReadFile(string path)
+        {
+            // TODO: Fix it
+            return string.Empty;
+        }
+
+        public void WriteFile(string path, string content)
+        {
+            // TODO: Fix it
         }
     }
 }

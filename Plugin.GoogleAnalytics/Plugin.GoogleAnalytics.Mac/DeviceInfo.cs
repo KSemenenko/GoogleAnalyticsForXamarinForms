@@ -2,6 +2,7 @@
 using System.Globalization;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
+using System.IO;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -104,6 +105,21 @@ namespace Plugin.GoogleAnalytics
             }
 
             return appId;
+        }
+		
+		public string ReadFile(string path)
+        {
+            if(!File.Exists(path))
+            {
+                return string.Empty;
+            }
+
+            return File.ReadAllText(path);
+        }
+
+        public void WriteFile(string path, string content)
+        {
+            File.WriteAllText(path, content);
         }
     }
 }

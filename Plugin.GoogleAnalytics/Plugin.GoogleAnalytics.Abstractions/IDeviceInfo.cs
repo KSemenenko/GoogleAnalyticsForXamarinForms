@@ -52,5 +52,8 @@ namespace Plugin.GoogleAnalytics.Abstractions
         /// <param name="suffix">Sets the suffix of the AppId</param>
         /// <returns></returns>
         string GenerateAppId(bool usingPhoneId = false, string prefix = null, string suffix = null);
+
+        string ReadFile(string path);
+        void WriteFile(string path, string content);
     }
 }
