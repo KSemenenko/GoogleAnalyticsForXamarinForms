@@ -27,6 +27,10 @@ namespace Plugin.GoogleAnalytics
 
         public void OnTracking()
         {
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine("GoogleAnalytics: Track.");
+#endif
         }
 
         public int? ScreenColorDepthBits { get; set; }
