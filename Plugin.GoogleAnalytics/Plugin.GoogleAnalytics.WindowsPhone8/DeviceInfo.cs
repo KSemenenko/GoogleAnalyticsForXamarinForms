@@ -115,17 +115,34 @@ namespace Plugin.GoogleAnalytics
 		
 		public string ReadFile(string path)
         {
-            if(!File.Exists(path))
-            {
-                return string.Empty;
-            }
-
-            return File.ReadAllText(path);
+            var result = ReadFileAsync(path).Result;
+            return result;
         }
 
         public void WriteFile(string path, string content)
         {
-            File.WriteAllText(path, content);
+            WriteFileAsync(path, content).RunSynchronously();
+        }
+
+        public async Task<string> ReadFileAsync(string path)
+        {
+            try
+			{
+				StorageFolder folder = ApplicationData.Current.LocalFolder;
+				StorageFile sampleFile = await folder.GetFileAsync(path);
+				return await FileIO.ReadTextAsync(sampleFile); 
+			}
+            catch
+			{
+				return string.Empty;
+			}
+        }
+
+        public async Task WriteFileAsync(string path, string content)
+        {
+            StorageFolder folder = ApplicationData.Current.LocalFolder;
+            StorageFile sampleFile = await folder.CreateFileAsync(path, CreationCollisionOption.ReplaceExisting);
+            await FileIO.WriteTextAsync(sampleFile, content);
         }
     }
 }
