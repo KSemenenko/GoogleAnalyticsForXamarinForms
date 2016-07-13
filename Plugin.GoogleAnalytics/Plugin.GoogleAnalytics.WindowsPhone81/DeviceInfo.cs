@@ -6,6 +6,8 @@ using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.System.Profile;
 using Windows.UI.Xaml;
 using System.IO;
+using System.Threading.Tasks;
+using Windows.Storage;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 

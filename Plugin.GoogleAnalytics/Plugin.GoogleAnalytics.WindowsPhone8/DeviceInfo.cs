@@ -3,6 +3,8 @@ using System.Globalization;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using System.IO;
+using System.Threading.Tasks;
+using Windows.Storage;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 
@@ -112,8 +114,8 @@ namespace Plugin.GoogleAnalytics
 
             return appId;
         }
-		
-		public string ReadFile(string path)
+        
+        public string ReadFile(string path)
         {
             var result = ReadFileAsync(path).Result;
             return result;
@@ -126,23 +128,49 @@ namespace Plugin.GoogleAnalytics
 
         public async Task<string> ReadFileAsync(string path)
         {
-            try
-			{
-				StorageFolder folder = ApplicationData.Current.LocalFolder;
-				StorageFile sampleFile = await folder.GetFileAsync(path);
-				return await FileIO.ReadTextAsync(sampleFile); 
-			}
-            catch
-			{
-				return string.Empty;
-			}
+            // Get the local folder.
+            StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
+
+            if(local != null)
+            {
+                // Get the DataFolder folder.
+                var dataFolder = await local.GetFolderAsync("ga-data");
+
+                // Get the file.
+                var file = await dataFolder.OpenStreamForReadAsync(path);
+
+                // Read the data.
+                using(StreamReader streamReader = new StreamReader(file))
+                {
+                    return streamReader.ReadToEnd();
+                }
+
+            }
+
+            return string.Empty;
+
         }
 
         public async Task WriteFileAsync(string path, string content)
         {
-            StorageFolder folder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await folder.CreateFileAsync(path, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(sampleFile, content);
+            // Get the text data from the textbox. 
+            byte[] fileBytes = System.Text.Encoding.UTF8.GetBytes(content.ToCharArray());
+
+            // Get the local folder.
+            StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
+
+            // Create a new folder name DataFolder.
+            var dataFolder = await local.CreateFolderAsync("ga-data", CreationCollisionOption.OpenIfExists);
+
+            // Create a new file named DataFile.txt.
+            var file = await dataFolder.CreateFileAsync(path, CreationCollisionOption.ReplaceExisting);
+
+            // Write the data from the textbox.
+            using(var s = await file.OpenStreamForWriteAsync())
+            {
+                s.Write(fileBytes, 0, fileBytes.Length);
+            }
+
         }
     }
 }

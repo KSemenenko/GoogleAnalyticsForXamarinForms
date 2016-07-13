@@ -6,6 +6,8 @@ using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.System.Profile;
 using Windows.UI.Xaml;
 using System.IO;
+using System.Threading.Tasks;
+using Windows.Storage;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 
@@ -114,8 +116,8 @@ namespace Plugin.GoogleAnalytics
 
             return appId;
         }
-		
-		public string ReadFile(string path)
+        
+        public string ReadFile(string path)
         {
             var result = ReadFileAsync(path).Result;
             return result;
@@ -129,15 +131,15 @@ namespace Plugin.GoogleAnalytics
         public async Task<string> ReadFileAsync(string path)
         {
             try
-			{
-				StorageFolder folder = ApplicationData.Current.LocalFolder;
-				StorageFile sampleFile = await folder.GetFileAsync(path);
-				return await FileIO.ReadTextAsync(sampleFile); 
-			}
+            {
+                StorageFolder folder = ApplicationData.Current.LocalFolder;
+                StorageFile sampleFile = await folder.GetFileAsync(path);
+                return await FileIO.ReadTextAsync(sampleFile); 
+            }
             catch
-			{
-				return string.Empty;
-			}
+            {
+                return string.Empty;
+            }
         }
 
         public async Task WriteFileAsync(string path, string content)
