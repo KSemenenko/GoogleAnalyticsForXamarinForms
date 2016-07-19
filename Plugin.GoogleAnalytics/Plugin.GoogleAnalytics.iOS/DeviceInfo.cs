@@ -9,6 +9,8 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
+        private const string GoogleAnalyticsFolder = "ga-store";
+
         public DeviceInfo()
         {
             UIWebView agentWebView = new UIWebView();
@@ -55,19 +57,19 @@ namespace Plugin.GoogleAnalytics
         {
             var appId = "";
 
-            if(!string.IsNullOrEmpty(prefix))
+            if (!string.IsNullOrEmpty(prefix))
             {
                 appId += prefix;
             }
 
             appId += Guid.NewGuid().ToString();
 
-            if(usingPhoneId)
+            if (usingPhoneId)
             {
                 appId += Id;
             }
 
-            if(!string.IsNullOrEmpty(suffix))
+            if (!string.IsNullOrEmpty(suffix))
             {
                 appId += suffix;
             }
@@ -77,17 +79,21 @@ namespace Plugin.GoogleAnalytics
 
         public string ReadFile(string path)
         {
-            if (!File.Exists(path))
+            if (!File.Exists(Path.Combine(GoogleAnalyticsFolder, path)))
             {
                 return string.Empty;
             }
 
-            return File.ReadAllText(path);
+            return File.ReadAllText(Path.Combine(GoogleAnalyticsFolder, path));
         }
 
         public void WriteFile(string path, string content)
         {
-            File.WriteAllText(path, content);
+            if (!Directory.Exists(GoogleAnalyticsFolder))
+            {
+                Directory.CreateDirectory(GoogleAnalyticsFolder);
+            }
+            File.WriteAllText(Path.Combine(GoogleAnalyticsFolder, path), content);
         }
     }
 }

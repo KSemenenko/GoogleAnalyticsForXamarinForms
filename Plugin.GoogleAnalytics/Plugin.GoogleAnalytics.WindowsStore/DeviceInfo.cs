@@ -15,6 +15,7 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
+        private const string GoogleAnalyticsFolder = "ga-store";
         private readonly EasClientDeviceInformation deviceInfo;
 
         public DeviceInfo()

@@ -12,6 +12,8 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
+
+        private const string GoogleAnalyticsFolder = "ga-store";
        // private readonly EasClientDeviceInformation deviceInfo;
 
         public DeviceInfo()
@@ -134,7 +136,7 @@ namespace Plugin.GoogleAnalytics
             if(local != null)
             {
                 // Get the DataFolder folder.
-                var dataFolder = await local.GetFolderAsync("ga-data");
+                var dataFolder = await local.GetFolderAsync(GoogleAnalyticsFolder);
 
                 // Get the file.
                 var file = await dataFolder.OpenStreamForReadAsync(path);
@@ -160,7 +162,7 @@ namespace Plugin.GoogleAnalytics
             StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
 
             // Create a new folder name DataFolder.
-            var dataFolder = await local.CreateFolderAsync("ga-data", CreationCollisionOption.OpenIfExists);
+            var dataFolder = await local.CreateFolderAsync(GoogleAnalyticsFolder, CreationCollisionOption.OpenIfExists);
 
             // Create a new file named DataFile.txt.
             var file = await dataFolder.CreateFileAsync(path, CreationCollisionOption.ReplaceExisting);

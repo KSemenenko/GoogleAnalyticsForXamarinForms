@@ -16,6 +16,8 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
+        private const string GoogleAnalyticsFolder = "ga-store";
+
         private readonly EasClientDeviceInformation deviceInfo;
 
         public DeviceInfo()
@@ -118,17 +120,21 @@ namespace Plugin.GoogleAnalytics
 
         public string ReadFile(string path)
         {
-            if(!File.Exists(path))
+            if (!File.Exists(Path.Combine(GoogleAnalyticsFolder, path)))
             {
                 return string.Empty;
             }
 
-            return File.ReadAllText(path);
+            return File.ReadAllText(Path.Combine(GoogleAnalyticsFolder, path));
         }
 
         public void WriteFile(string path, string content)
         {
-            File.WriteAllText(path, content);
+            if (!Directory.Exists(GoogleAnalyticsFolder))
+            {
+                Directory.CreateDirectory(GoogleAnalyticsFolder);
+            }
+            File.WriteAllText(Path.Combine(GoogleAnalyticsFolder, path), content);
         }
     }
 }
