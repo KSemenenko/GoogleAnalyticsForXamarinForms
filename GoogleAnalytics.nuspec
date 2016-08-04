@@ -44,9 +44,9 @@
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\portable-net45+win8+wpa81+wp8\Plugin.GoogleAnalytics.dll" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\portable-net45+win8+wpa81+wp8\Plugin.GoogleAnalytics.xml" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\portable-net45+win8+wpa81+wp8\Plugin.GoogleAnalytics.pdb" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\portable-net45+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\portable-net45+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\portable-net45+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.pdb" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\portable-net45+win8+wpa81+wp8\Plugin.GoogleAnalytics.Abstractions.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\portable-net45+win8+wpa81+wp8\Plugin.GoogleAnalytics.Abstractions.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\portable-net45+win8+wpa81+wp8\Plugin.GoogleAnalytics.Abstractions.pdb" />
 
 
     <!--Portable Profile111 -->                                                                                              
