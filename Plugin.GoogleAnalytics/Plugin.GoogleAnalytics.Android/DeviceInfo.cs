@@ -10,13 +10,15 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
-        private const string GoogleAnalyticsFolder = "ga-store";
+        private readonly string GoogleAnalyticsFolder = "ga-store";
 
         public DeviceInfo()
         {
             UserAgent = Java.Lang.JavaSystem.GetProperty("http.agent");
             Display = new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
+
+            GoogleAnalyticsFolder = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData), GoogleAnalyticsFolder);
 
         }
 

@@ -9,13 +9,15 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
-        private const string GoogleAnalyticsFolder = "ga-store";
+        private readonly string GoogleAnalyticsFolder = "ga-store";
 
         public DeviceInfo()
         {
             UIWebView agentWebView = new UIWebView();
             UserAgent = agentWebView.EvaluateJavascript("navigator.userAgent");
             Display = new Dimensions(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
+
+            GoogleAnalyticsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), GoogleAnalyticsFolder);
         }
 
         public string Id
