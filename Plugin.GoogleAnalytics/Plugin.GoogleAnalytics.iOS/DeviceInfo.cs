@@ -17,7 +17,7 @@ namespace Plugin.GoogleAnalytics
             UserAgent = agentWebView.EvaluateJavascript("navigator.userAgent");
             Display = new Dimensions(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
 
-            GoogleAnalyticsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), GoogleAnalyticsFolder);
+            GoogleAnalyticsFolder = Path.Combine(Environment.CurrentDirectory, GoogleAnalyticsFolder);
         }
 
         public string Id
