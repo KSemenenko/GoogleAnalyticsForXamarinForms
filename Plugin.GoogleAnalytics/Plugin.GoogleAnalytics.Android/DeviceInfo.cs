@@ -18,7 +18,8 @@ namespace Plugin.GoogleAnalytics
             Display = new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
 
-            GoogleAnalyticsFolder = Path.Combine(System.Environment.CurrentDirectory, GoogleAnalyticsFolder);
+            GoogleAnalyticsFolder = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), GoogleAnalyticsFolder);
+
 
         }
 

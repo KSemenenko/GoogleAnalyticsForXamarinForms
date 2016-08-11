@@ -7,6 +7,7 @@ using Windows.System.Profile;
 using Windows.UI.Xaml;
 using System.IO;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Activation;
 using Windows.Storage;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
@@ -21,7 +22,7 @@ namespace Plugin.GoogleAnalytics
         public DeviceInfo()
         {
             deviceInfo = new EasClientDeviceInformation();
-            UserAgent = $"Mozilla/5.0 (Windows Phone 8.1 ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
+            UserAgent = $"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
 
             var bounds = Window.Current.Bounds;
             var w = bounds.Width;
@@ -117,37 +118,39 @@ namespace Plugin.GoogleAnalytics
 
             return appId;
         }
-		
-		public string ReadFile(string path)
+        
+        public string ReadFile(string path)
         {
-            var result = ReadFileAsync(path).Result;
+            var result = ReadFileAsync(path);
             return result;
         }
 
         public void WriteFile(string path, string content)
         {
-            WriteFileAsync(path, content).RunSynchronously();
+            WriteFileAsync(path, content);
         }
 
-        public async Task<string> ReadFileAsync(string path)
+        public string ReadFileAsync(string path)
         {
-			try
-			{
-				StorageFolder folder = ApplicationData.Current.LocalFolder;
-				StorageFile sampleFile = await folder.GetFileAsync(path);
-				return await FileIO.ReadTextAsync(sampleFile); 
-			}
+            try
+            {
+                var folder = ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] as string;
+
+                if (!string.IsNullOrEmpty(folder))
+                {
+                    return folder;
+                }
+                return string.Empty;
+            }
             catch
-			{
-				return string.Empty;
-			}
+            {
+                return string.Empty;
+            }
         }
 
-        public async Task WriteFileAsync(string path, string content)
+        public void WriteFileAsync(string path, string content)
         {
-            StorageFolder folder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await folder.CreateFileAsync(path, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(sampleFile, content);
+            ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] = content;
         }
     }
 }

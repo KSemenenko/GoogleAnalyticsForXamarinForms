@@ -4,7 +4,9 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows;
 using Windows.Storage;
+using Microsoft.Phone.Info;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 
@@ -14,19 +16,15 @@ namespace Plugin.GoogleAnalytics
     {
 
         private const string GoogleAnalyticsFolder = "ga-store";
-       // private readonly EasClientDeviceInformation deviceInfo;
 
         public DeviceInfo()
         {
-            //deviceInfo = new EasClientDeviceInformation();
-            UserAgent = ""; //$"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
+            UserAgent = $"Mozilla/5.0 (Windows Phone {Environment.OSVersion} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {DeviceStatus.DeviceManufacturer}; {DeviceStatus.DeviceName}) like Gecko";
 
-            //var bounds = Window.Current.Bounds;
-            var w = 800;//bounds.Width;
-            var h = 480;//bounds.Height;
+            var w = Application.Current.Host.Content.ActualWidth;
+            var h = Application.Current.Host.Content.ActualHeight;
 
             Display = new Dimensions((int)w, (int)h);
-
             ViewPortResolution = new Dimensions((int)w, (int)h);
         }
 
