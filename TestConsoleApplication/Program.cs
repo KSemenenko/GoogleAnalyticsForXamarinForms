@@ -10,7 +10,7 @@ namespace TestConsoleApplication
     {
         private static void Main(string[] args)
         {
-            GoogleAnalytics.Current.Config.TrackingId = "UA-78089698-1"; //"UA -11111111-1";
+            GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
             GoogleAnalytics.Current.Config.AppId = "AppID";
             GoogleAnalytics.Current.Config.AppName = "TEST";
             GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
@@ -21,28 +21,28 @@ namespace TestConsoleApplication
 
             try
             {
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
             }
             catch (Exception ex)
             {

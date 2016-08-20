@@ -38,7 +38,6 @@ namespace Plugin.GoogleAnalytics
         public void InitTracker()
         {
             TrackerFactory.Current.InitTracker(Config);
-            //Tracker. 
         }
     }
 }
