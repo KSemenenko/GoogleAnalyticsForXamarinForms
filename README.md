@@ -31,7 +31,7 @@ https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
 GoogleAnalytics.Current.Config.AppId = "AppID";
 GoogleAnalytics.Current.Config.AppName = "TEST";
-GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
+GoogleAnalytics.Current.Config.AppVersion = "1.0.0.0";
 //GoogleAnalytics.Current.Config.Debug = true;
 GoogleAnalytics.Current.InitTracker();
            

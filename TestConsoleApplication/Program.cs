@@ -22,27 +22,7 @@ namespace TestConsoleApplication
             try
             {
                 GoogleAnalytics.Current.Tracker.SendView("");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
-                //GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                GoogleAnalytics.Current.Tracker.SendView("MainPage");
             }
             catch (Exception ex)
             {

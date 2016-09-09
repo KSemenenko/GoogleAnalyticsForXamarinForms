@@ -13,11 +13,20 @@ namespace TestFormsApp
     {
         public App()
         {
-            GAServiceManager.Current.PayloadSent += delegate(object s, PayloadSentEventArgs ev) { Debug.WriteLine($"Payload sent! Response:\n{ev.Response}"); };
+            GAServiceManager.Current.PayloadSent += delegate(object s, PayloadSentEventArgs ev)
+            {
+                Debug.WriteLine($"Payload sent! Response:\n{ev.Response}");
+            };
 
-            GAServiceManager.Current.PayloadFailed += delegate(object s, PayloadFailedEventArgs ev) { Debug.WriteLine($"Payload Failed! Error: {ev.Error}"); };
+            GAServiceManager.Current.PayloadFailed += delegate(object s, PayloadFailedEventArgs ev)
+            {
+                Debug.WriteLine($"Payload Failed! Error: {ev.Error}");
+            };
 
-            GAServiceManager.Current.PayloadMalformed += delegate(object s, PayloadMalformedEventArgs ev) { Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}"); };
+            GAServiceManager.Current.PayloadMalformed += delegate(object s, PayloadMalformedEventArgs ev)
+            {
+                Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}");
+            };
 
             B_Clicked(null, null);
             var button = new Button();
@@ -48,7 +57,7 @@ namespace TestFormsApp
             GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
             GoogleAnalytics.Current.Config.AppId = "AppID";
             GoogleAnalytics.Current.Config.AppName = "TEST";
-            GoogleAnalytics.Current.Config.AppInstallerId = Guid.NewGuid().ToString();
+            GoogleAnalytics.Current.Config.AppVersion = "1.0.0.0";
             GoogleAnalytics.Current.Config.Debug = true;
             GoogleAnalytics.Current.InitTracker();
 
