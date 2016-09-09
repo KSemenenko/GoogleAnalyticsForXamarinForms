@@ -19,8 +19,6 @@ namespace Plugin.GoogleAnalytics
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
 
             GoogleAnalyticsFolder = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), GoogleAnalyticsFolder);
-
-
         }
 
         public string Id
@@ -63,19 +61,19 @@ namespace Plugin.GoogleAnalytics
         {
             var appId = "";
 
-            if (!string.IsNullOrEmpty(prefix))
+            if(!string.IsNullOrEmpty(prefix))
             {
                 appId += prefix;
             }
 
             appId += Guid.NewGuid().ToString();
 
-            if (usingPhoneId)
+            if(usingPhoneId)
             {
                 appId += Id;
             }
 
-            if (!string.IsNullOrEmpty(suffix))
+            if(!string.IsNullOrEmpty(suffix))
             {
                 appId += suffix;
             }
@@ -85,7 +83,7 @@ namespace Plugin.GoogleAnalytics
 
         public string ReadFile(string path)
         {
-            if (!File.Exists(Path.Combine(GoogleAnalyticsFolder, path)))
+            if(!File.Exists(Path.Combine(GoogleAnalyticsFolder, path)))
             {
                 return string.Empty;
             }
@@ -95,7 +93,7 @@ namespace Plugin.GoogleAnalytics
 
         public void WriteFile(string path, string content)
         {
-            if (!Directory.Exists(GoogleAnalyticsFolder))
+            if(!Directory.Exists(GoogleAnalyticsFolder))
             {
                 Directory.CreateDirectory(GoogleAnalyticsFolder);
             }

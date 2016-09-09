@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Plugin.GoogleAnalytics;
 using Xamarin.Forms;
 
@@ -12,20 +13,11 @@ namespace TestFormsApp
     {
         public App()
         {
-            GAServiceManager.Current.PayloadSent += delegate (object s, PayloadSentEventArgs ev)
-            {
-                Debug.WriteLine($"Payload sent! Response:\n{ev.Response}");
-            };
+            GAServiceManager.Current.PayloadSent += delegate(object s, PayloadSentEventArgs ev) { Debug.WriteLine($"Payload sent! Response:\n{ev.Response}"); };
 
-            GAServiceManager.Current.PayloadFailed += delegate (object s, PayloadFailedEventArgs ev)
-            {
-                Debug.WriteLine($"Payload Failed! Error: {ev.Error}");
-            };
+            GAServiceManager.Current.PayloadFailed += delegate(object s, PayloadFailedEventArgs ev) { Debug.WriteLine($"Payload Failed! Error: {ev.Error}"); };
 
-            GAServiceManager.Current.PayloadMalformed += delegate (object s, PayloadMalformedEventArgs ev)
-            {
-                Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}");
-            };
+            GAServiceManager.Current.PayloadMalformed += delegate(object s, PayloadMalformedEventArgs ev) { Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}"); };
 
             B_Clicked(null, null);
             var button = new Button();
@@ -53,7 +45,6 @@ namespace TestFormsApp
 
         private void B_Clicked(object sender, EventArgs e)
         {
-
             GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
             GoogleAnalytics.Current.Config.AppId = "AppID";
             GoogleAnalytics.Current.Config.AppName = "TEST";

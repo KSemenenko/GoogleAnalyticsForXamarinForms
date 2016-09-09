@@ -12,7 +12,7 @@ namespace Plugin.GoogleAnalytics
             UserAgent = device.UserAgent;
             ViewPortResolution = device.ViewPortResolution;
             Version = device.VersionNumber;
-			GetAnonymousClientId(device);
+            GetAnonymousClientId(device);
         }
     }
 }

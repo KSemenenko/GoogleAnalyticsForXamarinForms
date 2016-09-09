@@ -18,7 +18,7 @@ namespace Plugin.GoogleAnalytics
         {
             this.serviceManager = serviceManager;
 
-            if (string.IsNullOrEmpty(serviceManager.UserAgent))
+            if(string.IsNullOrEmpty(serviceManager.UserAgent))
             {
                 serviceManager.UserAgent = platformInfoProvider.UserAgent;
             }
@@ -33,7 +33,7 @@ namespace Plugin.GoogleAnalytics
                 ScreenResolution = platformInfoProvider.ScreenResolution,
                 UserAgentOverride = platformInfoProvider.UserAgent,
                 UserLanguage = platformInfoProvider.UserLanguage,
-                ViewportSize = platformInfoProvider.ViewPortResolution,                
+                ViewportSize = platformInfoProvider.ViewPortResolution,
                 //DocumentEncoding = platformInfoProvider.DocumentEncoding,
             };
 
@@ -347,7 +347,7 @@ namespace Plugin.GoogleAnalytics
         public void SendTransactionItem(TransactionItem transactionItem)
         {
             platformInfoProvider.OnTracking(); // give platform info provider a chance to refresh.
-            var payload = engine.TrackTransactionItem(transactionItem.TransactionId, transactionItem.Name, (double)transactionItem.PriceInMicros / 1000000, transactionItem.Quantity,
+            var payload = engine.TrackTransactionItem(transactionItem.TransactionId, transactionItem.Name, (double)transactionItem.PriceInMicros/1000000, transactionItem.Quantity,
                 transactionItem.SKU, transactionItem.Category, transactionItem.CurrencyCode, SessionControl);
             SendPayload(payload);
         }
@@ -355,14 +355,14 @@ namespace Plugin.GoogleAnalytics
         private IEnumerable<Payload> TrackTransaction(Transaction transaction, SessionControl sessionControl = SessionControl.None, bool isNonInteractive = false)
         {
             yield return
-                engine.TrackTransaction(transaction.TransactionId, transaction.Affiliation, (double)transaction.TotalCostInMicros / 1000000,
-                    (double)transaction.ShippingCostInMicros / 1000000, (double)transaction.TotalTaxInMicros / 1000000, transaction.CurrencyCode, sessionControl,
+                engine.TrackTransaction(transaction.TransactionId, transaction.Affiliation, (double)transaction.TotalCostInMicros/1000000,
+                    (double)transaction.ShippingCostInMicros/1000000, (double)transaction.TotalTaxInMicros/1000000, transaction.CurrencyCode, sessionControl,
                     isNonInteractive);
 
             foreach(var item in transaction.Items)
             {
                 yield return
-                    engine.TrackTransactionItem(transaction.TransactionId, item.Name, (double)item.PriceInMicros / 1000000, item.Quantity, item.SKU, item.Category,
+                    engine.TrackTransactionItem(transaction.TransactionId, item.Name, (double)item.PriceInMicros/1000000, item.Quantity, item.SKU, item.Category,
                         transaction.CurrencyCode, sessionControl, isNonInteractive);
             }
         }
@@ -394,7 +394,6 @@ namespace Plugin.GoogleAnalytics
                     serviceManager.SendPayload(payload);
                 }
             }
-            
         }
 
         private bool IsSampledOut()
@@ -406,7 +405,7 @@ namespace Plugin.GoogleAnalytics
             if(SampleRate < 100.0F)
             {
                 var clientId = platformInfoProvider.AnonymousClientId;
-                return ((clientId != null) && (Math.Abs(clientId.GetHashCode()) % 10000 >= SampleRate * 100.0F));
+                return ((clientId != null) && (Math.Abs(clientId.GetHashCode())%10000 >= SampleRate*100.0F));
             }
             return false;
         }

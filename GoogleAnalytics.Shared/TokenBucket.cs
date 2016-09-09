@@ -36,7 +36,7 @@ namespace Plugin.GoogleAnalytics
             var now = DateTime.Now;
             if(tokens < capacity)
             {
-                var delta = fillRate * (now - timeStamp).TotalSeconds;
+                var delta = fillRate*(now - timeStamp).TotalSeconds;
                 tokens = Math.Min(capacity, tokens + delta);
                 timeStamp = now;
             }

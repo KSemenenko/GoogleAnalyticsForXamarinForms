@@ -113,6 +113,7 @@
       <Link>GoogleAnalytics.cs</Link>
     </Compile>
     <Compile Include="DeviceInfo.cs" />
+    <Compile Include="GoogleAnalyticsPlatform.cs" />
     <Compile Include="PlatformInfoProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\..\GoogleAnalytics.Shared\Properties\SharedAssemblyInfo.cs">

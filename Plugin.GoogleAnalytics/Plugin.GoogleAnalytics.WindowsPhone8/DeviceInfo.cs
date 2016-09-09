@@ -14,12 +14,12 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
-
         private const string GoogleAnalyticsFolder = "ga-store";
 
         public DeviceInfo()
         {
-            UserAgent = $"Mozilla/5.0 (Windows Phone {Environment.OSVersion} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {DeviceStatus.DeviceManufacturer}; {DeviceStatus.DeviceName}) like Gecko";
+            UserAgent =
+                $"Mozilla/5.0 (Windows Phone {Environment.OSVersion} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {DeviceStatus.DeviceManufacturer}; {DeviceStatus.DeviceName}) like Gecko";
 
             var w = Application.Current.Host.Content.ActualWidth;
             var h = Application.Current.Host.Content.ActualHeight;
@@ -114,7 +114,7 @@ namespace Plugin.GoogleAnalytics
 
             return appId;
         }
-        
+
         public string ReadFile(string path)
         {
             var result = ReadFileAsync(path).Result;
@@ -144,11 +144,9 @@ namespace Plugin.GoogleAnalytics
                 {
                     return streamReader.ReadToEnd();
                 }
-
             }
 
             return string.Empty;
-
         }
 
         public async Task WriteFileAsync(string path, string content)
@@ -170,7 +168,6 @@ namespace Plugin.GoogleAnalytics
             {
                 s.Write(fileBytes, 0, fileBytes.Length);
             }
-
         }
     }
 }

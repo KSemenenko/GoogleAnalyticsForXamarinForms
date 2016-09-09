@@ -1,15 +1,16 @@
 ﻿using Plugin.GoogleAnalytics.Abstractions;
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace Plugin.GoogleAnalytics
 {
     /// <summary>
     /// Cross platform Plugin.GoogleAnalytics implemenations
     /// </summary>
-    public class GoogleAnalytics
+    public partial class GoogleAnalytics
     {
-        private static readonly Lazy<IGoogleAnalytics> Implementation = 
+        private static readonly Lazy<IGoogleAnalytics> Implementation =
             new Lazy<IGoogleAnalytics>(CreatePluginGoogleAnalytics, System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
@@ -20,7 +21,7 @@ namespace Plugin.GoogleAnalytics
             get
             {
                 var ret = Implementation.Value;
-                if (ret == null)
+                if(ret == null)
                 {
                     throw NotImplementedInReferenceAssembly();
                 }
@@ -42,4 +43,3 @@ namespace Plugin.GoogleAnalytics
         }
     }
 }
-

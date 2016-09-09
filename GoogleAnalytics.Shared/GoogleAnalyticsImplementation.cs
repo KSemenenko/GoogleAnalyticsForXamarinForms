@@ -22,17 +22,13 @@ namespace Plugin.GoogleAnalytics
 
         public ITrackerConfig Config
         {
-            get { return StaticConfig; } 
+            get { return StaticConfig; }
             set { StaticConfig = value; }
         }
 
         public ITracker Tracker
         {
-            get
-            {
-                return TrackerFactory.Current.GetTracker();
-            }
-
+            get { return TrackerFactory.Current.GetTracker(); }
         }
 
         public void InitTracker()

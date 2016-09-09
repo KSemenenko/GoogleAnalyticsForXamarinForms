@@ -11,7 +11,7 @@ namespace Plugin.GoogleAnalytics
         private void GetAnonymousClientId(IDeviceInfo deviceInfo)
         {
             var id = deviceInfo.ReadFile(AnonymousIdFileName);
-            if (string.IsNullOrEmpty(id))
+            if(string.IsNullOrEmpty(id))
             {
                 id = Guid.NewGuid().ToString("D");
                 deviceInfo.WriteFile(AnonymousIdFileName, id);
@@ -27,7 +27,6 @@ namespace Plugin.GoogleAnalytics
 
         public void OnTracking()
         {
-
 #if DEBUG
             System.Diagnostics.Debug.WriteLine("GoogleAnalytics: Track.");
 #endif

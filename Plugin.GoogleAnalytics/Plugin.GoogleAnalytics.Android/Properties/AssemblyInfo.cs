@@ -4,4 +4,3 @@ using System.Runtime.InteropServices;
 using Android.App;
 
 [assembly: ComVisible(false)]
-

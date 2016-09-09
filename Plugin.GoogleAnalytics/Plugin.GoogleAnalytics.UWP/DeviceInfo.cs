@@ -26,7 +26,7 @@ namespace Plugin.GoogleAnalytics
 
             var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
             var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-            var size = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
+            var size = new Size(bounds.Width*scaleFactor, bounds.Height*scaleFactor);
             Display = new Dimensions(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
 
             UserAgent = string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
@@ -120,7 +120,7 @@ namespace Plugin.GoogleAnalytics
 
         public string ReadFile(string path)
         {
-            if (!File.Exists(Path.Combine(GoogleAnalyticsFolder, path)))
+            if(!File.Exists(Path.Combine(GoogleAnalyticsFolder, path)))
             {
                 return string.Empty;
             }
@@ -130,7 +130,7 @@ namespace Plugin.GoogleAnalytics
 
         public void WriteFile(string path, string content)
         {
-            if (!Directory.Exists(GoogleAnalyticsFolder))
+            if(!Directory.Exists(GoogleAnalyticsFolder))
             {
                 Directory.CreateDirectory(GoogleAnalyticsFolder);
             }
