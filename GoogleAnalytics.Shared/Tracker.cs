@@ -290,7 +290,7 @@ namespace Plugin.GoogleAnalytics
 
         public void SendException(Exception exception, bool isFatal)
         {
-            SendException(string.Format("{0};{3}{1};{3}{2};", exception.Message, exception.StackTrace, exception.Source, Environment.NewLine), isFatal);
+            SendException($"{exception.Message};{Environment.NewLine}StackTrace: {exception.StackTrace};{Environment.NewLine}Source: {exception.Source};", isFatal);
         }
 
         public void SendSocial(string network, string action, string target)
