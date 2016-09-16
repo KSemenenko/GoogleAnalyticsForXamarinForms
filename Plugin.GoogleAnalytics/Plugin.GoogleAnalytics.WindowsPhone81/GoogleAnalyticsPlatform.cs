@@ -1,4 +1,4 @@
-using System;
+using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
 namespace Plugin.GoogleAnalytics
@@ -13,6 +13,7 @@ namespace Plugin.GoogleAnalytics
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             Current.Tracker.SendException(e.Exception, true);
+            Task.Delay(1000).Wait(); //delay
         }
     }
 }

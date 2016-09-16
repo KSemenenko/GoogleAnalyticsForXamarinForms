@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C62DCE55-400E-4C30-8DF6-DC06AB245A94}"
 EndProject
@@ -54,20 +54,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.GoogleAnalytics.Wind
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{877717d9-b9da-4ba3-9ccf-b93e4604708c}*SharedItemsImports = 4
-		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{56a56f17-7de1-4ca1-9617-bf32e971ac84}*SharedItemsImports = 4
-		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{e34b516d-c0d8-450f-9db0-bb6a5b04aef1}*SharedItemsImports = 4
-		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{b3410225-5a68-4d54-9f8b-73d59d5c6114}*SharedItemsImports = 4
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{2882aeeb-d4cd-4eb9-8a6c-6653b33681f0}*SharedItemsImports = 4
-		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{5876144b-47dd-4c4e-b421-bc03f191b996}*SharedItemsImports = 4
-		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{e9d795f1-81a3-4761-9532-cf4ec3501f60}*SharedItemsImports = 13
-		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{d8b57bca-47fc-473b-9c1d-53904932c580}*SharedItemsImports = 4
-		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{fc352096-fdd3-4954-859c-d0e532d3d646}*SharedItemsImports = 4
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{2be19bda-c26e-4c6e-8b27-148ea06d2266}*SharedItemsImports = 13
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{2d4e302b-5f6a-4eca-9e2d-681b9dd64d84}*SharedItemsImports = 4
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{56a56f17-7de1-4ca1-9617-bf32e971ac84}*SharedItemsImports = 4
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{5876144b-47dd-4c4e-b421-bc03f191b996}*SharedItemsImports = 4
 		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{5f2506ea-00bd-4542-960e-5aa21b14f490}*SharedItemsImports = 4
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{7169373f-0b82-4e5d-9129-7cc3065b90fa}*SharedItemsImports = 4
-		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}*SharedItemsImports = 4
+		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{877717d9-b9da-4ba3-9ccf-b93e4604708c}*SharedItemsImports = 4
 		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}*SharedItemsImports = 4
+		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{b3410225-5a68-4d54-9f8b-73d59d5c6114}*SharedItemsImports = 4
+		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{d8b57bca-47fc-473b-9c1d-53904932c580}*SharedItemsImports = 4
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{e34b516d-c0d8-450f-9db0-bb6a5b04aef1}*SharedItemsImports = 4
+		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{e9d795f1-81a3-4761-9532-cf4ec3501f60}*SharedItemsImports = 13
+		GoogleAnalytics.Shared\GoogleAnalytics.Shared.projitems*{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}*SharedItemsImports = 4
+		TestFormsApp\TestFormsApp\TestFormsApp.projitems*{fc352096-fdd3-4954-859c-d0e532d3d646}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

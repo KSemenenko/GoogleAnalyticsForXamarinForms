@@ -27,7 +27,7 @@ namespace TestFormsApp
                 Debug.WriteLine($"Payload Malformed! HttpStatusCode: {ev.HttpStatusCode}");
             };
 
-            B_Clicked(null, null);
+           // B_Clicked(null, null);
             var button = new Button();
             button.Text = "ClickMe";
             button.Clicked += B_Clicked;
@@ -69,6 +69,8 @@ namespace TestFormsApp
             {
                 int a = 5;
             }
+
+            throw  new Exception("ex");
         }
 
         protected override void OnStart()

@@ -1,7 +1,6 @@
 using System;
+using System.Threading;
 using Android.Runtime;
-using Plugin.GoogleAnalytics.Abstractions;
-using Plugin.GoogleAnalytics.Abstractions.Model;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -15,7 +14,8 @@ namespace Plugin.GoogleAnalytics
 
         private static void AndroidEnvironment_UnhandledExceptionRaiser(object sender, RaiseThrowableEventArgs e)
         {
-            Current.Tracker.SendException(e.Exception as Exception, true);
+            Current.Tracker.SendException(e.Exception, true);
+            Thread.Sleep(1000); //delay
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
