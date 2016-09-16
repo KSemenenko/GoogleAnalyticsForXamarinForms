@@ -17,7 +17,7 @@ https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 |Xamarin.iOS|Partial|iOS 6+|
 |Xamarin.iOS Unified|Yes|iOS 6+|
 |Xamarin.Android|Yes|API 10+|
-|Windows Phone 8|Partial|8.0+|
+|Windows Phone 8|Yes|8.0+|
 |Windows Phone 8.1|Yes|8.1+|
 |Windows Store|Yes|8.1+|
 |Windows 10 UWP|Yes|10+|
