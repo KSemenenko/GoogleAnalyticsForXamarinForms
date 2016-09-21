@@ -24,11 +24,10 @@ namespace TestConsoleApplication
                 GoogleAnalytics.Current.Tracker.SendView("");
                 GoogleAnalytics.Current.Tracker.SendView("MainPage");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 int a = 5;
             }
-
 
             Console.ReadLine();
         }

@@ -30,7 +30,6 @@ namespace TestFormsApp.WinPhone
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
             LoadApplication(new TestFormsApp.App());
-
         }
 
         /// <summary>
