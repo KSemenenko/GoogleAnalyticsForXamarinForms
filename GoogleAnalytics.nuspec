@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.3">
     <id>ksemenenko.GoogleAnalytics</id>
-    <version>1.0.1.3</version>
+    <version>1.0.1.4</version>
     <title>GoogleAnalytics Plugin for Xamarin and Windows</title>
     <authors>ksemenenko</authors>
     <owners>ksemenenko</owners>
     <licenseUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms</projectUrl>
-    <!--<iconUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms/icons/plugin_icon_nuget.png</iconUrl>-->
+    <iconUrl>https://raw.githubusercontent.com/KSemenenko/GoogleAnalyticsForXamarinForms/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       This project is a cross platform library for Xamarin, which enables a handy use of Google Analytics in your applications.
