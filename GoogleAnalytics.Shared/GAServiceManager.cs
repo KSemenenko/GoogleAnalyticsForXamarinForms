@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -278,7 +279,12 @@ namespace Plugin.GoogleAnalytics
 
         private HttpClient GetHttpClient()
         {
-            var result = new HttpClient();
+            var handler = new HttpClientHandler
+            {
+                UseCookies = true,
+                UseProxy = true
+            };
+            var result = new HttpClient(handler);
             if(!string.IsNullOrEmpty(UserAgent))
             {
                 result.DefaultRequestHeaders.UserAgent.ParseAdd(UserAgent);

@@ -29,7 +29,7 @@
       <group targetFramework="win8">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
       </group>
-    <group targetFramework="portable-net45">
+	  <group targetFramework="portable-net45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
       </group>
     <group targetFramework="MonoAndroid10"/>
