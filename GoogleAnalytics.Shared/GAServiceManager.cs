@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Plugin.GoogleAnalytics.Abstractions;
@@ -281,7 +282,9 @@ namespace Plugin.GoogleAnalytics
         {
             var handler = new HttpClientHandler
             {
-                UseCookies = true,
+#if !(SILVERLIGHT || PORTABLE)
+                Proxy = WebRequest.DefaultWebProxy,                
+#endif
                 UseProxy = true
             };
             var result = new HttpClient(handler);
