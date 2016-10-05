@@ -9,8 +9,8 @@ using Windows.System.Profile;
 using Windows.UI.ViewManagement;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
-using System.IO;
 using Windows.ApplicationModel;
+using Windows.Storage;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -120,21 +120,25 @@ namespace Plugin.GoogleAnalytics
 
         public string ReadFile(string path)
         {
-            if(!File.Exists(Path.Combine(GoogleAnalyticsFolder, path)))
+            try
+            {
+                var folder = ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] as string;
+
+                if (!string.IsNullOrEmpty(folder))
+                {
+                    return folder;
+                }
+                return string.Empty;
+            }
+            catch
             {
                 return string.Empty;
             }
-
-            return File.ReadAllText(Path.Combine(GoogleAnalyticsFolder, path));
         }
 
         public void WriteFile(string path, string content)
         {
-            if(!Directory.Exists(GoogleAnalyticsFolder))
-            {
-                Directory.CreateDirectory(GoogleAnalyticsFolder);
-            }
-            File.WriteAllText(Path.Combine(GoogleAnalyticsFolder, path), content);
+            ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] = content;
         }
     }
 }

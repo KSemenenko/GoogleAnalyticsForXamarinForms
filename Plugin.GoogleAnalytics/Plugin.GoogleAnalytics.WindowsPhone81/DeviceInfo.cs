@@ -122,17 +122,6 @@ namespace Plugin.GoogleAnalytics
 
         public string ReadFile(string path)
         {
-            var result = ReadFileAsync(path);
-            return result;
-        }
-
-        public void WriteFile(string path, string content)
-        {
-            WriteFileAsync(path, content);
-        }
-
-        public string ReadFileAsync(string path)
-        {
             try
             {
                 var folder = ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] as string;
@@ -149,7 +138,7 @@ namespace Plugin.GoogleAnalytics
             }
         }
 
-        public void WriteFileAsync(string path, string content)
+        public void WriteFile(string path, string content)
         {
             ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] = content;
         }
