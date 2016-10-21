@@ -64,13 +64,16 @@ namespace TestFormsApp
             {
                 GoogleAnalytics.Current.Tracker.SendView("MainPage");
                 GoogleAnalytics.Current.Tracker.SendException(new Exception("oops"), false);
+
+                var t = GoogleAnalytics.Current.Tracker;
+                
             }
             catch(Exception ex)
             {
                 int a = 5;
             }
 
-            throw  new Exception("ex");
+          //  throw  new Exception("ex");
         }
 
         protected override void OnStart()
