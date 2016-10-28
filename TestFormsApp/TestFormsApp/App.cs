@@ -14,7 +14,7 @@ namespace TestFormsApp
         {
             GAServiceManager.Current.PayloadSent += delegate (object s, PayloadSentEventArgs ev)
             {
-                Debug.WriteLine($"Payload sent! Response:\n{ev.Response}");
+                Debug.WriteLine($"Payload sent! Response:{ev.Response}");
             };
 
             GAServiceManager.Current.PayloadFailed += delegate (object s, PayloadFailedEventArgs ev)
@@ -62,17 +62,42 @@ namespace TestFormsApp
 
             try
             {
+                Debug.WriteLine("Start" );
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
                 GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                sw.Stop();
+                Debug.WriteLine("SendView: " + sw.Elapsed);
+                sw.Restart();
                 GoogleAnalytics.Current.Tracker.SendException(new Exception("oops"), false);
+                sw.Stop();
+                Debug.WriteLine("SendException: " + sw.Elapsed);
 
                 var t = GoogleAnalytics.Current.Tracker;
 
-
+                sw.Restart();
                 Exception exe1  = new Exception("1");
-                Exception exe2 = new Exception("2",exe1);
+                Exception exe2 = new Exception("2", exe1);
                 Exception exe3 = new Exception("3", exe2);
                 GoogleAnalytics.Current.Tracker.SendException(exe3, false);
+                sw.Stop();
+                Debug.WriteLine("SendException and Inner: " + sw.Elapsed);
+                sw.Reset();
 
+                try
+                {
+                    sw.Start();
+                    GoogleAnalytics.Current.Tracker.SendView("MainPage");
+                    GoogleAnalytics.Current.Tracker.SendEvent("EventCategory1", "Error1");
+                    string s = null;
+                    string a = s.Substring(2);
+                }
+                catch (Exception ex)
+                {
+                    GoogleAnalytics.Current.Tracker.SendException(ex, false);
+                    sw.Stop();
+                    Debug.WriteLine("SendException from catch: " + sw.Elapsed);
+                }
 
             }
             catch(Exception ex)
