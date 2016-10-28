@@ -66,7 +66,14 @@ namespace TestFormsApp
                 GoogleAnalytics.Current.Tracker.SendException(new Exception("oops"), false);
 
                 var t = GoogleAnalytics.Current.Tracker;
-                
+
+
+                Exception exe1  = new Exception("1");
+                Exception exe2 = new Exception("2",exe1);
+                Exception exe3 = new Exception("3", exe2);
+                GoogleAnalytics.Current.Tracker.SendException(exe3, false);
+
+
             }
             catch(Exception ex)
             {

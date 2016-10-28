@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 
@@ -290,8 +291,36 @@ namespace Plugin.GoogleAnalytics
 
         public void SendException(Exception exception, bool isFatal)
         {
-            SendException($"{exception.Message};{Environment.NewLine}StackTrace: {exception.StackTrace};{Environment.NewLine}Source: {exception.Source};", isFatal);
+            SendException("Exception: " + GetExceptionMessage(exception), isFatal);
         }
+
+        private string GetInnerMessage(Exception exception, int depth = 0)
+        {
+            return GetExceptionMessage(exception);
+        }
+
+        private string GetExceptionMessage(Exception exception)
+        {
+            string exceptionMessage = Environment.NewLine + "  Message: " + exception.Message + "; ";
+
+            if (!string.IsNullOrEmpty(exception.StackTrace))
+            {
+                exceptionMessage += Environment.NewLine + "  StackTrace: " + exception.StackTrace + "; ";
+            }
+
+            if (!string.IsNullOrEmpty(exception.Source))
+            {
+                exceptionMessage += Environment.NewLine + "  Source: " + exception.Source + "; ";
+            }
+
+            if (exception.InnerException != null)
+            {
+                exceptionMessage += Environment.NewLine + "  InnerException: " + GetInnerMessage(exception.InnerException) + "; ";
+            }
+
+            return exceptionMessage;
+        }
+
 
         public void SendSocial(string network, string action, string target)
         {
