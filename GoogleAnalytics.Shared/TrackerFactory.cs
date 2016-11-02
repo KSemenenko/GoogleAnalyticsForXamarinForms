@@ -76,10 +76,10 @@ namespace Plugin.GoogleAnalytics
                 firstRun = false;
                 if (analyticsEngine.PlatformInfoProvider.IsInstall)
                 {
-                    tracker.SendEvent(Config.ServiceCategoryName, Config.InstallMessage, Config.AppVersion);
+                    tracker.SendEvent(Config.ServiceCategoryName, Config.InstallMessage, "v."+Config.AppVersion);
                 }
 
-                tracker.SendEvent(Config.ServiceCategoryName, Config.StartMessage, Config.AppVersion);
+                tracker.SendEvent(Config.ServiceCategoryName, Config.StartMessage, "v." + Config.AppVersion);
                 
             }
 
