@@ -9,6 +9,7 @@ namespace Plugin.GoogleAnalytics
     {
         private static TrackerFactory current;
         private static Tracker tracker;
+        private static bool firstRun= true;
 
         public TrackerFactory()
         {
@@ -17,7 +18,8 @@ namespace Plugin.GoogleAnalytics
 
         public TrackerFactory(ITrackerConfig config)
         {
-            InitTracker(config);
+            Config = config;
+            InitTracker(Config);
         }
 
         public Uri ConfigPath { get; set; }
@@ -68,6 +70,20 @@ namespace Plugin.GoogleAnalytics
             tracker.IsAnonymizeIpEnabled = Config.AnonymizeIp;
             tracker.SampleRate = Config.SampleFrequency;
             tracker.IsDebug = Config.Debug;
+
+            if(firstRun)
+            {
+                firstRun = false;
+                if (analyticsEngine.PlatformInfoProvider.IsInstall)
+                {
+                    tracker.SendEvent(Config.ServiceCategoryName, Config.InstallMessage, Config.AppVersion);
+                }
+
+                tracker.SendEvent(Config.ServiceCategoryName, Config.StartMessage, Config.AppVersion);
+                
+            }
+
+            
         }
 
         public Task Dispatch()

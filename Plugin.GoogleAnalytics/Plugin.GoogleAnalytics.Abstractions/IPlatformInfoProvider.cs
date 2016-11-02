@@ -13,5 +13,6 @@ namespace Plugin.GoogleAnalytics.Abstractions
         void OnTracking();
         string UserAgent { get; }
         Version Version { get; }
+        bool IsInstall { get; }
     }
 }

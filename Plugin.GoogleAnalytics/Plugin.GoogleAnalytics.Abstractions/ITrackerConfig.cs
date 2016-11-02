@@ -94,5 +94,20 @@ namespace Plugin.GoogleAnalytics.Abstractions
         ///     Validates the configuration and throws an exception is a problem is found.
         /// </summary>
         void Validate();
+
+        /// <summary>
+        ///     Install Event Message
+        /// </summary>
+        string InstallMessage { get; set; }
+
+        /// <summary>
+        ///     App start event Message
+        /// </summary>
+        string StartMessage { get; set; }
+
+        /// <summary>
+        ///     Service Category
+        /// </summary>
+        string ServiceCategoryName { get; set; }
     }
 }

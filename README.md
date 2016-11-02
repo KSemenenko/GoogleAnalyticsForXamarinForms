@@ -33,6 +33,10 @@ GoogleAnalytics.Current.Config.AppId = "AppID";
 GoogleAnalytics.Current.Config.AppName = "TEST";
 GoogleAnalytics.Current.Config.AppVersion = "1.0.0.0";
 //GoogleAnalytics.Current.Config.Debug = true;
+//For tracking install and starts app, you can change default event properties:
+//GoogleAnalytics.Current.Config.ServiceCategoryName = "App";
+//GoogleAnalytics.Current.Config.InstallMessage = "Install";
+//GoogleAnalytics.Current.Config.StartMessage = "Start";
 GoogleAnalytics.Current.InitTracker();
            
 //Track view

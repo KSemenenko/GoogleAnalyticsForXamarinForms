@@ -12,6 +12,9 @@ namespace Plugin.GoogleAnalytics
             SampleFrequency = 100.0F;
             AutoAppLifetimeMonitoring = true;
             AutoTrackNetworkConnectivity = true;
+            InstallMessage = "Install";
+            StartMessage = "Start";
+            ServiceCategoryName = "App";
         }
 
         /// <summary>
@@ -107,5 +110,21 @@ namespace Plugin.GoogleAnalytics
                 throw new ArgumentOutOfRangeException("AutoAppLifetimeTracking cannot be true if AutoAppLifetimeMonitoring is false.");
             }
         }
+
+        /// <summary>
+        ///     Install Event Message
+        /// </summary>
+        public string InstallMessage { get; set; }
+
+        /// <summary>
+        ///     App start event Message
+        /// </summary>
+        public string StartMessage { get; set; }
+
+        /// <summary>
+        ///      Service Category
+        /// </summary>
+        public string ServiceCategoryName { get; set; }
+        
     }
 }

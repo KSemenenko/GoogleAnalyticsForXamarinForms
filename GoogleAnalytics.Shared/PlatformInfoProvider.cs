@@ -7,6 +7,7 @@ namespace Plugin.GoogleAnalytics
     public sealed partial class PlatformInfoProvider : IPlatformInfoProvider
     {
         private const string AnonymousIdFileName = "ga-anonymous-id.guid";
+        private static bool isInstall;
 
         private void GetAnonymousClientId(IDeviceInfo deviceInfo)
         {
@@ -15,6 +16,7 @@ namespace Plugin.GoogleAnalytics
             {
                 id = Guid.NewGuid().ToString("D");
                 deviceInfo.WriteFile(AnonymousIdFileName, id);
+                IsInstall = true;
             }
 
             AnonymousClientId = id;
@@ -36,5 +38,11 @@ namespace Plugin.GoogleAnalytics
         public string UserLanguage { get; set; }
         public Dimensions ScreenResolution { get; set; }
         public Dimensions ViewPortResolution { get; set; }
+
+        public bool IsInstall
+        {
+            get { return isInstall; }
+            set { isInstall = value; }
+        }
     }
 }
