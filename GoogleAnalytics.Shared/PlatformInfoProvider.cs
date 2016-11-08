@@ -50,7 +50,6 @@ namespace Plugin.GoogleAnalytics
             {
                 if(anonymousClientId != value && anonymousClientId != null)
                 {
-                    
                     UpdateAnonymousClientId(value);
                 }
                 anonymousClientId = value;

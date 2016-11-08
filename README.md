@@ -37,6 +37,7 @@ GoogleAnalytics.Current.Config.AppVersion = "1.0.0.0";
 //GoogleAnalytics.Current.Config.ServiceCategoryName = "App";
 //GoogleAnalytics.Current.Config.InstallMessage = "Install";
 //GoogleAnalytics.Current.Config.StartMessage = "Start";
+//GoogleAnalytics.Current.Config.AppInstallerId = "someID"; // for custom installer id
 GoogleAnalytics.Current.InitTracker();
            
 //Track view
