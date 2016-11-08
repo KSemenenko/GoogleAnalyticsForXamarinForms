@@ -8,24 +8,54 @@ namespace Plugin.GoogleAnalytics
     {
         private const string AnonymousIdFileName = "ga-anonymous-id.guid";
         private static bool isInstall;
+        private string anonymousClientId;
 
-        private void GetAnonymousClientId(IDeviceInfo deviceInfo)
+        private readonly IDeviceInfo device;
+        public PlatformInfoProvider(IDeviceInfo deviceInfo)
         {
-            var id = deviceInfo.ReadFile(AnonymousIdFileName);
+            device = deviceInfo;
+            ScreenResolution = device.Display;
+            UserLanguage = device.LanguageCode;
+            UserAgent = device.UserAgent;
+            ViewPortResolution = device.ViewPortResolution;
+            Version = device.VersionNumber;
+            GetAnonymousClientId();
+        }
+        private void GetAnonymousClientId()
+        {
+            var id = device.ReadFile(AnonymousIdFileName);
             if(string.IsNullOrEmpty(id))
             {
                 id = Guid.NewGuid().ToString("D");
-                deviceInfo.WriteFile(AnonymousIdFileName, id);
+                device.WriteFile(AnonymousIdFileName, id);
                 IsInstall = true;
             }
 
             AnonymousClientId = id;
         }
 
+        public void UpdateAnonymousClientId(string newId)
+        {
+            device.WriteFile(AnonymousIdFileName, newId);
+        }
+
         public string UserAgent { get; set; }
 
         public Version Version { get; set; }
-        public string AnonymousClientId { get; set; }
+
+        public string AnonymousClientId
+        {
+            get { return anonymousClientId; }
+            set
+            {
+                if(anonymousClientId != value && anonymousClientId != null)
+                {
+                    
+                    UpdateAnonymousClientId(value);
+                }
+                anonymousClientId = value;
+            }
+        }
 
         public void OnTracking()
         {

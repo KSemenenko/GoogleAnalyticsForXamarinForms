@@ -8,7 +8,7 @@ namespace Plugin.GoogleAnalytics
     {
         static GoogleAnalyticsImplementation()
         {
-            StaticConfig = new TrackerConfig();
+            StaticConfig = new TrackerConfig(new PlatformInfoProvider());
         }
 
         public GoogleAnalyticsImplementation()

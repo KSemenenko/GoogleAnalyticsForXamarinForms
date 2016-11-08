@@ -44,6 +44,7 @@ namespace TestFormsApp
             GoogleAnalytics.Current.Config.TrackingId = "UA-11111111-1";
             GoogleAnalytics.Current.Config.AppId = "AppID";
             GoogleAnalytics.Current.Config.AppName = "TEST";
+            GoogleAnalytics.Current.Config.AppInstallerId = "someID";
             //GoogleAnalytics.Current.Config.Debug = true;
             GoogleAnalytics.Current.InitTracker();
 

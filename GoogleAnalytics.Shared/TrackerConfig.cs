@@ -5,7 +5,9 @@ namespace Plugin.GoogleAnalytics
 {
     public sealed class TrackerConfig : ITrackerConfig
     {
-        public TrackerConfig()
+        private IPlatformInfoProvider platformInfoProvider;
+        
+        public TrackerConfig(IPlatformInfoProvider provider)
         {
             SessionTimeout = TimeSpan.FromSeconds(30);
             DispatchPeriod = TimeSpan.Zero;
@@ -15,6 +17,7 @@ namespace Plugin.GoogleAnalytics
             InstallMessage = "Install";
             StartMessage = "Start";
             ServiceCategoryName = "App";
+            platformInfoProvider = provider;
         }
 
         /// <summary>
@@ -42,7 +45,14 @@ namespace Plugin.GoogleAnalytics
         /// <summary>
         ///     Application installer identifier.
         /// </summary>
-        public string AppInstallerId { get; set; }
+        public string AppInstallerId
+        {
+            get { return platformInfoProvider.AnonymousClientId; }
+            set
+            {
+                platformInfoProvider.AnonymousClientId = value;
+            }
+        }
 
         /// <summary>
         ///     Flag to enable or writing of debug information to the log, useful for troubleshooting your implementation. false by
