@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.3">
     <id>ksemenenko.GoogleAnalytics</id>
-    <version>1.0.2.3</version>
+    <version>1.0.2.4</version>
     <title>GoogleAnalytics Plugin for Xamarin and Windows</title>
     <authors>ksemenenko</authors>
     <owners>ksemenenko</owners>
@@ -29,13 +29,15 @@
       <group targetFramework="win8">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
       </group>
-    <group targetFramework="portable-net45">
+      <group targetFramework="portable-net45">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
       </group>
-      <!--<group targetFramework="MonoAndroid10"/>
-    <group targetFramework="XamariniOS10"/>
-    <group targetFramework="XamarinMac20"/>
-    <group targetFramework="MonoTouch"/>-->
+      <group targetFramework="XamariniOS10">
+        <dependency id="modernhttpclient" version="2.4.2" />
+      </group>
+      <group targetFramework="MonoAndroid10">
+        <dependency id="modernhttpclient" version="2.4.2" />
+      </group>
     </dependencies>
   </metadata>
   <files>
