@@ -31,7 +31,11 @@ namespace Plugin.GoogleAnalytics
 
         private static IGoogleAnalytics CreatePluginGoogleAnalytics()
         {
+#if PORTABLE
+            return null;
+#else
             return new GoogleAnalyticsImplementation();
+#endif
         }
 
         static Exception NotImplementedInReferenceAssembly()
