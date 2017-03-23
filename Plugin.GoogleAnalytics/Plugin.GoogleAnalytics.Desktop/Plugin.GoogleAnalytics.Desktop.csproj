@@ -7,8 +7,8 @@
     <ProjectGuid>{96CBCAE8-32A3-41CD-9371-4D775499863D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Plugin.GoogleAnalytics.Desktop</RootNamespace>
-    <AssemblyName>Plugin.GoogleAnalytics.Desktop</AssemblyName>
+    <RootNamespace>Plugin.GoogleAnalytics</RootNamespace>
+    <AssemblyName>Plugin.GoogleAnalytics</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,6 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Plugin.GoogleAnalytics.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

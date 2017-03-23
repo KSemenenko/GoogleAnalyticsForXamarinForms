@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.3">
     <id>ksemenenko.GoogleAnalytics</id>
-    <version>1.0.2.5</version>
+    <version>1.0.2.8</version>
     <title>GoogleAnalytics Plugin for Xamarin and Windows</title>
     <authors>ksemenenko</authors>
     <owners>ksemenenko</owners>
@@ -14,7 +14,7 @@
     <description>
       This project is a cross platform library for Xamarin, which enables a handy use of Google Analytics in your applications.
     </description>
-    <summary>App Version Tracking Plugin for Xamarin and Windows</summary>
+    <summary>Google Analytics Plugin for Xamarin and Windows</summary>
     <tags>xamarin, google analytics, analytics, pcl, plugin, plugin for xamarin, windows phone, uwp, winphone, wp8, winrt, android, xamarin.forms, ios, mac, version</tags>
     <dependencies>
       <group targetFramework="UAP10">
@@ -43,13 +43,12 @@
   <files>
     
     <!--Portable net45 -->
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\net45\Plugin.GoogleAnalytics.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\net45\Plugin.GoogleAnalytics.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\net45\Plugin.GoogleAnalytics.pdb" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Desktop\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\net45\Plugin.GoogleAnalytics.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Desktop\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\net45\Plugin.GoogleAnalytics.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Desktop\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\net45\Plugin.GoogleAnalytics.pdb" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\net45\Plugin.GoogleAnalytics.Abstractions.dll" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\net45\Plugin.GoogleAnalytics.Abstractions.xml" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\net45\Plugin.GoogleAnalytics.Abstractions.pdb" />
-
 
     <!-- Core -->                                                                                              
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.dll" />
@@ -59,14 +58,6 @@
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.xml" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.pdb" />
     
-    <!--Portable Profile78 -->                                                                                              
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\portable-net45+win8+wp8\Plugin.GoogleAnalytics.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\portable-net45+win8+wp8\Plugin.GoogleAnalytics.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\portable-net45+win8+wp8\Plugin.GoogleAnalytics.pdb" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\portable-net45+win8+wp8\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\portable-net45+win8+wp8\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\portable-net45+win8+wp8\Plugin.GoogleAnalytics.Abstractions.pdb" />
-
     <!--WP8-->
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone8\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\wp8\Plugin.GoogleAnalytics.dll" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.WindowsPhone8\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\wp8\Plugin.GoogleAnalytics.xml" />

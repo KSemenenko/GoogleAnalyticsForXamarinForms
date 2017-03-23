@@ -15,7 +15,9 @@ namespace Plugin.GoogleAnalytics
 
         public DeviceInfo()
         {
-            UserAgent = $"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT {Environment.OSVersion}; Trident/6.0)o";
+           
+
+            UserAgent = $"Mozilla/5.0 (Windows NT {Environment.OSVersion.Version.Major}.{Environment.OSVersion.Version.Minor}; Trident/7.0; rv:11.0) like Gecko";
 
             var left = System.Windows.Forms.Screen.AllScreens.Min(screen => screen.Bounds.X);
             var top = System.Windows.Forms.Screen.AllScreens.Min(screen => screen.Bounds.Y);
