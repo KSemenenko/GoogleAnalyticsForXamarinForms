@@ -1,5 +1,9 @@
 using System;
 using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 
@@ -7,40 +11,41 @@ namespace Plugin.GoogleAnalytics
 {
     public class DeviceInfo : IDeviceInfo
     {
-        private const string GoogleAnalyticsFolder = "ga-store";
-        private readonly EasClientDeviceInformation deviceInfo;
+        private const string GoogleAnalyticsFolder = "ga.dat";
 
         public DeviceInfo()
         {
-            deviceInfo = new EasClientDeviceInformation();
-            UserAgent =
-                $"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
+            UserAgent = $"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT {Environment.OSVersion}; Trident/6.0)o";
 
-            var bounds = Window.Current.Bounds;
-            var w = bounds.Width;
-            var h = bounds.Height;
+            var left = System.Windows.Forms.Screen.AllScreens.Min(screen => screen.Bounds.X);
+            var top = System.Windows.Forms.Screen.AllScreens.Min(screen => screen.Bounds.Y);
+            var right = System.Windows.Forms.Screen.AllScreens.Max(screen => screen.Bounds.X + screen.Bounds.Width);
+            var bottom = System.Windows.Forms.Screen.AllScreens.Max(screen => screen.Bounds.Y + screen.Bounds.Height);
+
+            var w = right - left;
+            var h = bottom - top;
 
             Display = new Dimensions((int)w, (int)h);
-
             ViewPortResolution = new Dimensions((int)w, (int)h);
         }
 
         public string Model
         {
-            get { return deviceInfo.SystemProductName; }
+            get { return ""; } // return deviceInfo.SystemProductName; }
         }
 
         public string Id
         {
             get
             {
+                return "unsupported";
                 try
                 {
-                    var myToken = HardwareIdentification.GetPackageSpecificToken(null);
-                    var hardwareId = myToken.Id;
-                    return Convert.ToBase64String(hardwareId.ToArray());
+                    //var myToken = HardwareIdentification.GetPackageSpecificToken(null);
+                    //var hardwareId = myToken.Id;
+                    //return Convert.ToBase64String(hardwareId.ToArray());
                 }
-                catch (Exception)
+                catch(Exception)
                 {
                     //throw new UnauthorizedAccessException( 
                     //"Application has no access to device identity. To enable access consider enabling ID_CAP_IDENTITY_DEVICE on app manifest."); 
@@ -55,10 +60,7 @@ namespace Plugin.GoogleAnalytics
         {
             get
             {
-                var version = new Version(Package.Current.Id.Version.Major,
-                    Package.Current.Id.Version.Minor,
-                    Package.Current.Id.Version.Revision,
-                    Package.Current.Id.Version.Build);
+                var version = Assembly.GetEntryAssembly().GetName().Version;
                 return version.ToString();
             }
         }
@@ -91,19 +93,19 @@ namespace Plugin.GoogleAnalytics
         {
             var appId = "";
 
-            if (!string.IsNullOrEmpty(prefix))
+            if(!string.IsNullOrEmpty(prefix))
             {
                 appId += prefix;
             }
 
             appId += Guid.NewGuid().ToString();
 
-            if (usingPhoneId)
+            if(usingPhoneId)
             {
                 appId += Id;
             }
 
-            if (!string.IsNullOrEmpty(suffix))
+            if(!string.IsNullOrEmpty(suffix))
             {
                 appId += suffix;
             }
@@ -115,23 +117,26 @@ namespace Plugin.GoogleAnalytics
         {
             try
             {
-                var folder = ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] as string;
-
-                if (!string.IsNullOrEmpty(folder))
-                {
-                    return folder;
-                }
-                return string.Empty;
+                return File.ReadAllText(Path.Combine(Environment.CurrentDirectory, path));
             }
-            catch
+            catch(Exception e)
             {
-                return string.Empty;
+                // skip
             }
+
+            return string.Empty;
         }
 
         public void WriteFile(string path, string content)
         {
-            ApplicationData.Current.LocalSettings.Values[GoogleAnalyticsFolder] = content;
+            try
+            {
+                File.WriteAllText(Path.Combine(Environment.CurrentDirectory, path), content);
+            }
+            catch(Exception e)
+            {
+                // skip
+            }
         }
     }
 }
