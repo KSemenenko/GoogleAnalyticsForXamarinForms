@@ -14,6 +14,8 @@ namespace Plugin.GoogleAnalytics
             SampleFrequency = 100.0F;
             AutoAppLifetimeMonitoring = true;
             AutoTrackNetworkConnectivity = true;
+            UseSecure = true;
+            Debug = false;
             InstallMessage = "Install";
             StartMessage = "Start";
             ServiceCategoryName = "App";

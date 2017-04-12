@@ -4,9 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-#if __MOBILE__
-using ModernHttpClient;
-#endif
 using System.Text;
 using System.Threading.Tasks;
 using Plugin.GoogleAnalytics.Abstractions;
@@ -283,10 +280,6 @@ namespace Plugin.GoogleAnalytics
 
         private HttpClient GetHttpClient()
         {
-#if __MOBILE__
-            var handler = new NativeMessageHandler();
-            handler.UseProxy = true;
-#else
             var handler = new HttpClientHandler
             {
 #if !(SILVERLIGHT || PORTABLE)
@@ -294,7 +287,6 @@ namespace Plugin.GoogleAnalytics
 #endif
                 UseProxy = true
             };
-#endif
             var result = new HttpClient(handler);
             if(!string.IsNullOrEmpty(UserAgent))
             {
