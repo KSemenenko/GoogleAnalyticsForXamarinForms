@@ -9,7 +9,7 @@ using System.Reflection;
 [assembly: AssemblyDescription("This project is a cross platform library for Xamarin Forms, which enables a handy use of Google Analytics in your applications.")]
 [assembly: AssemblyCompany("ksemenenko")]
 [assembly: AssemblyProduct("Plugin.GoogleAnalytics")]
-[assembly: AssemblyCopyright("Copyright © K.Semenenko 2016")]
+[assembly: AssemblyCopyright("Copyright © K.Semenenko 2017")]
 [assembly: AssemblyTrademark("ksemenenko")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
@@ -25,5 +25,5 @@ using System.Reflection;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.2.1")]
-[assembly: AssemblyFileVersion("1.0.2.1")]
+[assembly: AssemblyVersion("1.0.3.0")]
+[assembly: AssemblyFileVersion("1.0.3.0")]
