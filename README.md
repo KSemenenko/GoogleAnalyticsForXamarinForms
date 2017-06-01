@@ -11,6 +11,9 @@ Should you have any comments or suggestions, please let me know. Let's make it a
 ## Available at NuGet. 
 https://www.nuget.org/packages/ksemenenko.GoogleAnalytics/
 
+## Build status
+[![Build status](https://ci.appveyor.com/api/projects/status/7j7ddr2stfuhpxhs?svg=true)](https://ci.appveyor.com/project/KSemenenko/googleanalyticsforxamarinforms)
+[![Build status](https://ci.appveyor.com/api/projects/status/7j7ddr2stfuhpxhs/branch/master?svg=true)](https://ci.appveyor.com/project/KSemenenko/googleanalyticsforxamarinforms/branch/master)
 
 |Platform|Supported|Version|
 | ------------------- | :-----------: | :------------------: |
