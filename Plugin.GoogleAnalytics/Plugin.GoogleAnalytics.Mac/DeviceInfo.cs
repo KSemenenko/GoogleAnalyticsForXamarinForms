@@ -3,6 +3,8 @@ using System.Globalization;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 using System.IO;
+using AppKit;
+using WebKit;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -14,15 +16,13 @@ namespace Plugin.GoogleAnalytics
 
         public DeviceInfo()
         {
-            //deviceInfo = new EasClientDeviceInformation();
-            UserAgent = ""; //$"Mozilla/5.0 ({deviceInfo.OperatingSystem} ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {deviceInfo.SystemManufacturer}; {deviceInfo.SystemProductName}) like Gecko";
+            WebView agentWebView = new WebView();
+            UserAgent = agentWebView.CustomUserAgent;
 
-            //var bounds = Window.Current.Bounds;
-            var w = 800;//bounds.Width;
-            var h = 480;//bounds.Height;
+            var w = NSScreen.MainScreen?.Frame.Width ?? 0;
+            var h = NSScreen.MainScreen?.Frame.Height ?? 0;
 
             Display = new Dimensions((int)w, (int)h);
-
             ViewPortResolution = new Dimensions((int)w, (int)h);
         }
 
