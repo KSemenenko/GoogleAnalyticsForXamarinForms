@@ -24,19 +24,27 @@ namespace Plugin.GoogleAnalytics
         public DeviceInfo()
         {
             deviceInfo = new EasClientDeviceInformation();
-            SettingsPane.GetForCurrentView().CommandsRequested += DeviceInfo_CommandsRequested;
-        }
 
-        private void DeviceInfo_CommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
-        {
-            var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
-            var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-            var size = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
-            Display = new Dimensions(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
+            try
+            {
+                var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
+                var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
+                var size = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
+                Display = new Dimensions(Convert.ToInt32(size.Height), Convert.ToInt32(size.Width));
+            }
+            catch
+            {
+                //skip
+                if(System.Diagnostics.Debugger.IsAttached)
+                {
+                    throw;
+                }
+            }
 
             UserAgent = string.Format("Mozilla/5.0 ({0}; ARM; Trident/7.0; Touch; rv11.0; IEMobile/11.0; {1}; {2}) like Gecko",
                 deviceInfo.OperatingSystem, deviceInfo.SystemManufacturer, deviceInfo.SystemProductName);
         }
+
 
         public string Id
         {
