@@ -24,13 +24,15 @@ namespace Plugin.GoogleAnalytics
         private TimeSpan dispatchPeriod;
         private bool isConnected = true; // assume true. The app can tell us differently
         private Timer timer;
+        IDeviceInfo deviceInfo;
 
-        private GAServiceManager()
+        private GAServiceManager(IDeviceInfo deviceInfo)
         {
             PostData = true;
             dispatchingTasks = new List<Task>();
             payloads = new Queue<Payload>();
             DispatchPeriod = TimeSpan.Zero;
+            this.deviceInfo = deviceInfo;
         }
 
         /// <summary>
@@ -46,7 +48,7 @@ namespace Plugin.GoogleAnalytics
             {
                 if(current == null)
                 {
-                    current = new GAServiceManager();
+                    current = new GAServiceManager(new DeviceInfo());
                 }
                 return current;
             }
@@ -251,15 +253,36 @@ namespace Plugin.GoogleAnalytics
 
         private async Task<HttpResponseMessage> SendPayloadAsync(Payload payload, HttpClient httpClient, Dictionary<string, string> payloadData)
         {
-            var endPoint = payload.IsDebug ? endPointSecureDebug : (payload.IsUseSecure ? endPointSecure : endPointUnsecure);
-            if(PostData)
+            HttpResponseMessage response;
+            bool sended = false;
+            try
             {
-                using(var content = GetEncodedContent(payloadData))
+                var endPoint = payload.IsDebug ? endPointSecureDebug : (payload.IsUseSecure ? endPointSecure : endPointUnsecure);
+                if (PostData)
                 {
-                    return await httpClient.PostAsync(endPoint, content);
+                    using (var content = GetEncodedContent(payloadData))
+                    {
+                        response = await httpClient.PostAsync(endPoint, content);
+                    }
+                }
+                response = await httpClient.GetAsync(endPoint + "?" + GetUrlEncodedString(payloadData));
+                sended = true;
+            }
+            catch
+            {
+                //Save unsent data
+
+                throw;
+            }
+            finally
+            {
+                if(sended)
+                {
+                    //stored data
                 }
             }
-            return await httpClient.GetAsync(endPoint + "?" + GetUrlEncodedString(payloadData));
+
+            return response;
         }
 
         private void OnMalformedPayload(Payload payload, HttpResponseMessage response)
