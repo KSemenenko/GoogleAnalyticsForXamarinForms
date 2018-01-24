@@ -12,6 +12,9 @@ namespace Plugin.GoogleAnalytics
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
+            if (!Current.Config.ReportUncaughtExceptions)
+                return;
+            
             Current.Tracker.SendException(e.Exception, true);
             Task.Delay(1000).Wait(); //delay
         }
