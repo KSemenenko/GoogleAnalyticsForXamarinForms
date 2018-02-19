@@ -265,7 +265,11 @@ namespace Plugin.GoogleAnalytics
                         response = await httpClient.PostAsync(endPoint, content);
                     }
                 }
-                response = await httpClient.GetAsync(endPoint + "?" + GetUrlEncodedString(payloadData));
+                else
+                {
+                    response = await httpClient.GetAsync(endPoint + "?" + GetUrlEncodedString(payloadData));
+                }
+                
                 sended = true;
             }
             catch
