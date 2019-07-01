@@ -309,9 +309,6 @@ namespace Plugin.GoogleAnalytics
         {
             var handler = new HttpClientHandler
             {
-#if !(SILVERLIGHT || PORTABLE)
-                Proxy = WebRequest.DefaultWebProxy,                
-#endif
                 UseProxy = true
             };
             var result = new HttpClient(handler);
