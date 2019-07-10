@@ -5,9 +5,11 @@ using Java.Util.Concurrent;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 using System.IO;
+using Android.Runtime;
 
 namespace Plugin.GoogleAnalytics
 {
+    [Preserve(AllMembers = true)]
     public class DeviceInfo : IDeviceInfo
     {
         private readonly string GoogleAnalyticsFolder = "ga-store";

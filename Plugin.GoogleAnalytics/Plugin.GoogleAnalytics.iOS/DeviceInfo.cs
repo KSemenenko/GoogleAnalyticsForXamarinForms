@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Plugin.GoogleAnalytics
 {
+    [Preserve(AllMembers = true)]
     public class DeviceInfo : IDeviceInfo
     {
         private readonly string GoogleAnalyticsFolder = "ga-store";

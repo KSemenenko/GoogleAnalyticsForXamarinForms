@@ -1,9 +1,19 @@
 ﻿using System;
 using System.Threading;
 using Plugin.GoogleAnalytics.Abstractions;
+#if ANDROID
+using Android.Runtime;
+#endif
+
+#if __IOS__ || __MACOS__
+using Foundation;
+#endif
 
 namespace Plugin.GoogleAnalytics
 {
+#if !WINDOWS_UWP
+    [Preserve(AllMembers = true)]
+#endif
     public class GoogleAnalyticsImplementation : IGoogleAnalytics
     {
         static GoogleAnalyticsImplementation()

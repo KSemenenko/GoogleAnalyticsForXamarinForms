@@ -1,7 +1,16 @@
 ﻿using System;
+#if ANDROID
+using Android.Runtime;
+#endif
 
+#if __IOS__ || __MACOS__
+using Foundation;
+#endif
 namespace Plugin.GoogleAnalytics
 {
+#if !WINDOWS_UWP
+    [Preserve(AllMembers = true)]
+#endif
     public class TokenBucket
     {
         private readonly double capacity;

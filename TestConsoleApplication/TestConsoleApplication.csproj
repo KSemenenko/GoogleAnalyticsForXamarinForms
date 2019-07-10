@@ -54,14 +54,6 @@
       <Project>{3642f062-162e-460b-904f-f6dd63e2ede5}</Project>
       <Name>Plugin.GoogleAnalytics.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Desktop\Plugin.GoogleAnalytics.Desktop.csproj">
-      <Project>{96cbcae8-32a3-41cd-9371-4d775499863d}</Project>
-      <Name>Plugin.GoogleAnalytics.Desktop</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.csproj">
-      <Project>{03067a3c-5a75-41d8-80d9-0fcbe1668c15}</Project>
-      <Name>Plugin.GoogleAnalytics</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

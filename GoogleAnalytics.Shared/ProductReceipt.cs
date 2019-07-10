@@ -1,8 +1,18 @@
 ﻿using System.IO;
 using System.Xml;
+#if ANDROID
+using Android.Runtime;
+#endif
+
+#if __IOS__ || __MACOS__
+using Foundation;
+#endif
 
 namespace Plugin.GoogleAnalytics
 {
+#if !WINDOWS_UWP
+    [Preserve(AllMembers = true)]
+#endif
     public sealed class ProductReceipt
     {
         public string Id { get; set; }

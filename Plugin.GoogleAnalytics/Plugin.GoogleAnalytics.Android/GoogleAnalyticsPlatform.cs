@@ -4,6 +4,7 @@ using Android.Runtime;
 
 namespace Plugin.GoogleAnalytics
 {
+    [Preserve(AllMembers = true)]
     public partial class GoogleAnalytics
     {
         static GoogleAnalytics()

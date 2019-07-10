@@ -1,11 +1,21 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+#if ANDROID
+using Android.Runtime;
+#endif
+
+#if __IOS__ || __MACOS__
+using Foundation;
+#endif
 
 namespace Plugin.GoogleAnalytics
 {
     public delegate void TimerCallback(object state);
 
+#if !WINDOWS_UWP
+    [Preserve(AllMembers = true)]
+#endif
     public sealed class Timer : CancellationTokenSource, IDisposable
     {
         public Timer(TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period) : this(callback, state, (int)dueTime.TotalMilliseconds, (int)period.TotalMilliseconds)

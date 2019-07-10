@@ -4,10 +4,12 @@ using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 using System.IO;
 using AppKit;
+using Foundation;
 using WebKit;
 
 namespace Plugin.GoogleAnalytics
 {
+    [Preserve(AllMembers = true)]
     public class DeviceInfo : IDeviceInfo
     {
         private const string GoogleAnalyticsFolder = "ga-store";
@@ -16,11 +18,14 @@ namespace Plugin.GoogleAnalytics
 
         public DeviceInfo()
         {
-            WebView agentWebView = new WebView();
-            UserAgent = agentWebView.CustomUserAgent;
+            //WebView agentWebView = new WebView();
+            UserAgent = string.Empty;
 
-            var w = NSScreen.MainScreen?.Frame.Width ?? 0;
-            var h = NSScreen.MainScreen?.Frame.Height ?? 0;
+            //var w = NSScreen.MainScreen?.Frame.Width ?? 0;
+            //var h = NSScreen.MainScreen?.Frame.Height ?? 0;
+
+            var w = 0;
+            var h = 0;
 
             Display = new Dimensions((int)w, (int)h);
             ViewPortResolution = new Dimensions((int)w, (int)h);

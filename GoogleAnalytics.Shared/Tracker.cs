@@ -3,9 +3,19 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
+#if ANDROID
+using Android.Runtime;
+#endif
+
+#if __IOS__ || __MACOS__
+using Foundation;
+#endif
 
 namespace Plugin.GoogleAnalytics
 {
+#if !WINDOWS_UWP
+    [Preserve(AllMembers = true)]
+#endif
     public sealed class Tracker : ITracker
     {
         private readonly PayloadFactory engine;
@@ -291,7 +301,18 @@ namespace Plugin.GoogleAnalytics
 
         public void SendException(Exception exception, bool isFatal)
         {
-            SendException("Exception: " + GetExceptionMessage(exception), isFatal);
+            if(exception is AggregateException aggregateException)
+            {
+                foreach(var item in aggregateException.InnerExceptions)
+                {
+                    SendException(item, isFatal);
+                }
+            }
+            else
+            {
+                SendException("Exception: " + GetExceptionMessage(exception), isFatal);
+            }
+            
         }
 
         private string GetInnerMessage(Exception exception, int depth = 0)

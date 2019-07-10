@@ -3,11 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.3">
     <id>ksemenenko.GoogleAnalytics</id>
-    <version>1.0.4.0</version>
+    <version>1.0.4.0-pre</version>
     <title>GoogleAnalytics Plugin for Xamarin and Windows</title>
     <authors>ksemenenko</authors>
     <owners>ksemenenko</owners>
-    <licenseUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/KSemenenko/GoogleAnalyticsForXamarinForms</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/KSemenenko/GoogleAnalyticsForXamarinForms/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -18,15 +17,6 @@
     <tags>xamarin, google analytics, analytics, pcl, netstandard, plugin, plugin for xamarin, windows phone, uwp, winphone, wp8, winrt, android, xamarin.forms, ios, mac, version</tags>
     <dependencies>
       <group targetFramework="UAP10">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      </group>
-      <group targetFramework="wp8">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      </group>
-      <group targetFramework="wpa81">
-        <dependency id="Microsoft.Net.Http" version="2.2.29" />
-      </group>
-      <group targetFramework="win8">
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
       </group>
       <group targetFramework="portable-net45">
@@ -46,54 +36,35 @@
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.xml" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.pdb" />
 
-    <!--Portable net45 -->
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Desktop\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\net45\Plugin.GoogleAnalytics.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Desktop\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\net45\Plugin.GoogleAnalytics.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Desktop\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\net45\Plugin.GoogleAnalytics.pdb" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\net45\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\net45\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\net45\Plugin.GoogleAnalytics.Abstractions.pdb" />
-
-    <!-- Core -->                                                                                              
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.pdb" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\portable-net45+wp80+win8+wpa81\Plugin.GoogleAnalytics.Abstractions.pdb" />
-
-
     <!--UWP-->
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.UWP\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\UAP10\Plugin.GoogleAnalytics.dll" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.UWP\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\UAP10\Plugin.GoogleAnalytics.xml" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.UWP\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\UAP10\Plugin.GoogleAnalytics.pdb" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\UAP10\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\UAP10\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\UAP100\Plugin.GoogleAnalytics.Abstractions.pdb" />   
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.UWP\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\UAP10\Plugin.GoogleAnalytics.Abstractions.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.UWP\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\UAP10\Plugin.GoogleAnalytics.Abstractions.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.UWP\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\UAP100\Plugin.GoogleAnalytics.Abstractions.pdb" />   
    
     <!--Xamarin.Android-->
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Android\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.dll" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Android\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.xml" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Android\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.pdb" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.Abstractions.pdb" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Android\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.Abstractions.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Android\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.Abstractions.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Android\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\MonoAndroid10\Plugin.GoogleAnalytics.Abstractions.pdb" />
    
     <!--Xamarin.iOS-->
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.iOS\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\XamariniOS10\Plugin.GoogleAnalytics.dll" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.iOS\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\XamariniOS10\Plugin.GoogleAnalytics.xml" />
-    <!--<file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.iOS\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\XamariniOS10\Plugin.GoogleAnalytics.pdb" />-->
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\XamariniOS10\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\XamariniOS10\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\netstandard1.0\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\XamariniOS10\Plugin.GoogleAnalytics.Abstractions.pdb" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.iOS\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\XamariniOS10\Plugin.GoogleAnalytics.Abstractions.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.iOS\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\XamariniOS10\Plugin.GoogleAnalytics.Abstractions.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.iOS\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\XamariniOS10\Plugin.GoogleAnalytics.Abstractions.pdb" />
   
     <!--Xamarin.Mac-->
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Mac\bin\Release\Plugin.GoogleAnalytics.dll" target="lib\XamarinMac20\Plugin.GoogleAnalytics.dll" />
     <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Mac\bin\Release\Plugin.GoogleAnalytics.xml" target="lib\XamarinMac20\Plugin.GoogleAnalytics.xml" />
-    <!--<file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Mac\bin\Release\Plugin.GoogleAnalytics.pdb" target="lib\XamarinMac20\Plugin.GoogleAnalytics.pdb" />-->
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\XamarinMac20\Plugin.GoogleAnalytics.Abstractions.dll" />
-    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\XamarinMac20\Plugin.GoogleAnalytics.Abstractions.xml" />
-    <!--<file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Abstractions\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\XamarinMac20\Plugin.GoogleAnalytics.Abstractions.pdb" />-->
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Mac\bin\Release\Plugin.GoogleAnalytics.Abstractions.dll" target="lib\XamarinMac20\Plugin.GoogleAnalytics.Abstractions.dll" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Mac\bin\Release\Plugin.GoogleAnalytics.Abstractions.xml" target="lib\XamarinMac20\Plugin.GoogleAnalytics.Abstractions.xml" />
+    <file src="Plugin.GoogleAnalytics\Plugin.GoogleAnalytics.Mac\bin\Release\Plugin.GoogleAnalytics.Abstractions.pdb" target="lib\XamarinMac20\Plugin.GoogleAnalytics.Abstractions.pdb" />
         
   </files>
 </package>

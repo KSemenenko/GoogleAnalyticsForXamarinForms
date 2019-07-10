@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using System.Globalization;
 using Plugin.GoogleAnalytics.Abstractions.Model;
+#if ANDROID
+using Android.Runtime;
+#endif
+
+#if __IOS__ || __MACOS__
+using Foundation;
+#endif
 
 namespace Plugin.GoogleAnalytics
 {
     //https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters
+#if !WINDOWS_UWP
+    [Preserve(AllMembers = true)]
+#endif
     public sealed class PayloadFactory
     {
         private const string HitType_Pageview = "screenview";

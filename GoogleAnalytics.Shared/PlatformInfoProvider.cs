@@ -1,9 +1,19 @@
 ﻿using System;
 using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
+#if ANDROID
+using Android.Runtime;
+#endif
+
+#if __IOS__ || __MACOS__
+using Foundation;
+#endif
 
 namespace Plugin.GoogleAnalytics
 {
+#if !WINDOWS_UWP
+    [Preserve(AllMembers = true)]
+#endif
     public sealed partial class PlatformInfoProvider : IPlatformInfoProvider
     {
         private const string AnonymousIdFileName = "ga-anonymous-id.guid";
