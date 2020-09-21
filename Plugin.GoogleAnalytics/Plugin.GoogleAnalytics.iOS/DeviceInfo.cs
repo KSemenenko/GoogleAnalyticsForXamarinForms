@@ -4,6 +4,7 @@ using Plugin.GoogleAnalytics.Abstractions;
 using Plugin.GoogleAnalytics.Abstractions.Model;
 using UIKit;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Plugin.GoogleAnalytics
 {
@@ -14,8 +15,7 @@ namespace Plugin.GoogleAnalytics
 
         public DeviceInfo()
         {
-            UIWebView agentWebView = new UIWebView();
-            UserAgent = agentWebView.EvaluateJavascript("navigator.userAgent");
+            UserAgent = GetUserAgent();
             Display = new Dimensions(Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Height), Convert.ToInt32(UIScreen.MainScreen.Bounds.Size.Width));
 
             GoogleAnalyticsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), GoogleAnalyticsFolder);
@@ -97,6 +97,54 @@ namespace Plugin.GoogleAnalytics
                 Directory.CreateDirectory(GoogleAnalyticsFolder);
             }
             File.WriteAllText(Path.Combine(GoogleAnalyticsFolder, path), content);
+        }
+
+        private string GetUserAgent()
+        {
+	        var dict = NSBundle.MainBundle.InfoDictionary;
+	        var appName = dict["CFBundleDisplayName"]?.ToString();
+	        var appVersion = dict["CFBundleShortVersionString"]?.ToString();
+
+	        var osName = UIDevice.CurrentDevice.SystemName;
+	        var osVersion = UIDevice.CurrentDevice.SystemVersion;
+
+	        var networkHandler = "CFNetwork";
+	        var networkHandlerVersion = NSBundle.FromIdentifier("com.apple.CFNetwork")?.InfoDictionary["CFBundleShortVersionString"]?.ToString();
+
+	        var darwinName = "Darwin";
+	        var darwinVersion = GetSysPropertyInfo("kern.osrelease");
+	        var deviceModel = GetSysPropertyInfo("hw.machine");
+
+	        // <AppName/<version> <iDevice platform><Apple model identifier>  iOS/<OS version> CFNetwork/<version> Darwin/<version>
+	        var ua = $"{appName}/{appVersion} {deviceModel} {osName}/{osVersion} {networkHandler}/{networkHandlerVersion} {darwinName}/{darwinVersion}";
+
+	        return ua;
+        }
+
+        [DllImport("libc", CallingConvention = CallingConvention.Cdecl)]
+        private static extern int sysctlbyname([MarshalAs(UnmanagedType.LPStr)] string property, IntPtr output, IntPtr oldLen, IntPtr newp, uint newlen);
+
+        private static string GetSysPropertyInfo(string hardwareProperty)
+        {
+	        try
+	        {
+		        var pLen = Marshal.AllocHGlobal(sizeof(int));
+
+		        sysctlbyname(hardwareProperty, IntPtr.Zero, pLen, IntPtr.Zero, 0);
+
+		        var length = Marshal.ReadInt32(pLen);
+
+		        var pStr = Marshal.AllocHGlobal(length);
+		        sysctlbyname(hardwareProperty, pStr, pLen, IntPtr.Zero, 0);
+
+		        var hardwareStr = Marshal.PtrToStringAnsi(pStr);
+		        return hardwareStr;
+	        }
+	        catch (Exception e)
+	        {
+                System.Diagnostics.Debug.WriteLine("GetSysPropertyInfo failed: " + e.Message);
+		        return "?";
+	        }
         }
     }
 }
