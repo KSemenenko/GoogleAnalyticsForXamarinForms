@@ -15,9 +15,9 @@ namespace Plugin.GoogleAnalytics
         private readonly string GoogleAnalyticsFolder = "ga-store";
 
         public DeviceInfo()
-        {
-            UserAgent = Java.Lang.JavaSystem.GetProperty("http.agent");
-            Display = new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
+        { 
+	        UserAgent = GetUserAgent();
+	        Display = new Dimensions(Android.App.Application.Context.Resources.DisplayMetrics.HeightPixels,
                 Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels);
 
             GoogleAnalyticsFolder = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), GoogleAnalyticsFolder);
@@ -100,6 +100,20 @@ namespace Plugin.GoogleAnalytics
                 Directory.CreateDirectory(GoogleAnalyticsFolder);
             }
             File.WriteAllText(Path.Combine(GoogleAnalyticsFolder, path), content);
+        }
+
+        private string GetUserAgent()
+        {
+	        var context = Android.App.Application.Context;
+
+	        var appName = context.PackageManager.GetApplicationLabelFormatted(context.ApplicationInfo);
+	        var appVersion = context.PackageManager.GetPackageInfo(context.PackageName, 0)?.VersionName.Trim();
+
+	        var httpAgent = Java.Lang.JavaSystem.GetProperty("http.agent");
+
+	        var ua = $"{appName}/{appVersion} {httpAgent}";
+
+	        return ua;
         }
     }
 }
